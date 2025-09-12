@@ -90,11 +90,9 @@ export default function HomePage() {
 
   const collaborations = ["1.png", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.png", "7.png", "8.jpg"]
 
-  // Create repeated arrays for infinite scroll effect
-  const repeatedClients = [...clients, ...clients]
-  const repeatedPartners = [...partners, ...partners]
-  const repeatedCollaborations = [...collaborations, ...collaborations]
-
+  const repeatedClients = [...clients, ...clients, ...clients]
+  const repeatedPartners = [...partners, ...partners, ...partners]
+  const repeatedCollaborations = [...collaborations, ...collaborations, ...collaborations]
 
   // Auto-advance carousel
   useEffect(() => {
@@ -138,7 +136,7 @@ export default function HomePage() {
                 href="#"
                 className="relative text-gray-700 font-medium px-6 py-3 rounded-lg transition-all duration-500 hover:text-white group overflow-hidden transform hover:scale-105"
               >
-                <span className="relative z-10 transition-colors duration-75">CIDTES</span>
+                <span className="relative z-10 transition-colors duration-500">CIDTES</span>
                 <div className="absolute inset-0 bg-gradient-to-tr from-[#6B46C1] via-[#0891B2] to-[#059669] opacity-0 group-hover:opacity-100 transition-all duration-500 transform -translate-x-full group-hover:translate-x-0 rounded-lg shadow-lg group-hover:shadow-xl"></div>
                 <div className="absolute inset-0 bg-gradient-to-tr from-[#6B46C1] via-[#0891B2] to-[#059669] opacity-20 scale-0 group-hover:scale-110 transition-all duration-700 rounded-lg blur-sm"></div>
               </Link>
@@ -147,7 +145,7 @@ export default function HomePage() {
                 href="#"
                 className="relative text-gray-700 font-medium px-6 py-3 rounded-lg transition-all duration-500 hover:text-white group overflow-hidden transform hover:scale-105"
               >
-                <span className="relative z-10 transition-colors duration-75">Capacitación</span>
+                <span className="relative z-10 transition-colors duration-500">Capacitación</span>
                 <div className="absolute inset-0 bg-gradient-to-tr from-[#6B46C1] via-[#0891B2] to-[#059669] opacity-0 group-hover:opacity-100 transition-all duration-500 transform -translate-x-full group-hover:translate-x-0 rounded-lg shadow-lg group-hover:shadow-xl"></div>
                 <div className="absolute inset-0 bg-gradient-to-tr from-[#6B46C1] via-[#0891B2] to-[#059669] opacity-20 scale-0 group-hover:scale-110 transition-all duration-700 rounded-lg blur-sm"></div>
               </Link>
@@ -156,7 +154,7 @@ export default function HomePage() {
                 href="#"
                 className="relative text-gray-700 font-medium px-6 py-3 rounded-lg transition-all duration-500 hover:text-white group overflow-hidden transform hover:scale-105"
               >
-                <span className="relative z-10 transition-colors duration-75">Certificación</span>
+                <span className="relative z-10 transition-colors duration-500">Certificación</span>
                 <div className="absolute inset-0 bg-gradient-to-tr from-[#6B46C1] via-[#0891B2] to-[#059669] opacity-0 group-hover:opacity-100 transition-all duration-500 transform -translate-x-full group-hover:translate-x-0 rounded-lg shadow-lg group-hover:shadow-xl"></div>
                 <div className="absolute inset-0 bg-gradient-to-tr from-[#6B46C1] via-[#0891B2] to-[#059669] opacity-20 scale-0 group-hover:scale-110 transition-all duration-700 rounded-lg blur-sm"></div>
               </Link>
@@ -165,7 +163,7 @@ export default function HomePage() {
                 href="#"
                 className="relative text-gray-700 font-medium px-6 py-3 rounded-lg transition-all duration-500 hover:text-white group overflow-hidden transform hover:scale-105"
               >
-                <span className="relative z-10 transition-colors duration-75">Consultoría</span>
+                <span className="relative z-10 transition-colors duration-500">Consultoría</span>
                 <div className="absolute inset-0 bg-gradient-to-tr from-[#6B46C1] via-[#0891B2] to-[#059669] opacity-0 group-hover:opacity-100 transition-all duration-500 transform -translate-x-full group-hover:translate-x-0 rounded-lg shadow-lg group-hover:shadow-xl"></div>
                 <div className="absolute inset-0 bg-gradient-to-tr from-[#6B46C1] via-[#0891B2] to-[#059669] opacity-20 scale-0 group-hover:scale-110 transition-all duration-700 rounded-lg blur-sm"></div>
               </Link>
@@ -174,7 +172,7 @@ export default function HomePage() {
                 href="#"
                 className="relative text-gray-700 font-medium px-6 py-3 rounded-lg transition-all duration-500 hover:text-white group overflow-hidden transform hover:scale-105"
               >
-                <span className="relative z-10 transition-colors duration-75">Investigación y Consultoría</span>
+                <span className="relative z-10 transition-colors duration-500">Investigación y Consultoría</span>
                 <div className="absolute inset-0 bg-gradient-to-tr from-[#6B46C1] via-[#0891B2] to-[#059669] opacity-0 group-hover:opacity-100 transition-all duration-500 transform -translate-x-full group-hover:translate-x-0 rounded-lg shadow-lg group-hover:shadow-xl"></div>
                 <div className="absolute inset-0 bg-gradient-to-tr from-[#6B46C1] via-[#0891B2] to-[#059669] opacity-20 scale-0 group-hover:scale-110 transition-all duration-700 rounded-lg blur-sm"></div>
               </Link>
@@ -183,7 +181,7 @@ export default function HomePage() {
                 href="#"
                 className="relative text-gray-700 font-medium px-6 py-3 rounded-lg transition-all duration-500 hover:text-white group overflow-hidden transform hover:scale-105"
               >
-                <span className="relative z-10 transition-colors duration-75">Únete</span>
+                <span className="relative z-10 transition-colors duration-500">Únete</span>
                 <div className="absolute inset-0 bg-gradient-to-tr from-[#6B46C1] via-[#0891B2] to-[#059669] opacity-0 group-hover:opacity-100 transition-all duration-500 transform -translate-x-full group-hover:translate-x-0 rounded-lg shadow-lg group-hover:shadow-xl"></div>
                 <div className="absolute inset-0 bg-gradient-to-tr from-[#6B46C1] via-[#0891B2] to-[#059669] opacity-20 scale-0 group-hover:scale-110 transition-all duration-700 rounded-lg blur-sm"></div>
               </Link>
@@ -411,9 +409,8 @@ export default function HomePage() {
           </div>
         </section>
 
-         {/* Misión y Visión Section */}
+        {/* Misión y Visión Section */}
         <section className="relative overflow-hidden h-[500px] sm:h-[600px] lg:h-[800px]">
-        
           {/* Solar Panels Background Image */}
           <div className="absolute inset-0">
             <Image src="/images/solar-panels.jpg" alt="Solar panels field" fill className="object-cover" />
@@ -518,7 +515,7 @@ export default function HomePage() {
         <div className="h-16 bg-white relative overflow-hidden">
           <Image src="/images/wave-separator.png" alt="Wave separator" fill className="object-cover object-center" />
         </div>
-                {/* Video Section */}
+        {/* Video Section */}
         <section className="py-20 relative overflow-hidden bg-white">
           {/* Leaf Plant Background */}
           <div className="absolute inset-0">
@@ -574,7 +571,7 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-                {/* Wave Separator */}
+        {/* Wave Separator */}
         <div className="h-16 bg-white relative overflow-hidden">
           <Image src="/images/wave-separator.png" alt="Wave separator" fill className="object-cover object-center" />
         </div>
@@ -667,7 +664,12 @@ export default function HomePage() {
 
           {/* Wave Separator at bottom */}
           <div className="absolute bottom-0 left-0 right-0 h-16 bg-white overflow-hidden">
-            <Image src="/images/wave-separator.png" alt="Wave separator" fill className="object-cover object-center py-0" />
+            <Image
+              src="/images/wave-separator.png"
+              alt="Wave separator"
+              fill
+              className="object-cover object-center py-0"
+            />
           </div>
         </section>
 
@@ -701,6 +703,162 @@ export default function HomePage() {
         )}
       </main>
 
+      {/* Footer Section */}
+      <footer className="bg-gray-100 shadow-[0_-5px_6px_rgba(0,0,0,0.05)] font-sans">
+        <div className="flex flex-col items-center justify-center w-full">
+          {/* Main Footer Content */}
+          <div className="flex w-full box-border pt-12 pb-6 justify-evenly flex-col lg:flex-row gap-6 lg:gap-0">
+            {/* Logo and Tagline */}
+            <div className="flex flex-col items-start px-4 lg:px-8 box-border w-full lg:w-1/3">
+              <div className="w-20 p-4 rounded-2xl bg-white shadow-[0_6px_18px_rgba(0,0,0,0.2)] mb-4">
+                <Image
+                  src="/images/logo2.png"
+                  alt="CIDTES Logo"
+                  width={80}
+                  height={80}
+                  className="w-full h-auto"
+                />
+              </div>
+              <p className="leading-5 font-semibold text-xl text-gray-800">
+                Tu aventura con CIDTES Energía y Sustentabilidad comienza aquí.
+              </p>
+            </div>
+
+            {/* Contact Information */}
+            <div className="flex flex-col items-center w-full lg:w-1/3 px-4">
+              <h2 className="text-2xl font-semibold text-[#1D63ED] mb-4">Contacto</h2>
+              <ul className="flex flex-col items-center lg:items-start w-full gap-2">
+                <li className="flex items-center">
+                  <div className="w-2 h-2 bg-[#1D63ED] rounded-full mr-2"></div>
+                  <a
+                    href="mailto:cidtes@energiaysustentabilidad.org"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-black no-underline hover:underline transition-all duration-300"
+                  >
+                    cidtes@energiaysustentabilidad.org
+                  </a>
+                </li>
+                <li className="flex items-center">
+                  <div className="w-2 h-2 bg-[#1D63ED] rounded-full mr-2"></div>
+                  <a
+                    href="tel:5568125783"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-black no-underline hover:underline transition-all duration-300"
+                  >
+                    +52 55 6812-5783
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Location */}
+            <div className="flex flex-col justify-center items-center px-4 lg:px-6 box-border w-full lg:w-1/3">
+              <h2 className="text-2xl font-semibold text-[#1D63ED] mb-4">Ubicación</h2>
+              <div className="flex items-center mb-4">
+                <div className="w-2 h-2 bg-[#1D63ED] rounded-full mr-2"></div>
+                <p className="leading-5 text-center lg:text-left">
+                  Real de Los Reyes #303, Los Reyes, Alc. Coyoacán, Ciudad de México, C.P. 04330, México.
+                </p>
+              </div>
+              <iframe
+                title="Mapa de Ubicación"
+                loading="lazy"
+                referrerPolicy="no-referrer"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3764.727999171979!2d-99.1502399!3d19.3376058!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce0029f9da7505%3A0x23b2d1cdacd123b8!2sReal%20de%20Los%20Reyes%20303%2C%20Los%20Reyes%2C%20Coyoac%C3%A1n%2C%2004330%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses!2smx!4v1718144001766!5m2!1ses!2smx"
+                className="w-full h-48 lg:h-52 rounded-lg shadow-[0_4px_12px_rgba(0,0,0,0.15)] transition-all duration-300 hover:shadow-[0_6px_20px_rgba(0,0,0,0.2)] border-0"
+              />
+            </div>
+          </div>
+
+          {/* Bottom Footer */}
+          <div className="flex w-[90%] items-center py-8 border-t border-gray-300 flex-col lg:flex-row gap-6 lg:gap-0">
+            {/* Social Media Links */}
+            <div className="flex w-full lg:w-1/3 items-center justify-center">
+              <ul className="flex justify-center gap-4 flex-wrap">
+                <li className="bg-[#1D63ED] rounded-full flex items-center justify-center hover:bg-[#0E4BB8] transition-all duration-300 hover:scale-110">
+                  <a
+                    href="https://www.linkedin.com/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-full h-full p-3 flex items-center justify-center text-white no-underline"
+                  >
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                    </svg>
+                  </a>
+                </li>
+                <li className="bg-[#1D63ED] rounded-full flex items-center justify-center hover:bg-[#0E4BB8] transition-all duration-300 hover:scale-110">
+                  <a
+                    href="https://www.facebook.com/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-full h-full p-3 flex items-center justify-center text-white no-underline"
+                  >
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                    </svg>
+                  </a>
+                </li>
+                <li className="bg-[#1D63ED] rounded-full flex items-center justify-center hover:bg-[#0E4BB8] transition-all duration-300 hover:scale-110">
+                  <a
+                    href="https://www.youtube.com/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-full h-full p-3 flex items-center justify-center text-white no-underline"
+                  >
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                    </svg>
+                  </a>
+                </li>
+                <li className="bg-[#1D63ED] rounded-full flex items-center justify-center hover:bg-[#0E4BB8] transition-all duration-300 hover:scale-110">
+                  <a
+                    href="https://www.instagram.com/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-full h-full p-3 flex items-center justify-center text-white no-underline"
+                  >
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.618 5.367 11.986 11.988 11.986 6.618 0 11.986-5.368 11.986-11.986C24.003 5.367 18.635.001 12.017.001zM8.449 16.988c-1.297 0-2.448-.49-3.323-1.297C4.198 14.895 3.708 13.744 3.708 12.447s.49-2.448 1.297-3.323c.875-.807 2.026-1.297 3.323-1.297s2.448.49 3.323 1.297c.807.875 1.297 2.026 1.297 3.323s-.49 2.448-1.297 3.323c-.875.807-2.026 1.297-3.323 1.297zm7.718-9.469c-.49 0-.875-.385-.875-.875s.385-.875.875-.875.875.385.875.875-.385.875-.875.875zm-3.718 9.469c-2.026 0-3.708-1.682-3.708-3.708s1.682-3.708 3.708-3.708 3.708 1.682 3.708 3.708-1.682 3.708-3.708 3.708z" />
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Copyright and Legal Links */}
+            <div className="flex w-full lg:w-2/3 justify-center items-center gap-2 flex-wrap text-center">
+              <p className="text-black text-center">© 2025 CIDTES Energía y Sustentabilidad.</p>
+              <p className="text-black">|</p>
+              <p className="text-black">Todos los derechos reservados.</p>
+              <p className="text-black">|</p>
+              <Link
+                href="#"
+                className="text-black no-underline hover:underline transition-all duration-300 hover:scale-105"
+              >
+                Aviso de privacidad
+              </Link>
+              <p className="text-black">|</p>
+              <Link
+                href="#"
+                className="text-black no-underline hover:underline transition-all duration-300 hover:scale-105"
+              >
+                Términos y condiciones
+              </Link>
+              <p className="text-black">|</p>
+              <Link
+                href="#"
+                className="text-black no-underline hover:underline transition-all duration-300 hover:scale-105"
+              >
+                Legal
+              </Link>
+            </div>
+          </div>
+        </div>
+      </footer>
+
       <style jsx>{`
         @keyframes fadeInOut {
           0% { opacity: 0; }
@@ -709,45 +867,49 @@ export default function HomePage() {
           100% { opacity: 0; }
         }
 
-        /* Updated animations for faster speed and correct directions */
+        /* Seamless infinite scroll animations with no visible restart */
         @keyframes scroll-clients-left {
           0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
+          100% { transform: translateX(calc(-100% / 3)); }
         }
 
         @keyframes scroll-partners-right {
-          0% { transform: translateX(-50%); }
+          0% { transform: translateX(calc(-100% / 3)); }
           100% { transform: translateX(0); }
         }
 
         @keyframes scroll-collaborations-left {
           0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
+          100% { transform: translateX(calc(-100% / 3)); }
         }
 
+        /* Updated animations with triple content for seamless looping */
         .animate-scroll-clients-left {
-          animation: scroll-clients-left 10s linear infinite;
+          animation: scroll-clients-left 15s linear infinite;
+          width: fit-content;
         }
 
         .animate-scroll-partners-right {
-          animation: scroll-partners-right 8s linear infinite;
+          animation: scroll-partners-right 12s linear infinite;
+          width: fit-content;
         }
 
         .animate-scroll-collaborations-left {
-          animation: scroll-collaborations-left 6s linear infinite;
+          animation: scroll-collaborations-left 10s linear infinite;
+          width: fit-content;
         }
 
         @media (max-width: 768px) {
           .animate-scroll-clients-left {
-            animation: scroll-clients-left 15s linear infinite;
+            animation: scroll-clients-left 20s linear infinite;
           }
 
           .animate-scroll-partners-right {
-            animation: scroll-partners-right 13s linear infinite;
+            animation: scroll-partners-right 16s linear infinite;
           }
 
           .animate-scroll-collaborations-left {
-            animation: scroll-collaborations-left 10s linear infinite;
+            animation: scroll-collaborations-left 13s linear infinite;
           }
         }
       `}</style>
