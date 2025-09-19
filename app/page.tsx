@@ -661,7 +661,86 @@ export default function HomePage() {
               </div>
             </div>
           </div>
+          {/* Wave Separator */}
+        <div className="h-16 bg-white relative overflow-hidden">
+          <Image src="/images/wave-separator.png" alt="Wave separator" fill className="object-cover object-center" />
+        </div>
+        {/* Service Areas Section */}
+        <section className="py-20 relative overflow-hidden bg-white">
+          {/* Decorative leaf elements */}
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-10 right-0 w-96 h-96 translate-x-20">
+              <Image
+                src="/images/leaf-background.png"
+                alt="Decorative leaves"
+                width={384}
+                height={384}
+                className="w-full h-full object-contain"
+              />
+            </div>
+            <div className="absolute bottom-10 left-0 w-80 h-80 -translate-x-16 transform rotate-45">
+              <Image
+                src="/images/leaf-background.png"
+                alt="Decorative leaves"
+                width={320}
+                height={320}
+                className="w-full h-full object-contain"
+              />
+            </div>
+          </div>
 
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              {/* Left Content - Circular Diagram */}
+              <div className="flex justify-center">
+                <div className="w-full max-w-lg">
+                  <Image
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-uudt4tr6TpLe6rrmhTUBGsf25Q3FZG.png"
+                    alt="Áreas de servicio - Energía, Seguridad e Higiene, Sustentabilidad"
+                    width={500}
+                    height={500}
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
+              </div>
+
+              {/* Right Content - Service Type Information */}
+              <div className="space-y-6">
+                <div className="text-left">
+                  <div className="inline-block">
+                    <div className="h-1 w-16 bg-blue-600 mb-4"></div>
+                    <h2 className="text-4xl font-bold text-[#397383] mb-6">
+                      Tipo de Servicio
+                    </h2>
+                  </div>
+                </div>
+
+                <div className="space-y-4 text-gray-800 leading-relaxed">
+                  <p className="font-semibold text-lg">
+                    Iniciamos operaciones formalmente en 2010 y nuestros expertos cuentan como más de 20 años de experiencia.
+                  </p>
+
+                  <p className="text-base">
+                    Somos una <span className="font-semibold">organización interdisciplinaria que brinda</span> soluciones integrales en energía, sustentabilidad, seguridad y salud en el trabajo y desarrollo organizacional.
+                  </p>
+
+                  <p className="text-base">
+                    <span className="font-semibold">Promoviendo</span> la capacitación, la certificación, la investigación, el desarrollo tecnológico y la implementación de proyectos para mejores prácticas.
+                  </p>
+                </div>
+
+                {/* Decorative green leaf elements on the right */}
+                <div className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-8 opacity-20">
+                  <div className="flex flex-col space-y-4">
+                    <div className="w-32 h-16 bg-gradient-to-r from-green-400 to-green-600 transform rotate-12 rounded-full opacity-60"></div>
+                    <div className="w-28 h-14 bg-gradient-to-r from-green-500 to-green-700 transform -rotate-6 rounded-full opacity-70"></div>
+                    <div className="w-36 h-18 bg-gradient-to-r from-green-300 to-green-500 transform rotate-8 rounded-full opacity-50"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
           {/* Wave Separator at bottom */}
           <div className="absolute bottom-0 left-0 right-0 h-16 bg-white overflow-hidden">
             <Image
