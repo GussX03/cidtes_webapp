@@ -89,6 +89,27 @@
   }
 }
 
+@layer components {
+  /* ============== Estilos del diagrama ============== */
+  .diagram-section {
+    transition: filter 220ms ease, transform 220ms ease;
+  }
+  .diagram-section:hover {
+    filter: brightness(1.08) drop-shadow(0 6px 12px rgba(0, 0, 0, 0.18));
+  }
+
+  /* No usar scale en <path> (deforma arcos), solo sombras */
+  .diagram-tab {
+    transition: filter 200ms ease;
+  }
+  .diagram-tab:hover {
+    filter: drop-shadow(0 12px 22px rgba(0, 0, 0, 0.28));
+  }
+  .diagram-tab-active {
+    filter: drop-shadow(0 16px 28px rgba(0, 0, 0, 0.35));
+  }
+}
+
 /* Hide v0 branding */
 [id^="v0-built-with-button-"] {
   display: none !important;
