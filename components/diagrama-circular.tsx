@@ -486,7 +486,7 @@ export default function DiagramaCircular({ onTabSelect }: { onTabSelect?: (tabId
           strokeWidth={3}
           style={{ filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.18))" }}
         />
-        <text x={CX} y={CY + 6} textAnchor="middle" fill="#1f2937" fontSize="18" fontWeight={900}>
+        <text className="leading-10 font-semibold" x={CX} y={CY + 6} textAnchor="middle" fill="#1f2937" fontSize="25" fontWeight={900}>
           Áreas
         </text>
       </svg>
