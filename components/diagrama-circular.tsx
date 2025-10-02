@@ -282,7 +282,10 @@ export default function DiagramaCircular({ onTabSelect }: { onTabSelect?: (tabId
           {(() => {
             const mid = (SECTORS[0].start + SECTORS[0].end) / 2 // 60°
             const layout = SECTOR_LAYOUT.seguridad
-            const pIcon = polar(CX, CY, layout.iconRadius, mid)
+            const pIcon = {
+            ...polar(CX, CY, layout.iconRadius, mid),
+            y: polar(CX, CY, layout.iconRadius, mid).y - 32, // subir 2px
+            }
             const pT = polar(CX, CY, layout.textRadius, mid)
             return (
               <g>
@@ -322,8 +325,14 @@ export default function DiagramaCircular({ onTabSelect }: { onTabSelect?: (tabId
           {(() => {
             const mid = (SECTORS[1].start + SECTORS[1].end) / 2 // 180°
             const layout = SECTOR_LAYOUT.sustentabilidad
-            const pIcon = polar(CX, CY, layout.iconRadius, mid)
-            const pT = polar(CX, CY, layout.textRadius, mid)
+            const pIcon = {
+            ...polar(CX, CY, layout.iconRadius, mid),
+            y: polar(CX, CY, layout.iconRadius, mid).y - 2, // subir 2px
+          }
+            const pT = {
+            ...polar(CX, CY, layout.textRadius, mid),
+            y: polar(CX, CY, layout.textRadius, mid).y - 12,
+          }
             return (
               <g>
                 <svg
@@ -361,7 +370,10 @@ export default function DiagramaCircular({ onTabSelect }: { onTabSelect?: (tabId
           {(() => {
             const mid = (SECTORS[2].start + SECTORS[2].end) / 2 // 300°
             const layout = SECTOR_LAYOUT.energia
-            const pIcon = polar(CX, CY, layout.iconRadius, mid)
+            const pIcon = {
+  ...polar(CX, CY, layout.iconRadius, mid),
+  y: polar(CX, CY, layout.iconRadius, mid).y - 35, // subir 2px
+}
             const pT = polar(CX, CY, layout.textRadius, mid)
             return (
               <g>
