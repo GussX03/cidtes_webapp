@@ -30,13 +30,13 @@ const sectorPath = (cx: number, cy: number, r: number, start: number, end: numbe
 const roundedBandPath = (cx: number, cy: number, innerR: number, outerR: number, start: number, end: number) => {
   const a1 = start
   let a2 = end
-  while (a2 < a1) a2 += 360
+  while (a2 < a1) a2 += 300
   const largeArc = a2 - a1 > 180 ? 1 : 0
   const i1 = polar(cx, cy, innerR, a1)
   const i2 = polar(cx, cy, innerR, a2)
   const o2 = polar(cx, cy, outerR, a2)
   const o1 = polar(cx, cy, outerR, a1)
-  const capR = (outerR - innerR) / 2 // radio de las "tapas" redondeadas
+  const capR = outerR - innerR // radio de las "tapas" redondeadas
 
   // Los arcos de las tapas ahora son explícitamente semicírculos de 180° (sweep-flag=1, large-arc-flag=0)
   return `
@@ -50,8 +50,8 @@ const roundedBandPath = (cx: number, cy: number, innerR: number, outerR: number,
 }
 
 /* =============== Layout =============== */
-const W = 600
-const H = 600
+const W = 450
+const H = 450
 const CX = W / 2
 const CY = H / 2
 
@@ -59,7 +59,7 @@ const CY = H / 2
 const RING_OUTER = 180 // borde externo del anillo blanco
 const WHEEL_R = 178 // radio de los 3 sectores (=> anillo blanco ≈ 12px)
 
-const BAND_SEPARATION = 22 // Separación entre el anillo blanco y las bandas externas
+const BAND_SEPARATION = 7 // Separación entre el anillo blanco y las bandas externas
 const BAND_THICKNESS = 32 // Grosor de cada banda
 
 const TAB_INNER = RING_OUTER + BAND_SEPARATION
@@ -77,32 +77,32 @@ const BAND_SIZES = {
 const BAND_ANGLES = {
   capacitacion: 0, // Arriba
   estudios: 95, // Izquierda-abajo (extendido hacia la izquierda)
-  consultoria: 185, // Abajo
-  proyectos: 240, // Izquierda
-  certificacion: 300, // Izquierda-arriba
+  consultoria: 187, // Abajo
+  proyectos: 238, // Izquierda
+  certificacion: 299, // Izquierda-arriba
 }
 
 const SECTOR_LAYOUT = {
   seguridad: {
-    iconRadius: 95, // Radio donde se posiciona el icono
-    textRadius: 138, // Radio donde se posiciona el texto
-    iconSize: 35, // Tamaño del icono en px
-    fontSize: 17, // Tamaño de fuente
-    lineSpacing: 18, // Espaciado entre líneas de texto
+    iconRadius: 120, // Icono más lejos del centro (arriba)
+    textRadius: 105, // Texto más cerca del centro (abajo)
+    iconSize: 35,
+    fontSize: 17,
+    lineSpacing: 20,
   },
   sustentabilidad: {
     iconRadius: 105,
     textRadius: 148,
     iconSize: 34,
     fontSize: 19,
-    lineSpacing: 0, // Texto en una sola línea
+    lineSpacing: 0,
   },
   energia: {
-    iconRadius: 80, // Icono más cerca del centro
-    textRadius: 120, // Texto más hacia afuera
+    iconRadius: 110, // Icono más lejos del centro (arriba)
+    textRadius: 100, // Texto más cerca del centro (abajo)
     iconSize: 35,
     fontSize: 19,
-    lineSpacing: 0, // Texto en una sola línea
+    lineSpacing: 0,
   },
 }
 
@@ -151,7 +151,7 @@ const tabs: Tab[] = [
   {
     id: "certificacion",
     title: "Certificación",
-    color: "#80DEEA",
+    color: "#4FC3F7",
     angle: BAND_ANGLES.certificacion,
     span: BAND_SIZES.certificacion,
     z: 4,
@@ -230,8 +230,8 @@ export default function DiagramaCircular({ onTabSelect }: { onTabSelect?: (tabId
             <stop offset="100%" stopColor="#81D4FA" />
           </linearGradient>
           <linearGradient id="certificacionGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#80DEEA" />
-            <stop offset="100%" stopColor="#4DD0E1" />
+            <stop offset="0%" stopColor="#4FC3F7" />
+            <stop offset="100%" stopColor="#29B6F6" />
           </linearGradient>
 
           <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
