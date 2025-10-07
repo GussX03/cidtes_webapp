@@ -178,7 +178,7 @@ export default function CapacitacionPage() {
         </div>
       </main>
 
-      {/* Footer Section */}
+       {/* Footer Section */}
       <footer className="bg-gray-100 shadow-[0_-5px_6px_rgba(0,0,0,0.05)] font-sans">
         <div className="w-full px-8 py-12">
           {/* Main Footer Content */}
@@ -291,3 +291,85 @@ export default function CapacitacionPage() {
                 </svg>
 
                 </a>
+              </div>
+
+              {/* Copyright and Legal Links */}
+              <div className="flex flex-wrap items-center justify-center gap-2 text-sm text-gray-700">
+                <span>© 2025 CIDTES Energía y Sustentabilidad.</span>
+                <span>|</span>
+                <span>Todos los derechos reservados.</span>
+                <span>|</span>
+                <Link href="#" className="hover:text-[#1D63ED] transition-colors duration-300">
+                  Aviso de privacidad
+                </Link>
+                <span>|</span>
+                <Link href="#" className="hover:text-[#1D63ED] transition-colors duration-300">
+                  Términos y condiciones
+                </Link>
+                <span>|</span>
+                <Link href="#" className="hover:text-[#1D63ED] transition-colors duration-300">
+                  Legal
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <style jsx>{`
+        @keyframes fadeInOut {
+          0% { opacity: 0; }
+          16.67% { opacity: 1; }
+          83.33% { opacity: 1; }
+          100% { opacity: 0; }
+        }
+
+        /* Seamless infinite scroll animations with no visible restart */
+        @keyframes scroll-clients-left {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(calc(-100% / 3)); }
+        }
+
+        @keyframes scroll-partners-right {
+          0% { transform: translateX(calc(-100% / 3)); }
+          100% { transform: translateX(0); }
+        }
+
+        @keyframes scroll-collaborations-left {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(calc(-100% / 3)); }
+        }
+
+        /* Updated animations with triple content for seamless looping */
+        .animate-scroll-clients-left {
+          animation: scroll-clients-left 15s linear infinite;
+          width: fit-content;
+        }
+
+        .animate-scroll-partners-right {
+          animation: scroll-partners-right 12s linear infinite;
+          width: fit-content;
+        }
+
+        .animate-scroll-collaborations-left {
+          animation: scroll-collaborations-left 10s linear infinite;
+          width: fit-content;
+        }
+
+        @media (max-width: 768px) {
+          .animate-scroll-clients-left {
+            animation: scroll-clients-left 20s linear infinite;
+          }
+
+          .animate-scroll-partners-right {
+            animation: scroll-partners-right 16s linear infinite;
+          }
+
+          .animate-scroll-collaborations-left {
+            animation: scroll-collaborations-left 13s linear infinite;
+          }
+        }
+      `}</style>
+    </div>
+  )
+}
