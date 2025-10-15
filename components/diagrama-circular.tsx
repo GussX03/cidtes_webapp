@@ -26,19 +26,17 @@ const sectorPath = (cx: number, cy: number, r: number, start: number, end: numbe
   return `M ${cx} ${cy} L ${p1.x} ${p1.y} A ${r} ${r} 0 ${largeArc} 1 ${p2.x} ${p2.y} Z`
 }
 
-/** Banda anular con **extremos redondeados** (cápsula a lo largo de un arco) */
-const roundedBandPath = (cx: number, cy: number, innerR: number, outerR: number, start: number, end: number) => {
+/** FIX: 300 -> 360 */
+const roundedBandPath = (cx:number, cy:number, innerR:number, outerR:number, start:number, end:number) => {
   const a1 = start
   let a2 = end
-  while (a2 < a1) a2 += 300
+  while (a2 < a1) a2 += 360  // <- aquí
   const largeArc = a2 - a1 > 180 ? 1 : 0
   const i1 = polar(cx, cy, innerR, a1)
   const i2 = polar(cx, cy, innerR, a2)
   const o2 = polar(cx, cy, outerR, a2)
-  const o1 = polar(cx, cy, outerR, a1)
-  const capR = outerR - innerR // radio de las "tapas" redondeadas
-
-  // Los arcos de las tapas ahora son explícitamente semicírculos de 180° (sweep-flag=1, large-arc-flag=0)
+  const o1 = polar(CX, CY, outerR, a1)
+  const capR = outerR - innerR
   return `
     M ${i1.x} ${i1.y}
     A ${innerR} ${innerR} 0 ${largeArc} 1 ${i2.x} ${i2.y}
@@ -48,6 +46,36 @@ const roundedBandPath = (cx: number, cy: number, innerR: number, outerR: number,
     Z
   `
 }
+/* ===== Igualar separaciones entre bandas ===== */
+function layoutTabsWithEqualGaps(baseTabs: Tab[], anchorId = "capacitacion") {
+  // 1) Orden actual por ángulo (como están en tu diseño)
+  const ordered = [...baseTabs].sort((a, b) => a.angle - b.angle)
+
+  // 2) Gap uniforme
+  const totalSpan = ordered.reduce((s, t) => s + t.span, 0)
+  const GAP = (360 - totalSpan) / ordered.length // = 3°
+
+  // 3) Rotamos el arreglo para que la ancla sea la primera
+  const ai = ordered.findIndex(t => t.id === anchorId)
+  const seq = ai >= 0 ? [...ordered.slice(ai), ...ordered.slice(0, ai)] : ordered
+
+  // 4) Sembramos el start de la ancla para conservar su ángulo central existente
+  let curStart = seq[0].angle - seq[0].span / 2
+
+  // 5) Propagamos alrededor del círculo aplicando GAP constante
+  const laid = seq.map(t => {
+    const start = curStart
+    const end = start + t.span
+    const angle = (start + end) / 2
+    curStart = end + GAP
+    return { ...t, start, end, angle }
+  })
+
+  // 6) Volvemos al orden original de dibujo (por z si quieres conservarlo)
+  const byId: Record<string, typeof laid[number]> = Object.fromEntries(laid.map(t => [t.id, t]))
+  return baseTabs.map(t => ({ ...t, ...byId[t.id] }))
+}
+
 
 /* =============== Layout =============== */
 const W = 450
@@ -68,16 +96,16 @@ const TAB_OUTER = TAB_INNER + BAND_THICKNESS
 const BAND_SIZES = {
   capacitacion: 50,
   estudios: 130,
-  consultoria: 50,
+  consultoria: 45,
   proyectos: 50,
   certificacion: 70,
 }
 
 // 0° = arriba, 90° = derecha, 180° = abajo, 270° = izquierda
 const BAND_ANGLES = {
-  capacitacion: 0, // Arriba
+  capacitacion: 2, // Arriba
   estudios: 95, // Izquierda-abajo (extendido hacia la izquierda)
-  consultoria: 187, // Abajo
+  consultoria: 186, // Abajo
   proyectos: 238, // Izquierda
   certificacion: 299, // Izquierda-arriba
 }
@@ -168,13 +196,17 @@ export default function DiagramaCircular({ onTabSelect }: { onTabSelect?: (tabId
   const [selectedTab, setSelectedTab] = useState<Tab | null>(null)
   const rotation = selectedTab ? -selectedTab.angle : 0
 
-  /** Pestañas con path redondeado + textPath */
+  // NUEVO: tabs con separaciones iguales entre bordes
+  const tabsEqual = useMemo(() => layoutTabsWithEqualGaps(tabs, "capacitacion"), [])
+
   const tabPaths = useMemo(() => {
-    return [...tabs]
-      .sort((a, b) => (a.z ?? 0) - (b.z ?? 0)) // z-order deseado (p.ej. Estudios encima)
+    return [...tabsEqual]
+      .sort((a, b) => (a.z ?? 0) - (b.z ?? 0))
       .map((tab) => {
-        const start = tab.angle - tab.span / 2
-        const end = tab.angle + tab.span / 2
+        // start/end ya vienen calculados; si no existieran, caemos al cálculo clásico
+        const start = tab.start ?? tab.angle - tab.span / 2
+        const end = tab.end ?? tab.angle + tab.span / 2
+
         const path = roundedBandPath(CX, CY, TAB_INNER, TAB_OUTER, start, end)
 
         const midR = (TAB_INNER + TAB_OUTER) / 2
