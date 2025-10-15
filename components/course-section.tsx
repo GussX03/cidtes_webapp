@@ -12,7 +12,7 @@ interface CourseSectionProps {
 // Button styling constants
 const BUTTON_CONFIG = {
   paddingX: 35, // px-12
-  paddingY: 4, // py-4
+  paddingY: 6, // py-4
   fontSize: "text-xl", // larger font size
   borderRadius: "rounded-xl", // less rounded corners (was rounded-full)
 }
@@ -46,7 +46,7 @@ export function CourseSection({ title, imageSrc, imageAlt, reverse = false, href
             {/* Button with gradient background */}
             <Link
               href={href}
-              className={`inline-block font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-xl whitespace-nowrap text-left ${BUTTON_CONFIG.fontSize}`}
+              className={`whitespace-nowrap inline-block font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-xl ${BUTTON_CONFIG.fontSize}`}
               style={{
                 padding: `${BUTTON_CONFIG.paddingY * 0.25}rem ${BUTTON_CONFIG.paddingX * 0.25}rem`,
                 background: "linear-gradient(135deg, #84cc16 0%, #65a30d 100%)",
