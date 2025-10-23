@@ -46,7 +46,7 @@ export function CourseSection({ title, imageSrc, imageAlt, reverse = false, href
             {/* Button with gradient background */}
             <Link
               href={href}
-              className={`whitespace-nowrap inline-block font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-xl ${BUTTON_CONFIG.fontSize}`}
+              className={`whitespace-nowrap inline-block font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-xl text-left ${BUTTON_CONFIG.fontSize}`}
               style={{
                 padding: `${BUTTON_CONFIG.paddingY * 0.25}rem ${BUTTON_CONFIG.paddingX * 0.25}rem`,
                 background: "linear-gradient(135deg, #84cc16 0%, #65a30d 100%)",
