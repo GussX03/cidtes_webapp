@@ -248,7 +248,7 @@ export default function CertificationContent({ activeSection }: CertificationCon
                       </div>
                       <div className="w-32 h-32 flex-shrink-0 rounded-lg overflow-hidden shadow-md">
                         <img
-                          src="/images/design-mode/image(1).png"
+                          src="/images/maps.png"
                           alt="Location map"
                           className="w-full h-full object-cover"
                         />
@@ -513,14 +513,14 @@ export default function CertificationContent({ activeSection }: CertificationCon
               <div className="grid grid-cols-2 gap-6">
                 <div className="rounded-xl overflow-hidden shadow-2xl border-4" style={{ borderColor: "#0891b2" }}>
                   <img
-                    src="/images/design-mode/image(1).png"
+                    src="/images/maps.png"
                     alt="Formativo"
                     className="w-full h-64 object-cover"
                   />
                 </div>
                 <div className="rounded-xl overflow-hidden shadow-2xl border-4" style={{ borderColor: "#0891b2" }}>
                   <img
-                    src="/images/design-mode/image(1).png"
+                    src="/images/maps.png"
                     alt="Valuación"
                     className="w-full h-64 object-cover"
                   />
