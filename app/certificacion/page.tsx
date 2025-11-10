@@ -4,22 +4,26 @@ import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { MetaballBackground } from "@/components/metaball-background"
-import { ChevronDown } from "lucide-react"
+import CertificationWheel from "@/components/certification-wheel"
+import CertificationContent from "@/components/certification-content"
+
+type SectionKey = 0 | 1 | 2 | 3
 
 export default function CertificacionPage() {
   const [currentColor, setCurrentColor] = useState("#9470DE")
+  const [activeSection, setActiveSection] = useState<SectionKey | null>(null)
 
-  const colors = [
-    { hex: "#9470DE", name: "Morado" },
-    { hex: "#74B74A", name: "Verde" },
-    { hex: "#005BB1", name: "Azul" },
-    { hex: "#13D4CB", name: "Cyan" },
-  ]
-
-  const handleColorChange = () => {
-    const currentIndex = colors.findIndex((c) => c.hex === currentColor)
-    const nextIndex = (currentIndex + 1) % colors.length
-    setCurrentColor(colors[nextIndex].hex)
+  const handleSectionChange = (section: SectionKey | null) => {
+    setActiveSection(section)
+    if (section !== null) {
+      const colors = {
+        0: "#9470DE",
+        1: "#74B74A",
+        2: "#005BB1",
+        3: "#13D4CB",
+      }
+      setCurrentColor(colors[section])
+    }
   }
 
   const scrollToFooter = () => {
@@ -106,64 +110,21 @@ export default function CertificacionPage() {
       {/* Main Content */}
       <main className="pt-20">
         {/* Interactive Metaball Section */}
-        <section className="relative w-full h-screen overflow-hidden bg-[#0f0f0f]">
+        <section className="relative w-full min-h-screen overflow-hidden bg-[#0f0f0f]">
           <MetaballBackground color={currentColor} />
 
           {/* Content Overlay */}
-          <div className="absolute inset-0 z-10 flex items-center justify-between px-16">
-            {/* Left Side - Color Change Button */}
-            <div className="flex flex-col items-start gap-4">
-              <button
-                onClick={handleColorChange}
-                className="group relative px-8 py-4 text-white font-semibold text-lg rounded-full transition-all duration-300 hover:scale-105"
-                style={{
-                  backgroundColor: currentColor,
-                  boxShadow: `0 8px 32px ${currentColor}40`,
-                }}
-              >
-                <span className="relative z-10">Cambiar Color</span>
-                <div
-                  className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  style={{
-                    background: `linear-gradient(135deg, ${currentColor}dd, ${currentColor}88)`,
-                  }}
-                />
-              </button>
-
-              {/* Color Indicator */}
-              <div className="flex gap-2">
-                {colors.map((color) => (
-                  <div
-                    key={color.hex}
-                    className={`w-4 h-4 rounded-full transition-all duration-300 ${
-                      currentColor === color.hex ? "scale-125 ring-2 ring-white" : "opacity-50"
-                    }`}
-                    style={{ backgroundColor: color.hex }}
-                  />
-                ))}
-              </div>
+          <div className="absolute inset-0 z-10 flex items-center justify-between px-8 lg:px-16 py-12">
+            {/* Left Side - Certification Wheel */}
+            <div className="flex flex-col items-center justify-end gap-4 w-2/5">
+              <CertificationWheel onSectionChange={handleSectionChange} currentColor={currentColor} />
             </div>
 
-            {/* Right Side - Text */}
-            <div className="text-right text-foreground">
-              <h2 className="text-5xl font-bold mb-4 text-primary" style={{ fontFamily: "var(--font-sans)" }}>
-                Interactúa con el botón
-              </h2>
-              <p className="text-3xl font-semibold text-primary">CIDTES</p>
+            {/* Right Side - Content */}
+            <div className="w-3/5 pl-16">
+              {/* Always show content - now Conocer is the default state */}
+              <CertificationContent activeSection={activeSection} />
             </div>
-          </div>
-
-          <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2">
-            <button
-              onClick={scrollToFooter}
-              className="group flex flex-col items-center gap-2 text-white/80 hover:text-white transition-all duration-300"
-              aria-label="Scroll down"
-            >
-              <span className="text-sm font-medium">Desplázate hacia abajo</span>
-              <div className="w-10 h-10 rounded-full border-2 border-white/60 flex items-center justify-center group-hover:border-white group-hover:scale-110 transition-all duration-300">
-                <ChevronDown className="w-5 h-5 animate-bounce" />
-              </div>
-            </button>
           </div>
         </section>
       </main>
@@ -277,7 +238,7 @@ export default function CertificacionPage() {
                   className="w-10 h-10 bg-[#1D63ED] rounded-full flex items-center justify-center text-white hover:bg-[#0E4BB8] transition-all duration-300 hover:scale-110"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#ffffff" aria-hidden="true">
-                    <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8s.01 2.445.048 3.299c.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a2.5 2.5 0 0 1-.599-1.419c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.599-.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.738-.034-1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
+                    <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8s0 2.445.048 3.299c.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a2.5 2.5 0 0 0-.599-1.419c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.599-.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.738-.034-1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
                   </svg>
                 </a>
               </div>
@@ -313,7 +274,6 @@ export default function CertificacionPage() {
           100% { opacity: 0; }
         }
 
-        /* Seamless infinite scroll animations with no visible restart */
         @keyframes scroll-clients-left {
           0% { transform: translateX(0); }
           100% { transform: translateX(calc(-100% / 3)); }
@@ -329,7 +289,6 @@ export default function CertificacionPage() {
           100% { transform: translateX(calc(-100% / 3)); }
         }
 
-        /* Updated animations with triple content for seamless looping */
         .animate-scroll-clients-left {
           animation: scroll-clients-left 15s linear infinite;
           width: fit-content;
