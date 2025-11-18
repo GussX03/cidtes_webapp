@@ -6,6 +6,7 @@ import Image from "next/image"
 import { MetaballBackground } from "@/components/metaball-background"
 import CertificationWheel from "@/components/certification-wheel"
 import CertificationContent from "@/components/certification-content"
+import CertificationExtendedContent from "@/components/certification-extended-content"
 
 type SectionKey = 0 | 1 | 2 | 3
 
@@ -125,6 +126,12 @@ export default function CertificacionPage() {
               {/* Always show content - now Conocer is the default state */}
               <CertificationContent activeSection={activeSection} />
             </div>
+          </div>
+        </section>
+
+        <section className="relative w-full bg-white px-8 lg:px-16 py-16">
+          <div className="max-w-6xl mx-auto">
+            <CertificationExtendedContent />
           </div>
         </section>
       </main>
@@ -263,61 +270,60 @@ export default function CertificacionPage() {
               </div>
             </div>
           </div>
-        </div>
-      </footer>
+        </footer>
 
-      <style jsx>{`
-        @keyframes fadeInOut {
-          0% { opacity: 0; }
-          16.67% { opacity: 1; }
-          83.33% { opacity: 1; }
-          100% { opacity: 0; }
-        }
+        <style jsx>{`
+          @keyframes fadeInOut {
+            0% { opacity: 0; }
+            16.67% { opacity: 1; }
+            83.33% { opacity: 1; }
+            100% { opacity: 0; }
+          }
 
-        @keyframes scroll-clients-left {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(calc(-100% / 3)); }
-        }
+          @keyframes scroll-clients-left {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-100% / 3)); }
+          }
 
-        @keyframes scroll-partners-right {
-          0% { transform: translateX(calc(-100% / 3)); }
-          100% { transform: translateX(0); }
-        }
+          @keyframes scroll-partners-right {
+            0% { transform: translateX(calc(-100% / 3)); }
+            100% { transform: translateX(0); }
+          }
 
-        @keyframes scroll-collaborations-left {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(calc(-100% / 3)); }
-        }
+          @keyframes scroll-collaborations-left {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-100% / 3)); }
+          }
 
-        .animate-scroll-clients-left {
-          animation: scroll-clients-left 15s linear infinite;
-          width: fit-content;
-        }
-
-        .animate-scroll-partners-right {
-          animation: scroll-partners-right 12s linear infinite;
-          width: fit-content;
-        }
-
-        .animate-scroll-collaborations-left {
-          animation: scroll-collaborations-left 10s linear infinite;
-          width: fit-content;
-        }
-
-        @media (max-width: 768px) {
           .animate-scroll-clients-left {
-            animation: scroll-clients-left 20s linear infinite;
+            animation: scroll-clients-left 15s linear infinite;
+            width: fit-content;
           }
 
           .animate-scroll-partners-right {
-            animation: scroll-partners-right 16s linear infinite;
+            animation: scroll-partners-right 12s linear infinite;
+            width: fit-content;
           }
 
           .animate-scroll-collaborations-left {
-            animation: scroll-collaborations-left 13s linear infinite;
+            animation: scroll-collaborations-left 10s linear infinite;
+            width: fit-content;
           }
-        }
-      `}</style>
-    </div>
-  )
+
+          @media (max-width: 768px) {
+            .animate-scroll-clients-left {
+              animation: scroll-clients-left 20s linear infinite;
+            }
+
+            .animate-scroll-partners-right {
+              animation: scroll-partners-right 16s linear infinite;
+            }
+
+            .animate-scroll-collaborations-left {
+              animation: scroll-collaborations-left 13s linear infinite;
+            }
+          }
+        `}</style>
+      </div>
+    )
 }
