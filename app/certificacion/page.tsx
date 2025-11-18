@@ -244,13 +244,12 @@ export default function CertificacionPage() {
                   rel="noreferrer"
                   className="w-10 h-10 bg-[#1D63ED] rounded-full flex items-center justify-center text-white hover:bg-[#0E4BB8] transition-all duration-300 hover:scale-110"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#ffffff" aria-hidden="true">
-                    <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8s0 2.445.048 3.299c.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a2.5 2.5 0 0 0-.599-1.419c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.599-.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.738-.034-1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                   </svg>
                 </a>
               </div>
 
-              {/* Copyright and Legal Links */}
               <div className="flex flex-wrap items-center justify-center gap-2 text-sm text-gray-700">
                 <span>© 2025 CIDTES Energía y Sustentabilidad.</span>
                 <span>|</span>
@@ -270,60 +269,8 @@ export default function CertificacionPage() {
               </div>
             </div>
           </div>
-        </footer>
-
-        <style jsx>{`
-          @keyframes fadeInOut {
-            0% { opacity: 0; }
-            16.67% { opacity: 1; }
-            83.33% { opacity: 1; }
-            100% { opacity: 0; }
-          }
-
-          @keyframes scroll-clients-left {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-100% / 3)); }
-          }
-
-          @keyframes scroll-partners-right {
-            0% { transform: translateX(calc(-100% / 3)); }
-            100% { transform: translateX(0); }
-          }
-
-          @keyframes scroll-collaborations-left {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-100% / 3)); }
-          }
-
-          .animate-scroll-clients-left {
-            animation: scroll-clients-left 15s linear infinite;
-            width: fit-content;
-          }
-
-          .animate-scroll-partners-right {
-            animation: scroll-partners-right 12s linear infinite;
-            width: fit-content;
-          }
-
-          .animate-scroll-collaborations-left {
-            animation: scroll-collaborations-left 10s linear infinite;
-            width: fit-content;
-          }
-
-          @media (max-width: 768px) {
-            .animate-scroll-clients-left {
-              animation: scroll-clients-left 20s linear infinite;
-            }
-
-            .animate-scroll-partners-right {
-              animation: scroll-partners-right 16s linear infinite;
-            }
-
-            .animate-scroll-collaborations-left {
-              animation: scroll-collaborations-left 13s linear infinite;
-            }
-          }
-        `}</style>
-      </div>
-    )
+        </div>
+      </footer>
+    </div>
+  )
 }
