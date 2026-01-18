@@ -2,9 +2,90 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { CourseSection } from "@/components/course-section"
+import { useState, useEffect } from "react"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 
-export default function CapacitacionPage() {
+const areasConsultoria = [
+  {
+    id: 1,
+    title: "Cambio Climático",
+    image: "/images/consultoria/cambio-climatico.png",
+    color: "bg-[#6B46C1]", // Morado
+  },
+  {
+    id: 2,
+    title: "Edificación",
+    image: "/images/consultoria/edificacion.png",
+    color: "bg-[#6B46C1]", // Morado
+  },
+  {
+    id: 3,
+    title: "Carbono y Emisiones",
+    image: "/images/consultoria/carbono-emisiones.png",
+    color: "bg-[#0891B2]", // Turquesa
+  },
+  {
+    id: 4,
+    title: "Sustentabilidad",
+    image: "/images/consultoria/sustentabilidad.png",
+    color: "bg-[#0891B2]", // Turquesa
+  },
+  {
+    id: 5,
+    title: "Energía",
+    image: "/images/consultoria/energia.png",
+    color: "bg-[#0891B2]", // Turquesa
+  },
+  {
+    id: 6,
+    title: "Desarrollo social",
+    image: "/images/consultoria/desarrollo-social.png",
+    color: "bg-[#6B46C1]", // Morado
+  },
+]
+
+export default function ConsultoriaPage() {
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [itemsPerView, setItemsPerView] = useState(6)
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 640) {
+        setItemsPerView(1)
+      } else if (window.innerWidth < 768) {
+        setItemsPerView(2)
+      } else if (window.innerWidth < 1024) {
+        setItemsPerView(3)
+      } else if (window.innerWidth < 1280) {
+        setItemsPerView(4)
+      } else {
+        setItemsPerView(6)
+      }
+    }
+
+    handleResize()
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
+
+  const maxIndex = Math.max(0, areasConsultoria.length - itemsPerView)
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1))
+  }
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - 1))
+  }
+
+  // Auto-advance carousel
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide()
+    }, 4000)
+    return () => clearInterval(interval)
+  }, [maxIndex])
+
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
@@ -77,9 +158,9 @@ export default function CapacitacionPage() {
 
       {/* Main Content */}
       <main className="pt-16">
-        {/* Capacitación Section */}
+        {/* Hero Section - Consultoría */}
         <section
-          className="relative overflow-hidden min-h-screen py-20"
+          className="relative overflow-hidden min-h-[70vh] py-20"
           style={{
             backgroundImage: "url(/images/capacitacion/waves-background.jpg)",
             backgroundSize: "cover",
@@ -88,67 +169,37 @@ export default function CapacitacionPage() {
           }}
         >
           <div className="container mx-auto px-4 relative z-10">
-            <div className="grid lg:grid-cols-2 gap-16 items-start max-w-7xl mx-auto">
-              {/* Left Content */}
-              <div className="space-y-8 relative">
-                {/* Title */}
-                <div>
-                  <svg width="126" height="10" viewBox="0 0 126 10" fill="none" className="mb-4">
-                    <path d="M5 5H121" stroke="url(#paint0_linear_cap_line)" strokeWidth="9" strokeLinecap="round" />
-                    <defs>
-                      <linearGradient
-                        id="paint0_linear_cap_line"
-                        x1="5"
-                        y1="5.5"
-                        x2="121"
-                        y2="5.5"
-                        gradientUnits="userSpaceOnUse"
-                      >
-                        <stop stopColor="#084E9F" />
-                        <stop offset="1" stopColor="#662686" />
-                      </linearGradient>
-                    </defs>
-                  </svg>
-                </div>
-
-                {/* Subtitle with Gradient Background */}
-                <div className="inline-block">
-                  <div
-                    className="text-white px-8 py-3 rounded-lg"
-                    style={{ background: "linear-gradient(to right, #084E9F 0%, #01A0E1 47.9%, #662686 95.8%)" }}
-                  >
-                    <h2 className="text-white text-2xl font-semibold">Metodología de capacitación</h2>
-                  </div>
-                </div>
-
-                {/* Description Text */}
-                <div className="space-y-6 text-gray-800 leading-relaxed text-lg">
-                  <p>
-                    En nuestros cursos, hemos desarrollado una metodología sólida alineada con la competitividad,{" "}
-                    <span className="font-bold">fomentando un entorno de aprendizaje</span> relevante para el desarrollo
-                    personal y profesional.
-                  </p>
-
-                  <p>
-                    Valoramos la experiencia, autonomía y motivación del aprendiz, utilizando la andragogía para
-                    facilitar la conexión de nueva información con experiencias previas y promover conocimientos
-                    duraderos y funcionales.
-                  </p>
-
-                  <p>Hemos capacitado a más de 40,000 personas, potencializando sus competencias laborales.</p>
-                </div>
+            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20 max-w-7xl mx-auto">
+              {/* Left Side - Colibri Image */}
+              <div className="flex-shrink-0 w-full lg:w-1/2 flex justify-center">
+                <Image
+                  src="/images/colibri-consultoria.png"
+                  alt="CIDTES Consultoría"
+                  width={500}
+                  height={500}
+                  className="w-72 h-72 md:w-80 md:h-80 lg:w-[400px] lg:h-[400px] object-contain"
+                />
               </div>
 
-              {/* Right Content - Single PNG Image */}
-              <div className="relative flex justify-center items-start pt-[-50px]">
-                <div className="relative w-full max-w-2xl">
-                  <Image
-                    src="/images/capacitacion/team-with-circles.png"
-                    alt="Equipo de capacitación"
-                    width={1000}
-                    height={1000}
-                    className="w-full h-auto object-contain"
-                  />
+              {/* Right Side - Content */}
+              <div className="w-full lg:w-1/2 space-y-6">
+                {/* Decorative line image */}
+                <Image src="/images/linea-decorativa.png" alt="" width={126} height={10} className="h-2 w-32" />
+
+                {/* Title without underline */}
+                <h1 className="text-4xl md:text-5xl font-bold text-[#0D5C5C]">Consultoría</h1>
+
+                {/* Description paragraphs */}
+                <div className="space-y-6 text-gray-700 text-lg leading-relaxed">
+                  <p>
+                    En CIDTES <strong className="text-gray-900">trabajamos los problemas actuales</strong> con el
+                    objetivo de <strong className="text-gray-900">cambiar</strong> el modelo productivo, social y
+                    laboral con conciencia ambiental y sostenible.
+                  </p>
+                  <p>
+                    El área de Consultoría <strong className="text-gray-900">generamos</strong> servicios de asesoría y
+                    auditoría en temas de Seguridad, Salud, Energía, Medio Ambiente y Sustentabilidad.
+                  </p>
                 </div>
               </div>
             </div>
@@ -156,85 +207,97 @@ export default function CapacitacionPage() {
         </section>
 
         {/* Wave Separator */}
-        <div className="h-16 bg-white relative overflow-hidden">
-          <Image src="/images/wave-separator.png" alt="Wave separator" fill className="object-cover object-center" />
+        <div className="relative w-full -mt-1">
+          <Image
+            src="/images/wave-separator.png"
+            alt=""
+            width={1920}
+            height={100}
+            className="w-full h-auto object-cover"
+          />
         </div>
 
-        {/* Course Sections */}
-        <CourseSection
-          title="Energía"
-          imageSrc="/images/capacitacion/energia-bg.png"
-          imageAlt="Energía - Cursos de energía"
-          courseKey="energia"
-        />
+        {/* Áreas de Consultoría Section */}
+        <section className="py-16 bg-gray-50 relative overflow-hidden">
+          {/* Decorative elements */}
+          <div className="absolute top-10 left-10 w-20 h-20 bg-[#0891B2]/20 rounded-full blur-xl"></div>
+          <div className="absolute bottom-10 right-10 w-32 h-32 bg-[#6B46C1]/20 rounded-full blur-xl"></div>
+          <div className="absolute top-1/2 left-5 w-16 h-16 bg-[#059669]/20 rounded-full blur-lg"></div>
 
-        {/* Wave Separator */}
-        <div className="h-16 bg-white relative overflow-hidden">
-          <Image src="/images/wave-separator.png" alt="Wave separator" fill className="object-cover object-center" />
-        </div>
+          <div className="container mx-auto px-4 relative z-10">
+            {/* Title */}
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0D5C5C] text-center mb-12">Áreas de Consultoría</h2>
 
-        <CourseSection
-          title="Seguridad y Salud en el trabajo"
-          imageSrc="/images/capacitacion/seguridad-bg.png"
-          imageAlt="Seguridad y Salud en el trabajo"
-          reverse={true}
-          courseKey="seguridad"
-        />
+            {/* Carousel */}
+            <div className="relative max-w-7xl mx-auto">
+              {/* Cards Container */}
+              <div className="overflow-hidden">
+                <div
+                  className="flex transition-transform duration-500 ease-in-out"
+                  style={{
+                    transform: `translateX(-${currentIndex * (100 / itemsPerView)}%)`,
+                  }}
+                >
+                  {areasConsultoria.map((area) => (
+                    <div
+                      key={area.id}
+                      className="flex-shrink-0 px-2"
+                      style={{ width: `${100 / itemsPerView}%` }}
+                    >
+                      <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer group">
+                        {/* Image */}
+                        <div className="relative aspect-[3/4] overflow-hidden">
+                          <Image
+                            src={area.image || "/placeholder.svg"}
+                            alt={area.title}
+                            fill
+                            className="object-cover group-hover:scale-105 transition-transform duration-500"
+                          />
+                        </div>
+                        {/* Title Label */}
+                        <div className={`${area.color} py-3 px-4`}>
+                          <p className="text-white text-center font-medium text-sm">{area.title}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
 
-        {/* Wave Separator */}
-        <div className="h-16 bg-white relative overflow-hidden">
-          <Image src="/images/wave-separator.png" alt="Wave separator" fill className="object-cover object-center" />
-        </div>
+              {/* Dots Indicator */}
+              <div className="flex justify-center items-center gap-2 mt-8">
+                {Array.from({ length: maxIndex + 1 }).map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentIndex(index)}
+                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                      currentIndex === index ? "w-6 bg-[#0891B2]" : "bg-gray-300 hover:bg-gray-400"
+                    }`}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+                ))}
+              </div>
 
-        <CourseSection
-          title="Desarrollo Personal"
-          imageSrc="/images/capacitacion/desarrollo-bg.png"
-          imageAlt="Desarrollo Personal"
-          courseKey="desarrollo-personal"
-        />
-
-        {/* Wave Separator */}
-        <div className="h-16 bg-white relative overflow-hidden">
-          <Image src="/images/wave-separator.png" alt="Wave separator" fill className="object-cover object-center" />
-        </div>
-
-        <CourseSection
-          title="Formativo"
-          imageSrc="/images/capacitacion/formativo-bg.png"
-          imageAlt="Formativo - Cursos formativos"
-          reverse={true}
-          courseKey="formativo"
-        />
-
-        {/* Wave Separator */}
-        <div className="h-16 bg-white relative overflow-hidden">
-          <Image src="/images/wave-separator.png" alt="Wave separator" fill className="object-cover object-center" />
-        </div>
-
-        <CourseSection
-          title="Valuación"
-          imageSrc="/images/capacitacion/valuacion-bg.png"
-          imageAlt="Valuación - Cursos de valuación"
-          courseKey="valuacion"
-        />
-
-        {/* Wave Separator */}
-        <div className="h-16 bg-white relative overflow-hidden">
-          <Image src="/images/wave-separator.png" alt="Wave separator" fill className="object-cover object-center" />
-        </div>
-
-        <CourseSection
-          title="Desarrollo Organizacional"
-          imageSrc="/images/capacitacion/desarrollo-organizacional-bg.png"
-          imageAlt="Desarrollo Organizacional"
-          reverse={true}
-          courseKey="desarrollo-organizacional"
-        />
-
-        {/* Wave Separator */}
-        <div className="h-16 bg-white relative overflow-hidden">
-          <Image src="/images/wave-separator.png" alt="Wave separator" fill className="object-cover object-center" />
-        </div>
+              {/* Navigation Arrows */}
+              <div className="flex justify-center items-center gap-4 mt-4">
+                <button
+                  onClick={prevSlide}
+                  className="w-10 h-10 rounded-full border-2 border-[#0891B2] flex items-center justify-center text-[#0891B2] hover:bg-[#0891B2] hover:text-white transition-colors duration-300"
+                  aria-label="Previous slide"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+                <button
+                  onClick={nextSlide}
+                  className="w-10 h-10 rounded-full border-2 border-[#0891B2] flex items-center justify-center text-[#0891B2] hover:bg-[#0891B2] hover:text-white transition-colors duration-300"
+                  aria-label="Next slide"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
 
       {/* Footer Section */}
@@ -351,23 +414,10 @@ export default function CapacitacionPage() {
                 </a>
               </div>
 
-              <div className="flex flex-wrap items-center justify-center gap-2 text-sm text-gray-700">
-                <span>© 2025 CIDTES Energía y Sustentabilidad.</span>
-                <span>|</span>
-                <span>Todos los derechos reservados.</span>
-                <span>|</span>
-                <Link href="#" className="hover:text-[#1D63ED] transition-colors duration-300">
-                  Aviso de privacidad
-                </Link>
-                <span>|</span>
-                <Link href="#" className="hover:text-[#1D63ED] transition-colors duration-300">
-                  Términos y condiciones
-                </Link>
-                <span>|</span>
-                <Link href="#" className="hover:text-[#1D63ED] transition-colors duration-300">
-                  Legal
-                </Link>
-              </div>
+              {/* Copyright */}
+              <p className="text-gray-500 text-sm text-center">
+                Copyright 2025 CIDTES Energía y Sustentabilidad. Todos los derechos reservados.
+              </p>
             </div>
           </div>
         </div>

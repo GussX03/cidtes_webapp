@@ -74,7 +74,7 @@ export default function CertificacionPage() {
               </Link>
               <span className="text-gray-400 mx-2">|</span>
               <Link
-                href="#"
+                href="/consultoria"
                 className="relative text-gray-700 font-medium px-6 py-3 rounded-lg transition-all duration-500 hover:text-white group overflow-hidden transform hover:scale-105"
               >
                 <span className="relative z-10 transition-colors duration-500">Consultoría</span>
@@ -130,9 +130,7 @@ export default function CertificacionPage() {
         </section>
 
         <section className="relative w-full bg-white px-8 lg:px-16 py-16">
-          <div className="max-w-6xl mx-auto">
-            <CertificationExtendedContent />
-          </div>
+          <div className="max-w-6xl mx-auto">{activeSection === 2 && <CertificationExtendedContent />}</div>
         </section>
       </main>
 
