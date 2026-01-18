@@ -56,10 +56,8 @@ export default function ConsultoriaPage() {
         setItemsPerView(2)
       } else if (window.innerWidth < 1024) {
         setItemsPerView(3)
-      } else if (window.innerWidth < 1280) {
-        setItemsPerView(4)
       } else {
-        setItemsPerView(6)
+        setItemsPerView(4) // Siempre máximo 4 cards visibles
       }
     }
 
@@ -246,7 +244,7 @@ export default function ConsultoriaPage() {
                     >
                       <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer group">
                         {/* Image */}
-                        <div className="relative aspect-[3/4] overflow-hidden">
+                        <div className="relative aspect-[2/3] overflow-hidden">
                           <Image
                             src={area.image || "/placeholder.svg"}
                             alt={area.title}
@@ -255,8 +253,8 @@ export default function ConsultoriaPage() {
                           />
                         </div>
                         {/* Title Label */}
-                        <div className={`${area.color} py-3 px-4`}>
-                          <p className="text-white text-center font-medium text-sm">{area.title}</p>
+                        <div className={`${area.color} py-4 px-4`}>
+                          <p className="text-white text-center font-semibold text-base">{area.title}</p>
                         </div>
                       </div>
                     </div>
