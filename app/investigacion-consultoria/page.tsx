@@ -1,38 +1,71 @@
 "use client"
 
-import { useState } from "react"
-import Link from "next/link"
 import Image from "next/image"
-import { MetaballBackground } from "@/components/metaball-background"
-import CertificationWheel from "@/components/certification-wheel"
-import CertificationContent from "@/components/certification-content"
-import CertificationExtendedContent from "@/components/certification-extended-content"
+import Link from "next/link"
+import { useState, useEffect } from "react"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 
-type SectionKey = 0 | 1 | 2 | 3
+const odsItems = [
+  { id: 1, image: "/images/ods/ods-01.png", alt: "01 No Poverty" },
+  { id: 2, image: "/images/ods/ods-02.png", alt: "02 Zero Hunger" },
+  { id: 3, image: "/images/ods/ods-03.png", alt: "03 Good Health & Well-Being" },
+  { id: 4, image: "/images/ods/ods-04.png", alt: "04 Quality Education" },
+  { id: 5, image: "/images/ods/ods-05.png", alt: "05 Gender Equality" },
+  { id: 6, image: "/images/ods/ods-06.png", alt: "06 Clean Water and Sanitation" },
+  { id: 7, image: "/images/ods/ods-07.png", alt: "07 Affordable and Clean Energy" },
+  { id: 8, image: "/images/ods/ods-08.png", alt: "08 Decent Work and Economic Growth" },
+  { id: 9, image: "/images/ods/ods-09.png", alt: "09 Industry, Innovation and Infrastructure" },
+  { id: 10, image: "/images/ods/ods-10.png", alt: "10 Reduced Inequalities" },
+  { id: 11, image: "/images/ods/ods-11.png", alt: "11 Sustainable Cities and Communities" },
+  { id: 12, image: "/images/ods/ods-12.png", alt: "12 Responsible Consumption and Production" },
+  { id: 13, image: "/images/ods/ods-13.png", alt: "13 Climate Action" },
+  { id: 14, image: "/images/ods/ods-14.png", alt: "14 Life Below Water" },
+  { id: 15, image: "/images/ods/ods-15.png", alt: "15 Life on Land" },
+  { id: 16, image: "/images/ods/ods-16.png", alt: "16 Peace, Justice and Strong Institutions" },
+  { id: 17, image: "/images/ods/ods-17.png", alt: "17 Partnerships for the Goals" },
+]
 
-export default function CertificacionPage() {
-  const [currentColor, setCurrentColor] = useState("#9470DE")
-  const [activeSection, setActiveSection] = useState<SectionKey | null>(null)
+export default function InvestigacionConsultoriaPage() {
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [itemsPerView, setItemsPerView] = useState(5)
 
-  const handleSectionChange = (section: SectionKey | null) => {
-    setActiveSection(section)
-    if (section !== null) {
-      const colors = {
-        0: "#9470DE",
-        1: "#74B74A",
-        2: "#005BB1",
-        3: "#13D4CB",
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 640) {
+        setItemsPerView(1)
+      } else if (window.innerWidth < 768) {
+        setItemsPerView(2)
+      } else if (window.innerWidth < 1024) {
+        setItemsPerView(3)
+      } else if (window.innerWidth < 1280) {
+        setItemsPerView(4)
+      } else {
+        setItemsPerView(5)
       }
-      setCurrentColor(colors[section])
     }
+
+    handleResize()
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
+
+  const maxIndex = Math.max(0, odsItems.length - itemsPerView)
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1))
   }
 
-  const scrollToFooter = () => {
-    const footer = document.querySelector("footer")
-    if (footer) {
-      footer.scrollIntoView({ behavior: "smooth" })
-    }
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - 1))
   }
+
+  // Auto-advance carousel
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide()
+    }, 4000)
+    return () => clearInterval(interval)
+  }, [maxIndex])
 
   return (
     <div className="min-h-screen bg-white">
@@ -96,43 +129,120 @@ export default function CertificacionPage() {
                 className="relative text-gray-700 font-medium px-6 py-3 rounded-lg transition-all duration-500 hover:text-white group overflow-hidden transform hover:scale-105"
               >
                 <span className="relative z-10 transition-colors duration-500">Únete</span>
-                <div
-                  className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  style={{
-                    background: `linear-gradient(135deg, ${currentColor}dd, ${currentColor}88)`,
-                  }}
-                />
+                <div className="absolute inset-0 bg-gradient-to-tr from-[#6B46C1] via-[#0891B2] to-[#059669] opacity-0 group-hover:opacity-100 transition-all duration-500 transform -translate-x-full group-hover:translate-x-0 rounded-lg shadow-lg group-hover:shadow-xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-tr from-[#6B46C1] via-[#0891B2] to-[#059669] opacity-20 scale-0 group-hover:scale-110 transition-all duration-700 rounded-lg blur-sm"></div>
               </Link>
             </nav>
           </div>
         </div>
       </header>
 
-      {/* Main Content */}
-      <main className="pt-20">
-        {/* Interactive Metaball Section */}
-        <section className="relative w-full min-h-screen overflow-hidden bg-[#0f0f0f]">
-          <MetaballBackground color={currentColor} />
+      {/* ODS Section */}
+      <section className="pt-32 pb-16 bg-white relative">
+        {/* Background decoration */}
+        <div className="absolute inset-0 opacity-5">
+          <Image src="/images/leaf-background.png" alt="" fill className="object-cover" />
+        </div>
 
-          {/* Content Overlay */}
-          <div className="absolute inset-0 z-10 flex items-center justify-between px-8 lg:px-16 py-12">
-            {/* Left Side - Certification Wheel */}
-            <div className="flex flex-col items-center justify-end gap-4 w-2/5">
-              <CertificationWheel onSectionChange={handleSectionChange} currentColor={currentColor} />
+        <div className="container mx-auto px-4 relative z-10">
+          {/* Title with decorative line */}
+          <div className="text-center mb-8">
+            {/* Blue-Purple Line */}
+            <div className="flex justify-center mb-4">
+              <Image
+                src="/images/linea-azul-morado.png"
+                alt=""
+                width={150}
+                height={8}
+                className="h-2 w-auto"
+              />
             </div>
+            <h2 className="text-4xl lg:text-5xl font-bold text-[#1a365d]">
+              ODS y agenda 2030
+            </h2>
+          </div>
 
-            {/* Right Side - Content */}
-            <div className="w-3/5 pl-16">
-              {/* Always show content - now Conocer is the default state */}
-              <CertificationContent activeSection={activeSection} />
+          {/* Description */}
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <p className="text-gray-700 text-lg leading-relaxed">
+              En CIDTES <strong>nos comprometemos en los tres pilares económico, ambiental y social</strong> y nos
+              alineamos a los compromisos y cumplimiento de las ODS de la ONU. Cidtes está alineado a los
+              compromiso y cumplimientos a los objetivos de la ODS, nos basamos en:
+            </p>
+          </div>
+
+          {/* Los 17 ODS Badge */}
+          <div className="flex justify-center mb-12">
+            <div className="border-2 border-gray-300 rounded-full px-8 py-3">
+              <span className="text-2xl font-light text-gray-700">Los 17 ODS</span>
             </div>
           </div>
-        </section>
 
-        <section className="relative w-full bg-white px-8 lg:px-16 py-16">
-          <div className="max-w-6xl mx-auto">{activeSection === 2 && <CertificationExtendedContent />}</div>
-        </section>
-      </main>
+          {/* ODS Carousel */}
+          <div className="relative max-w-6xl mx-auto">
+            {/* Carousel Container */}
+            <div className="overflow-hidden">
+              <div
+                className="flex transition-transform duration-500 ease-in-out"
+                style={{
+                  transform: `translateX(-${currentIndex * (100 / itemsPerView)}%)`,
+                }}
+              >
+                {odsItems.map((item) => (
+                  <div
+                    key={item.id}
+                    className="flex-shrink-0 px-2"
+                    style={{ width: `${100 / itemsPerView}%` }}
+                  >
+                    <div className="overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer group">
+                      <div className="relative aspect-[3/2]">
+                        <Image
+                          src={item.image || "/placeholder.svg"}
+                          alt={item.alt}
+                          fill
+                          className="object-contain group-hover:scale-105 transition-transform duration-500"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Dots Indicator */}
+            <div className="flex justify-center gap-2 mt-8">
+              {Array.from({ length: maxIndex + 1 }).map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentIndex(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    currentIndex === index ? "bg-[#0891B2] w-6" : "bg-gray-300"
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
+
+            {/* Navigation Arrows */}
+            <div className="flex justify-center gap-4 mt-6">
+              <button
+                onClick={prevSlide}
+                className="p-3 rounded-full border-2 border-gray-300 text-gray-600 hover:border-[#0891B2] hover:text-[#0891B2] transition-colors duration-300"
+                aria-label="Previous slide"
+              >
+                <ChevronLeft className="w-6 h-6" />
+              </button>
+              <button
+                onClick={nextSlide}
+                className="p-3 rounded-full border-2 border-gray-300 text-gray-600 hover:border-[#0891B2] hover:text-[#0891B2] transition-colors duration-300"
+                aria-label="Next slide"
+              >
+                <ChevronRight className="w-6 h-6" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Footer Section */}
       <footer className="bg-gray-100 shadow-[0_-5px_6px_rgba(0,0,0,0.05)] font-sans">
@@ -186,7 +296,7 @@ export default function CertificacionPage() {
               <div className="flex items-start mb-4">
                 <div className="w-2 h-2 bg-[#1D63ED] rounded-full mr-3 mt-2"></div>
                 <p className="text-gray-800 text-center lg:text-left leading-relaxed">
-                  Real de Los Reyes #303, Los Reyes, Coyoacán, Ciudad de México, C.P. 04330, México.
+                  Real de Los Reyes #303, Los Reyes, Alc. Coyoacán, Ciudad de México, C.P. 04330, México.
                 </p>
               </div>
               <div className="w-full max-w-sm">
@@ -233,7 +343,7 @@ export default function CertificacionPage() {
                   className="w-10 h-10 bg-[#1D63ED] rounded-full flex items-center justify-center text-white hover:bg-[#0E4BB8] transition-all duration-300 hover:scale-110"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93-.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
                   </svg>
                 </a>
                 <a
@@ -248,23 +358,10 @@ export default function CertificacionPage() {
                 </a>
               </div>
 
-              <div className="flex flex-wrap items-center justify-center gap-2 text-sm text-gray-700">
-                <span>© 2025 CIDTES Energía y Sustentabilidad.</span>
-                <span>|</span>
-                <span>Todos los derechos reservados.</span>
-                <span>|</span>
-                <Link href="#" className="hover:text-[#1D63ED] transition-colors duration-300">
-                  Aviso de privacidad
-                </Link>
-                <span>|</span>
-                <Link href="#" className="hover:text-[#1D63ED] transition-colors duration-300">
-                  Términos y condiciones
-                </Link>
-                <span>|</span>
-                <Link href="#" className="hover:text-[#1D63ED] transition-colors duration-300">
-                  Legal
-                </Link>
-              </div>
+              {/* Copyright */}
+              <p className="text-gray-500 text-sm text-center">
+                Copyright 2025 CIDTES Energía y Sustentabilidad. Todos los derechos reservados.
+              </p>
             </div>
           </div>
         </div>
