@@ -13,6 +13,16 @@ const odsItems = [
   { id: 5, image: "/images/ods/ods-05.png", alt: "05 Gender Equality" },
   { id: 6, image: "/images/ods/ods-06.png", alt: "06 Clean Water and Sanitation" },
   { id: 7, image: "/images/ods/ods-07.png", alt: "07 Affordable and Clean Energy" },
+  { id: 8, image: "/images/ods/ods-08.png", alt: "08 Decent Work and Economic Growth" },
+  { id: 9, image: "/images/ods/ods-09.png", alt: "09 Industry, Innovation and Infrastructure" },
+  { id: 10, image: "/images/ods/ods-10.png", alt: "10 Reduced Inequalities" },
+  { id: 11, image: "/images/ods/ods-11.png", alt: "11 Sustainable Cities and Communities" },
+  { id: 12, image: "/images/ods/ods-12.png", alt: "12 Responsible Consumption and Production" },
+  { id: 13, image: "/images/ods/ods-13.png", alt: "13 Climate Action" },
+  { id: 14, image: "/images/ods/ods-14.png", alt: "14 Life Below Water" },
+  { id: 15, image: "/images/ods/ods-15.png", alt: "15 Life on Land" },
+  { id: 16, image: "/images/ods/ods-16.png", alt: "16 Peace, Justice and Strong Institutions" },
+  { id: 17, image: "/images/ods/ods-17.png", alt: "17 Partnerships for the Goals" },
 ]
 
 export default function InvestigacionConsultoriaPage() {
@@ -128,7 +138,7 @@ export default function InvestigacionConsultoriaPage() {
       </header>
 
       {/* ODS Section */}
-      <section className="py-16 bg-white relative">
+      <section className="pt-32 pb-16 bg-white relative">
         {/* Background decoration */}
         <div className="absolute inset-0 opacity-5">
           <Image src="/images/leaf-background.png" alt="" fill className="object-cover" />
@@ -185,12 +195,12 @@ export default function InvestigacionConsultoriaPage() {
                     style={{ width: `${100 / itemsPerView}%` }}
                   >
                     <div className="overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer group">
-                      <div className="relative aspect-[4/3]">
+                      <div className="relative aspect-[3/2]">
                         <Image
                           src={item.image || "/placeholder.svg"}
                           alt={item.alt}
                           fill
-                          className="object-cover group-hover:scale-105 transition-transform duration-500"
+                          className="object-contain group-hover:scale-105 transition-transform duration-500"
                         />
                       </div>
                     </div>
