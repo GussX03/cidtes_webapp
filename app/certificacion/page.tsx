@@ -83,7 +83,7 @@ export default function CertificacionPage() {
               </Link>
               <span className="text-gray-400 mx-2">|</span>
               <Link
-                href="#"
+                href="/investigacion-consultoria"
                 className="relative text-gray-700 font-medium px-6 py-3 rounded-lg transition-all duration-500 hover:text-white group overflow-hidden transform hover:scale-105"
               >
                 <span className="relative z-10 transition-colors duration-500">Investigación y Consultoría</span>
