@@ -244,6 +244,93 @@ export default function InvestigacionConsultoriaPage() {
         </div>
       </section>
 
+      {/* Desarrollo Social - Niños Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Image */}
+            <div className="relative">
+              <div className="overflow-hidden">
+                <Image
+                  src="/images/desarrollo-social-ninos.png"
+                  alt="Niña sonriendo con su muñeca"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+            </div>
+
+            {/* Content */}
+            <div className="space-y-6">
+              <div>
+                <h2 className="text-4xl lg:text-5xl font-bold italic text-[#1a365d] mb-2">
+                  Desarrollo Social
+                </h2>
+                <div className="flex items-center gap-3">
+                  <div className="w-16 h-1 bg-gradient-to-r from-[#6B46C1] to-[#0891B2] rounded-full"></div>
+                  <span className="text-2xl lg:text-3xl font-semibold text-[#0891B2]">Niños</span>
+                </div>
+              </div>
+              
+              <div className="space-y-4 text-gray-700 leading-relaxed">
+                <p>
+                  Conocer los derechos constitucionales que defienden nuestra integridad y autonomía como seres humanos, nos permiten ejercer nuestra libertad y solicitar el apoyo a instituciones gubernamentales cuando se presenten situaciones que atenten contra nuestra soberanía.
+                </p>
+                <p>
+                  Por lo que se consideran esenciales en el desarrollo de cada ser humano y en la creación de una buena calidad de vida.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Por qué lo estamos trabajando - Autismos Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Image */}
+            <div className="relative">
+              <div className="overflow-hidden">
+                <Image
+                  src="/images/autismos-manos.png"
+                  alt="Manos pintadas con caritas felices"
+                  width={600}
+                  height={500}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+            </div>
+
+            {/* Content */}
+            <div className="space-y-6">
+              <div>
+                <h2 className="text-3xl lg:text-4xl font-bold italic text-[#1a365d] mb-2">
+                  Por qué lo estamos trabajando y beneficios
+                </h2>
+                <div className="flex items-center gap-3">
+                  <div className="w-16 h-1 bg-gradient-to-r from-[#6B46C1] to-[#0891B2] rounded-full"></div>
+                  <span className="text-2xl lg:text-3xl font-semibold text-[#0891B2]">Autismos</span>
+                </div>
+              </div>
+              
+              <div className="space-y-4 text-gray-700 leading-relaxed">
+                <p>
+                  En CIDTES somos una asociación civil dedicada a la sustentabilidad, está comprometida con el avance de personas pertenecientes a grupos minoritarios o vulnerables.
+                </p>
+                <p>
+                  Reconociendo el creciente interés en el autismo por parte de la comunidad científica, CIDTES lidera el "Proyecto Autismo", centrado en la integración de personas con Trastorno del Espectro Autista (TEA) en la comunidad y su impulso dentro de un marco sustentable.
+                </p>
+                <p>
+                  Creemos que la difusión y divulgación científica sobre esta condición son el primer paso para una inclusión efectiva, promoviendo sensibilidad y conciencia en la población para disminuir la estigmatización y los prejuicios que enfrentan estas personas.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Footer Section */}
       <footer className="bg-gray-100 shadow-[0_-5px_6px_rgba(0,0,0,0.05)] font-sans">
         <div className="w-full px-8 py-12">
