@@ -264,12 +264,20 @@ export default function InvestigacionConsultoriaPage() {
             {/* Content */}
             <div className="space-y-6">
               <div>
-                <h2 className="text-4xl lg:text-5xl font-bold italic text-[#1a365d] mb-2">
+                <h2 
+                  className="text-4xl lg:text-5xl font-bold italic mb-2 bg-clip-text text-transparent"
+                  style={{ backgroundImage: 'linear-gradient(90deg, #01A0E1 0%, #662686 100%)' }}
+                >
                   Desarrollo Social
                 </h2>
                 <div className="flex items-center gap-3">
-                  <div className="w-16 h-1 bg-gradient-to-r from-[#6B46C1] to-[#0891B2] rounded-full"></div>
-                  <span className="text-2xl lg:text-3xl font-semibold text-[#0891B2]">Niños</span>
+                  <div className="w-16 h-1 rounded-full" style={{ backgroundImage: 'linear-gradient(90deg, #01A0E1 0%, #662686 100%)' }}></div>
+                  <span 
+                    className="text-2xl lg:text-3xl font-semibold bg-clip-text text-transparent"
+                    style={{ backgroundImage: 'linear-gradient(90deg, #01A0E1 0%, #662686 100%)' }}
+                  >
+                    Niños
+                  </span>
                 </div>
               </div>
               
@@ -306,12 +314,20 @@ export default function InvestigacionConsultoriaPage() {
             {/* Content */}
             <div className="space-y-6">
               <div>
-                <h2 className="text-3xl lg:text-4xl font-bold italic text-[#1a365d] mb-2">
+                <h2 
+                  className="text-3xl lg:text-4xl font-bold italic mb-2 bg-clip-text text-transparent"
+                  style={{ backgroundImage: 'linear-gradient(90deg, #01A0E1 0%, #662686 100%)' }}
+                >
                   Por qué lo estamos trabajando y beneficios
                 </h2>
                 <div className="flex items-center gap-3">
-                  <div className="w-16 h-1 bg-gradient-to-r from-[#6B46C1] to-[#0891B2] rounded-full"></div>
-                  <span className="text-2xl lg:text-3xl font-semibold text-[#0891B2]">Autismos</span>
+                  <div className="w-16 h-1 rounded-full" style={{ backgroundImage: 'linear-gradient(90deg, #01A0E1 0%, #662686 100%)' }}></div>
+                  <span 
+                    className="text-2xl lg:text-3xl font-semibold bg-clip-text text-transparent"
+                    style={{ backgroundImage: 'linear-gradient(90deg, #01A0E1 0%, #662686 100%)' }}
+                  >
+                    Autismos
+                  </span>
                 </div>
               </div>
               
