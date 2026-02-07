@@ -438,53 +438,66 @@ export default function InvestigacionConsultoriaPage() {
           </div>
 
           {/* Timeline Section */}
-          <div className="relative pt-12">
-            {/* Timeline line */}
-            <div className="absolute top-20 left-0 right-0 h-1 bg-[#14b8a6]"></div>
-
+          <div className="relative pt-12 pb-8">
             {/* Timeline Items */}
             <div className="relative grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Item 1: Autismo */}
               <div className="flex flex-col items-center relative">
-                <div className="relative z-10 mb-4">
-                  <div className="w-24 h-24 rounded-full flex items-center justify-center shadow-lg" style={{ background: 'linear-gradient(135deg, #c084fc 0%, #a855f7 100%)' }}>
-                    <svg className="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M7 11h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm0 4h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2z"/>
-                      <path d="M5 22h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zM19 8l.001 12H5V8h14z"/>
-                    </svg>
+                <div className="relative z-10 mb-6">
+                  <div className="w-20 h-20 rounded-full bg-[#14b8a6] flex items-center justify-center p-4">
+                    <Image
+                      src="/images/icon-autismo.png"
+                      alt="Autismo"
+                      width={64}
+                      height={64}
+                      className="w-full h-full object-contain"
+                    />
                   </div>
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-white border-4 border-[#14b8a6]"></div>
+                  {/* Connection dot */}
+                  <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-white border-4 border-[#14b8a6]"></div>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-800 text-center">Autismo</h3>
+                <h3 className="text-lg font-normal text-gray-700 text-center mt-8">Autismo</h3>
               </div>
 
               {/* Item 2: Derechos Constitucionales */}
               <div className="flex flex-col items-center relative">
-                <div className="relative z-10 mb-4">
-                  <div className="w-24 h-24 rounded-full flex items-center justify-center shadow-lg" style={{ background: 'linear-gradient(135deg, #ec4899 0%, #14b8a6 100%)' }}>
-                    <svg className="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M21 8h-2V6c0-1.103-.897-2-2-2H7C5.897 4 5 4.897 5 6v2H3c-1.103 0-2 .897-2 2v10c0 1.103.897 2 2 2h18c1.103 0 2-.897 2-2V10c0-1.103-.897-2-2-2zM7 6h10v2H7V6z"/>
-                    </svg>
+                <div className="relative z-10 mb-6">
+                  <div className="w-20 h-20 rounded-full bg-[#14b8a6] flex items-center justify-center p-4">
+                    <Image
+                      src="/images/icon-derechos.png"
+                      alt="Derechos Constitucionales"
+                      width={64}
+                      height={64}
+                      className="w-full h-full object-contain"
+                    />
                   </div>
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-white border-4 border-[#14b8a6]"></div>
+                  {/* Connection dot */}
+                  <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-white border-4 border-[#14b8a6]"></div>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-800 text-center">Derechos<br/>Constitucionales</h3>
+                <h3 className="text-lg font-normal text-gray-700 text-center mt-8">Derechos<br/>Constitucionales</h3>
               </div>
 
               {/* Item 3: Niños */}
               <div className="flex flex-col items-center relative">
-                <div className="relative z-10 mb-4">
-                  <div className="w-24 h-24 rounded-full flex items-center justify-center shadow-lg" style={{ background: 'linear-gradient(135deg, #14b8a6 0%, #fbbf24 100%)' }}>
-                    <svg className="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
-                      <circle cx="12" cy="8" r="3"/>
-                      <path d="M12 14c-4 0-8 2-8 4v2h16v-2c0-2-4-4-8-4z"/>
-                    </svg>
+                <div className="relative z-10 mb-6">
+                  <div className="w-20 h-20 rounded-full bg-[#14b8a6] flex items-center justify-center p-4">
+                    <Image
+                      src="/images/icon-ninos.png"
+                      alt="Niños"
+                      width={64}
+                      height={64}
+                      className="w-full h-full object-contain"
+                    />
                   </div>
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-white border-4 border-[#14b8a6]"></div>
+                  {/* Connection dot */}
+                  <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-white border-4 border-[#14b8a6]"></div>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-800 text-center">Niños</h3>
+                <h3 className="text-lg font-normal text-gray-700 text-center mt-8">Niños</h3>
               </div>
             </div>
+
+            {/* Timeline line - positioned below the dots */}
+            <div className="absolute top-24 left-0 right-0 h-0.5 bg-[#14b8a6] hidden md:block" style={{ top: '5.5rem' }}></div>
           </div>
         </div>
       </section>
