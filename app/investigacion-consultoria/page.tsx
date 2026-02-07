@@ -347,6 +347,116 @@ export default function InvestigacionConsultoriaPage() {
         </div>
       </section>
 
+      {/* Desarrollo Social - Derechos Constitucionales Section */}
+      <section className="py-20 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #e8f4f8 100%)' }}>
+        {/* Decorative background shapes */}
+        <div className="absolute top-0 right-0 w-96 h-96 opacity-20">
+          <svg viewBox="0 0 400 400" className="w-full h-full">
+            {/* Large green triangle */}
+            <polygon points="350,50 400,200 300,300" fill="#059669" opacity="0.4" />
+            {/* Medium teal triangle */}
+            <polygon points="300,100 350,180 250,220" fill="#0891B2" opacity="0.3" />
+            {/* Light teal triangle */}
+            <polygon points="200,150 280,250 150,300" fill="#06B6D4" opacity="0.2" />
+          </svg>
+        </div>
+
+        {/* Decorative circles at bottom */}
+        <div className="absolute bottom-0 right-0 w-full h-48 opacity-10">
+          <svg viewBox="0 0 1000 400" className="w-full h-full" preserveAspectRatio="none">
+            <circle cx="800" cy="200" r="200" fill="#0891B2" />
+            <circle cx="900" cy="300" r="150" fill="#01A0E1" />
+            <circle cx="650" cy="250" r="180" fill="#059669" />
+          </svg>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+            {/* Left Content */}
+            <div className="space-y-6">
+              <div>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-4 h-1 bg-[#0891B2] rounded-full"></div>
+                  <span className="text-lg font-semibold text-[#0891B2]">Desarrollo social</span>
+                </div>
+                <h2 className="text-3xl lg:text-4xl font-bold text-gray-800">
+                  Derechos Constitucionales
+                </h2>
+              </div>
+              
+              <div className="space-y-4 text-gray-700 leading-relaxed">
+                <p>
+                  En CIDTES somos una asociación civil dedicada a la sustentabilidad, está comprometida con el avance de personas pertenecientes a grupos minoritarios o vulnerables.
+                </p>
+                <p>
+                  Reconociendo el creciente interés en el autismo por parte de la comunidad científica, CIDTES lidera el "Proyecto Autismo", centrado en la integración de personas con Trastorno del Espectro Autista (TEA) en la comunidad y su impulso dentro de un marco sustentable.
+                </p>
+                <p>
+                  Creemos que la difusión y divulgación científica sobre esta condición son el primer paso para una inclusión efectiva, promoviendo sensibilidad y conciencia en la población para disminuir la estigmatización y los prejuicios que enfrentan estas personas.
+                </p>
+              </div>
+            </div>
+
+            {/* Right Image */}
+            <div className="relative">
+              <div className="overflow-hidden rounded-2xl shadow-2xl">
+                <Image
+                  src="/images/derechos-constitucionales.png"
+                  alt="Profesionales trabajando con documentos legales"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Timeline Section */}
+          <div className="bg-white bg-opacity-80 rounded-xl p-8 backdrop-blur-sm">
+            {/* Timeline */}
+            <div className="flex flex-col lg:flex-row items-center justify-between relative">
+              {/* Timeline line */}
+              <div className="absolute left-0 lg:left-12 lg:right-12 top-12 lg:top-16 h-1 w-11/12 lg:w-auto lg:h-1 lg:w-5/6 mx-auto" 
+                style={{ background: 'linear-gradient(90deg, #0891B2 0%, #0891B2 100%)' }}>
+              </div>
+
+              {/* Timeline Items */}
+              <div className="relative w-full flex flex-col lg:flex-row justify-between gap-12 lg:gap-0">
+                {/* Item 1: Autismo */}
+                <div className="flex flex-col items-center relative lg:flex-1">
+                  <div className="relative z-10 mb-6">
+                    <div className="w-20 h-20 rounded-full bg-white border-4 border-[#0891B2] flex items-center justify-center shadow-lg">
+                      <div className="text-3xl">👥</div>
+                    </div>
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-800 text-center">Autismo</h3>
+                </div>
+
+                {/* Item 2: Derechos Constitucionales */}
+                <div className="flex flex-col items-center relative lg:flex-1">
+                  <div className="relative z-10 mb-6">
+                    <div className="w-20 h-20 rounded-full bg-white border-4 border-[#0891B2] flex items-center justify-center shadow-lg">
+                      <div className="text-3xl">⚖️</div>
+                    </div>
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-800 text-center">Derechos<br/>Constitucionales</h3>
+                </div>
+
+                {/* Item 3: Niños */}
+                <div className="flex flex-col items-center relative lg:flex-1">
+                  <div className="relative z-10 mb-6">
+                    <div className="w-20 h-20 rounded-full bg-white border-4 border-[#0891B2] flex items-center justify-center shadow-lg">
+                      <div className="text-3xl">😊</div>
+                    </div>
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-800 text-center">Niños</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Footer Section */}
       <footer className="bg-gray-100 shadow-[0_-5px_6px_rgba(0,0,0,0.05)] font-sans">
         <div className="w-full px-8 py-12">
