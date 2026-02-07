@@ -347,6 +347,129 @@ export default function InvestigacionConsultoriaPage() {
         </div>
       </section>
 
+      {/* Desarrollo Social - Derechos Constitucionales Section */}
+      <section className="py-20 relative overflow-hidden bg-white">
+        {/* Green leaf background - Right side */}
+        <div className="absolute top-0 right-0 w-full h-full pointer-events-none flex items-start justify-end">
+          <div className="relative" style={{ width: '800px', height: '800px', marginTop: '-100px', marginRight: '-100px' }}>
+            <Image
+              src="/images/hoja-verde-background.png"
+              alt=""
+              width={800}
+              height={800}
+              className="w-full h-full object-contain opacity-40"
+            />
+          </div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+            {/* Left Content */}
+            <div className="space-y-6">
+              <div>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-16 h-1 rounded-full" style={{ backgroundImage: 'linear-gradient(90deg, #662686 0%, #01A0E1 100%)' }}></div>
+                </div>
+                <h2 className="text-3xl lg:text-5xl font-bold text-[#14b8a6] mb-3">
+                  Desarrollo social
+                </h2>
+                <h3 className="text-2xl lg:text-3xl font-normal text-gray-800">
+                  Derechos Constitucionales
+                </h3>
+              </div>
+              
+              <div className="space-y-4 text-gray-700 leading-relaxed">
+                <p>
+                  En CIDTES somos una asociación civil dedicada a la sustentabilidad, está comprometida con el avance de personas pertenecientes a grupos minoritarios o vulnerables.
+                </p>
+                <p>
+                  Reconociendo el creciente interés en el autismo por parte de la comunidad científica, CIDTES lidera el "Proyecto Autismo", centrado en la integración de personas con Trastorno del Espectro Autista (TEA) en la comunidad y su impulso dentro de un marco sustentable.
+                </p>
+                <p>
+                  Creemos que la difusión y divulgación científica sobre esta condición son el primer paso para una inclusión efectiva, promoviendo sensibilidad y conciencia en la población para disminuir la estigmatización y los prejuicios que enfrentan estas personas.
+                </p>
+              </div>
+            </div>
+
+            {/* Right Image */}
+            <div className="relative z-20">
+              <div className="overflow-hidden rounded-2xl shadow-2xl">
+                <Image
+                  src="/images/derechos-constitucionales.png"
+                  alt="Profesionales trabajando con documentos legales"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Timeline Section */}
+          <div className="relative pt-20 pb-8">
+            {/* Timeline Items Container */}
+            <div className="relative">
+              {/* Timeline line - thicker green line */}
+              <div className="absolute top-24 left-0 right-0 h-1 bg-[#14b8a6] hidden md:block" style={{ left: '5%', right: '5%' }}></div>
+              
+              {/* Timeline Items */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                {/* Item 1: Autismo */}
+                <div className="flex flex-col items-center relative">
+                  {/* Icon circle - above the line with hover effect */}
+                  <div className="relative z-10 w-16 h-16 rounded-full bg-[#14b8a6] flex items-center justify-center p-3 shadow-md mb-8 transition-all duration-300 hover:scale-110 hover:shadow-xl hover:bg-[#0d9488] cursor-pointer">
+                    <Image
+                      src="/images/icon-autismo.png"
+                      alt="Autismo"
+                      width={48}
+                      height={48}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                  {/* Connection dot - centered on the line */}
+                  <div className="absolute top-24 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-white border-2 border-[#14b8a6] z-20 hidden md:block"></div>
+                  <h3 className="text-base font-normal text-gray-700 text-center mt-6">Autismo</h3>
+                </div>
+
+                {/* Item 2: Derechos Constitucionales */}
+                <div className="flex flex-col items-center relative">
+                  {/* Icon circle - above the line with hover effect */}
+                  <div className="relative z-10 w-16 h-16 rounded-full bg-[#14b8a6] flex items-center justify-center p-3 shadow-md mb-8 transition-all duration-300 hover:scale-110 hover:shadow-xl hover:bg-[#0d9488] cursor-pointer">
+                    <Image
+                      src="/images/icon-derechos.png"
+                      alt="Derechos Constitucionales"
+                      width={48}
+                      height={48}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                  {/* Connection dot - centered on the line */}
+                  <div className="absolute top-24 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-white border-2 border-[#14b8a6] z-20 hidden md:block"></div>
+                  <h3 className="text-base font-normal text-gray-700 text-center mt-6">Derechos<br/>Constitucionales</h3>
+                </div>
+
+                {/* Item 3: Niños */}
+                <div className="flex flex-col items-center relative">
+                  {/* Icon circle - above the line with hover effect */}
+                  <div className="relative z-10 w-16 h-16 rounded-full bg-[#14b8a6] flex items-center justify-center p-3 shadow-md mb-8 transition-all duration-300 hover:scale-110 hover:shadow-xl hover:bg-[#0d9488] cursor-pointer">
+                    <Image
+                      src="/images/icon-ninos.png"
+                      alt="Niños"
+                      width={48}
+                      height={48}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                  {/* Connection dot - centered on the line */}
+                  <div className="absolute top-24 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-white border-2 border-[#14b8a6] z-20 hidden md:block"></div>
+                  <h3 className="text-base font-normal text-gray-700 text-center mt-6">Niños</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Footer Section */}
       <footer className="bg-gray-100 shadow-[0_-5px_6px_rgba(0,0,0,0.05)] font-sans">
         <div className="w-full px-8 py-12">
