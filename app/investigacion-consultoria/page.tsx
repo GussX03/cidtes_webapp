@@ -409,15 +409,15 @@ export default function InvestigacionConsultoriaPage() {
           <div className="relative pt-20 pb-8">
             {/* Timeline Items Container */}
             <div className="relative">
-              {/* Timeline line - positioned where circles intersect */}
-              <div className="absolute top-8 left-0 right-0 h-px bg-gray-400 hidden md:block" style={{ left: '10%', right: '10%' }}></div>
+              {/* Timeline line - positioned below the green circles */}
+              <div className="absolute top-20 left-0 right-0 h-px bg-gray-400 hidden md:block" style={{ left: '10%', right: '10%' }}></div>
               
               {/* Timeline Items */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                 {/* Item 1: Autismo */}
                 <div className="flex flex-col items-center relative">
-                  {/* Icon circle - positioned to overlap line */}
-                  <div className="relative z-10 w-16 h-16 rounded-full bg-[#14b8a6] flex items-center justify-center p-3 shadow-md" style={{ marginBottom: '-8px' }}>
+                  {/* Icon circle - above the line */}
+                  <div className="relative z-10 w-16 h-16 rounded-full bg-[#14b8a6] flex items-center justify-center p-3 shadow-md mb-4">
                     <Image
                       src="/images/icon-autismo.png"
                       alt="Autismo"
@@ -426,15 +426,15 @@ export default function InvestigacionConsultoriaPage() {
                       className="w-full h-full object-contain"
                     />
                   </div>
-                  {/* Connection dot - centered on line */}
-                  <div className="w-3 h-3 rounded-full bg-white border-2 border-gray-400 z-20 hidden md:block" style={{ marginTop: '8px', marginBottom: '16px' }}></div>
-                  <h3 className="text-base font-normal text-gray-700 text-center">Autismo</h3>
+                  {/* Connection dot - centered on the line */}
+                  <div className="absolute top-20 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-white border-2 border-gray-400 z-20 hidden md:block"></div>
+                  <h3 className="text-base font-normal text-gray-700 text-center mt-4">Autismo</h3>
                 </div>
 
                 {/* Item 2: Derechos Constitucionales */}
                 <div className="flex flex-col items-center relative">
-                  {/* Icon circle - positioned to overlap line */}
-                  <div className="relative z-10 w-16 h-16 rounded-full bg-[#14b8a6] flex items-center justify-center p-3 shadow-md" style={{ marginBottom: '-8px' }}>
+                  {/* Icon circle - above the line */}
+                  <div className="relative z-10 w-16 h-16 rounded-full bg-[#14b8a6] flex items-center justify-center p-3 shadow-md mb-4">
                     <Image
                       src="/images/icon-derechos.png"
                       alt="Derechos Constitucionales"
@@ -443,15 +443,15 @@ export default function InvestigacionConsultoriaPage() {
                       className="w-full h-full object-contain"
                     />
                   </div>
-                  {/* Connection dot - centered on line */}
-                  <div className="w-3 h-3 rounded-full bg-white border-2 border-gray-400 z-20 hidden md:block" style={{ marginTop: '8px', marginBottom: '16px' }}></div>
-                  <h3 className="text-base font-normal text-gray-700 text-center">Derechos<br/>Constitucionales</h3>
+                  {/* Connection dot - centered on the line */}
+                  <div className="absolute top-20 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-white border-2 border-gray-400 z-20 hidden md:block"></div>
+                  <h3 className="text-base font-normal text-gray-700 text-center mt-4">Derechos<br/>Constitucionales</h3>
                 </div>
 
                 {/* Item 3: Niños */}
                 <div className="flex flex-col items-center relative">
-                  {/* Icon circle - positioned to overlap line */}
-                  <div className="relative z-10 w-16 h-16 rounded-full bg-[#14b8a6] flex items-center justify-center p-3 shadow-md" style={{ marginBottom: '-8px' }}>
+                  {/* Icon circle - above the line */}
+                  <div className="relative z-10 w-16 h-16 rounded-full bg-[#14b8a6] flex items-center justify-center p-3 shadow-md mb-4">
                     <Image
                       src="/images/icon-ninos.png"
                       alt="Niños"
@@ -460,9 +460,9 @@ export default function InvestigacionConsultoriaPage() {
                       className="w-full h-full object-contain"
                     />
                   </div>
-                  {/* Connection dot - centered on line */}
-                  <div className="w-3 h-3 rounded-full bg-white border-2 border-gray-400 z-20 hidden md:block" style={{ marginTop: '8px', marginBottom: '16px' }}></div>
-                  <h3 className="text-base font-normal text-gray-700 text-center">Niños</h3>
+                  {/* Connection dot - centered on the line */}
+                  <div className="absolute top-20 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-white border-2 border-gray-400 z-20 hidden md:block"></div>
+                  <h3 className="text-base font-normal text-gray-700 text-center mt-4">Niños</h3>
                 </div>
               </div>
             </div>
