@@ -348,26 +348,50 @@ export default function InvestigacionConsultoriaPage() {
       </section>
 
       {/* Desarrollo Social - Derechos Constitucionales Section */}
-      <section className="py-20 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #e8f4f8 100%)' }}>
-        {/* Decorative background shapes */}
-        <div className="absolute top-0 right-0 w-96 h-96 opacity-20">
-          <svg viewBox="0 0 400 400" className="w-full h-full">
-            {/* Large green triangle */}
-            <polygon points="350,50 400,200 300,300" fill="#059669" opacity="0.4" />
-            {/* Medium teal triangle */}
-            <polygon points="300,100 350,180 250,220" fill="#0891B2" opacity="0.3" />
-            {/* Light teal triangle */}
-            <polygon points="200,150 280,250 150,300" fill="#06B6D4" opacity="0.2" />
-          </svg>
-        </div>
+      <section className="py-20 relative overflow-hidden bg-white">
+        {/* Large decorative background shapes - Right side */}
+        <div className="absolute top-0 right-0 w-full h-full pointer-events-none">
+          {/* Large green triangle at top right */}
+          <div className="absolute top-0 right-0" style={{ width: '600px', height: '600px' }}>
+            <svg viewBox="0 0 600 600" className="w-full h-full">
+              <polygon points="400,0 600,300 200,500" fill="#10b981" opacity="0.7" />
+            </svg>
+          </div>
+          
+          {/* Medium teal triangle */}
+          <div className="absolute top-20 right-32" style={{ width: '500px', height: '500px' }}>
+            <svg viewBox="0 0 500 500" className="w-full h-full">
+              <polygon points="300,50 450,250 150,400" fill="#14b8a6" opacity="0.6" />
+            </svg>
+          </div>
+          
+          {/* Light teal triangle */}
+          <div className="absolute top-40 right-20" style={{ width: '400px', height: '400px' }}>
+            <svg viewBox="0 0 400 400" className="w-full h-full">
+              <polygon points="200,80 350,220 100,320" fill="#5eead4" opacity="0.5" />
+            </svg>
+          </div>
 
-        {/* Decorative circles at bottom */}
-        <div className="absolute bottom-0 right-0 w-full h-48 opacity-10">
-          <svg viewBox="0 0 1000 400" className="w-full h-full" preserveAspectRatio="none">
-            <circle cx="800" cy="200" r="200" fill="#0891B2" />
-            <circle cx="900" cy="300" r="150" fill="#01A0E1" />
-            <circle cx="650" cy="250" r="180" fill="#059669" />
-          </svg>
+          {/* Large blue circle at bottom right */}
+          <div className="absolute bottom-0 right-0" style={{ width: '700px', height: '700px' }}>
+            <svg viewBox="0 0 700 700" className="w-full h-full">
+              <circle cx="500" cy="500" r="350" fill="#06b6d4" opacity="0.6" />
+            </svg>
+          </div>
+          
+          {/* Medium cyan circle */}
+          <div className="absolute bottom-20 right-40" style={{ width: '500px', height: '500px' }}>
+            <svg viewBox="0 0 500 500" className="w-full h-full">
+              <circle cx="350" cy="350" r="250" fill="#22d3ee" opacity="0.5" />
+            </svg>
+          </div>
+
+          {/* Light blue accent shapes */}
+          <div className="absolute bottom-32 right-96" style={{ width: '300px', height: '300px' }}>
+            <svg viewBox="0 0 300 300" className="w-full h-full">
+              <polygon points="150,50 200,150 100,200 50,100" fill="#67e8f9" opacity="0.4" />
+            </svg>
+          </div>
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
@@ -376,12 +400,14 @@ export default function InvestigacionConsultoriaPage() {
             <div className="space-y-6">
               <div>
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-4 h-1 bg-[#0891B2] rounded-full"></div>
-                  <span className="text-lg font-semibold text-[#0891B2]">Desarrollo social</span>
+                  <div className="w-16 h-1 rounded-full" style={{ backgroundImage: 'linear-gradient(90deg, #662686 0%, #01A0E1 100%)' }}></div>
                 </div>
-                <h2 className="text-3xl lg:text-4xl font-bold text-gray-800">
-                  Derechos Constitucionales
+                <h2 className="text-3xl lg:text-5xl font-bold text-[#14b8a6] mb-3">
+                  Desarrollo social
                 </h2>
+                <h3 className="text-2xl lg:text-3xl font-normal text-gray-800">
+                  Derechos Constitucionales
+                </h3>
               </div>
               
               <div className="space-y-4 text-gray-700 leading-relaxed">
@@ -398,7 +424,7 @@ export default function InvestigacionConsultoriaPage() {
             </div>
 
             {/* Right Image */}
-            <div className="relative">
+            <div className="relative z-20">
               <div className="overflow-hidden rounded-2xl shadow-2xl">
                 <Image
                   src="/images/derechos-constitucionales.png"
@@ -412,45 +438,51 @@ export default function InvestigacionConsultoriaPage() {
           </div>
 
           {/* Timeline Section */}
-          <div className="bg-white bg-opacity-80 rounded-xl p-8 backdrop-blur-sm">
-            {/* Timeline */}
-            <div className="flex flex-col lg:flex-row items-center justify-between relative">
-              {/* Timeline line */}
-              <div className="absolute left-0 lg:left-12 lg:right-12 top-12 lg:top-16 h-1 w-11/12 lg:w-auto lg:h-1 lg:w-5/6 mx-auto" 
-                style={{ background: 'linear-gradient(90deg, #0891B2 0%, #0891B2 100%)' }}>
+          <div className="relative pt-12">
+            {/* Timeline line */}
+            <div className="absolute top-20 left-0 right-0 h-1 bg-[#14b8a6]"></div>
+
+            {/* Timeline Items */}
+            <div className="relative grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* Item 1: Autismo */}
+              <div className="flex flex-col items-center relative">
+                <div className="relative z-10 mb-4">
+                  <div className="w-24 h-24 rounded-full flex items-center justify-center shadow-lg" style={{ background: 'linear-gradient(135deg, #c084fc 0%, #a855f7 100%)' }}>
+                    <svg className="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M7 11h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm0 4h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2z"/>
+                      <path d="M5 22h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zM19 8l.001 12H5V8h14z"/>
+                    </svg>
+                  </div>
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-white border-4 border-[#14b8a6]"></div>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-800 text-center">Autismo</h3>
               </div>
 
-              {/* Timeline Items */}
-              <div className="relative w-full flex flex-col lg:flex-row justify-between gap-12 lg:gap-0">
-                {/* Item 1: Autismo */}
-                <div className="flex flex-col items-center relative lg:flex-1">
-                  <div className="relative z-10 mb-6">
-                    <div className="w-20 h-20 rounded-full bg-white border-4 border-[#0891B2] flex items-center justify-center shadow-lg">
-                      <div className="text-3xl">👥</div>
-                    </div>
+              {/* Item 2: Derechos Constitucionales */}
+              <div className="flex flex-col items-center relative">
+                <div className="relative z-10 mb-4">
+                  <div className="w-24 h-24 rounded-full flex items-center justify-center shadow-lg" style={{ background: 'linear-gradient(135deg, #ec4899 0%, #14b8a6 100%)' }}>
+                    <svg className="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M21 8h-2V6c0-1.103-.897-2-2-2H7C5.897 4 5 4.897 5 6v2H3c-1.103 0-2 .897-2 2v10c0 1.103.897 2 2 2h18c1.103 0 2-.897 2-2V10c0-1.103-.897-2-2-2zM7 6h10v2H7V6z"/>
+                    </svg>
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-800 text-center">Autismo</h3>
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-white border-4 border-[#14b8a6]"></div>
                 </div>
+                <h3 className="text-lg font-semibold text-gray-800 text-center">Derechos<br/>Constitucionales</h3>
+              </div>
 
-                {/* Item 2: Derechos Constitucionales */}
-                <div className="flex flex-col items-center relative lg:flex-1">
-                  <div className="relative z-10 mb-6">
-                    <div className="w-20 h-20 rounded-full bg-white border-4 border-[#0891B2] flex items-center justify-center shadow-lg">
-                      <div className="text-3xl">⚖️</div>
-                    </div>
+              {/* Item 3: Niños */}
+              <div className="flex flex-col items-center relative">
+                <div className="relative z-10 mb-4">
+                  <div className="w-24 h-24 rounded-full flex items-center justify-center shadow-lg" style={{ background: 'linear-gradient(135deg, #14b8a6 0%, #fbbf24 100%)' }}>
+                    <svg className="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
+                      <circle cx="12" cy="8" r="3"/>
+                      <path d="M12 14c-4 0-8 2-8 4v2h16v-2c0-2-4-4-8-4z"/>
+                    </svg>
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-800 text-center">Derechos<br/>Constitucionales</h3>
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-white border-4 border-[#14b8a6]"></div>
                 </div>
-
-                {/* Item 3: Niños */}
-                <div className="flex flex-col items-center relative lg:flex-1">
-                  <div className="relative z-10 mb-6">
-                    <div className="w-20 h-20 rounded-full bg-white border-4 border-[#0891B2] flex items-center justify-center shadow-lg">
-                      <div className="text-3xl">😊</div>
-                    </div>
-                  </div>
-                  <h3 className="text-lg font-semibold text-gray-800 text-center">Niños</h3>
-                </div>
+                <h3 className="text-lg font-semibold text-gray-800 text-center">Niños</h3>
               </div>
             </div>
           </div>
