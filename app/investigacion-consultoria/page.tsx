@@ -349,47 +349,11 @@ export default function InvestigacionConsultoriaPage() {
 
       {/* Desarrollo Social - Derechos Constitucionales Section */}
       <section className="py-20 relative overflow-hidden bg-white">
-        {/* Large decorative background shapes - Right side */}
+        {/* Single green leaf shape background - Right side */}
         <div className="absolute top-0 right-0 w-full h-full pointer-events-none">
-          {/* Large green triangle at top right */}
-          <div className="absolute top-0 right-0" style={{ width: '600px', height: '600px' }}>
-            <svg viewBox="0 0 600 600" className="w-full h-full">
-              <polygon points="400,0 600,300 200,500" fill="#10b981" opacity="0.7" />
-            </svg>
-          </div>
-          
-          {/* Medium teal triangle */}
-          <div className="absolute top-20 right-32" style={{ width: '500px', height: '500px' }}>
-            <svg viewBox="0 0 500 500" className="w-full h-full">
-              <polygon points="300,50 450,250 150,400" fill="#14b8a6" opacity="0.6" />
-            </svg>
-          </div>
-          
-          {/* Light teal triangle */}
-          <div className="absolute top-40 right-20" style={{ width: '400px', height: '400px' }}>
-            <svg viewBox="0 0 400 400" className="w-full h-full">
-              <polygon points="200,80 350,220 100,320" fill="#5eead4" opacity="0.5" />
-            </svg>
-          </div>
-
-          {/* Large blue circle at bottom right */}
-          <div className="absolute bottom-0 right-0" style={{ width: '700px', height: '700px' }}>
+          <div className="absolute top-0 right-0" style={{ width: '700px', height: '700px' }}>
             <svg viewBox="0 0 700 700" className="w-full h-full">
-              <circle cx="500" cy="500" r="350" fill="#06b6d4" opacity="0.6" />
-            </svg>
-          </div>
-          
-          {/* Medium cyan circle */}
-          <div className="absolute bottom-20 right-40" style={{ width: '500px', height: '500px' }}>
-            <svg viewBox="0 0 500 500" className="w-full h-full">
-              <circle cx="350" cy="350" r="250" fill="#22d3ee" opacity="0.5" />
-            </svg>
-          </div>
-
-          {/* Light blue accent shapes */}
-          <div className="absolute bottom-32 right-96" style={{ width: '300px', height: '300px' }}>
-            <svg viewBox="0 0 300 300" className="w-full h-full">
-              <polygon points="150,50 200,150 100,200 50,100" fill="#67e8f9" opacity="0.4" />
+              <polygon points="350,0 700,350 350,700 0,350" fill="#10b981" opacity="0.3" />
             </svg>
           </div>
         </div>
@@ -439,65 +403,62 @@ export default function InvestigacionConsultoriaPage() {
 
           {/* Timeline Section */}
           <div className="relative pt-12 pb-8">
+            {/* Timeline line - horizontal line */}
+            <div className="absolute top-16 left-0 right-0 h-0.5 bg-[#14b8a6] hidden md:block"></div>
+            
             {/* Timeline Items */}
             <div className="relative grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Item 1: Autismo */}
               <div className="flex flex-col items-center relative">
-                <div className="relative z-10 mb-6">
-                  <div className="w-20 h-20 rounded-full bg-[#14b8a6] flex items-center justify-center p-4">
-                    <Image
-                      src="/images/icon-autismo.png"
-                      alt="Autismo"
-                      width={64}
-                      height={64}
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
-                  {/* Connection dot */}
-                  <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-white border-4 border-[#14b8a6]"></div>
+                {/* Icon circle */}
+                <div className="relative z-10 w-20 h-20 rounded-full bg-[#14b8a6] flex items-center justify-center p-4">
+                  <Image
+                    src="/images/icon-autismo.png"
+                    alt="Autismo"
+                    width={64}
+                    height={64}
+                    className="w-full h-full object-contain"
+                  />
                 </div>
-                <h3 className="text-lg font-normal text-gray-700 text-center mt-8">Autismo</h3>
+                {/* Connection dot - centered on line */}
+                <div className="absolute top-9 left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-white border-4 border-[#14b8a6] z-20"></div>
+                <h3 className="text-lg font-normal text-gray-700 text-center mt-12">Autismo</h3>
               </div>
 
               {/* Item 2: Derechos Constitucionales */}
               <div className="flex flex-col items-center relative">
-                <div className="relative z-10 mb-6">
-                  <div className="w-20 h-20 rounded-full bg-[#14b8a6] flex items-center justify-center p-4">
-                    <Image
-                      src="/images/icon-derechos.png"
-                      alt="Derechos Constitucionales"
-                      width={64}
-                      height={64}
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
-                  {/* Connection dot */}
-                  <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-white border-4 border-[#14b8a6]"></div>
+                {/* Icon circle */}
+                <div className="relative z-10 w-20 h-20 rounded-full bg-[#14b8a6] flex items-center justify-center p-4">
+                  <Image
+                    src="/images/icon-derechos.png"
+                    alt="Derechos Constitucionales"
+                    width={64}
+                    height={64}
+                    className="w-full h-full object-contain"
+                  />
                 </div>
-                <h3 className="text-lg font-normal text-gray-700 text-center mt-8">Derechos<br/>Constitucionales</h3>
+                {/* Connection dot - centered on line */}
+                <div className="absolute top-9 left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-white border-4 border-[#14b8a6] z-20"></div>
+                <h3 className="text-lg font-normal text-gray-700 text-center mt-12">Derechos<br/>Constitucionales</h3>
               </div>
 
               {/* Item 3: Niños */}
               <div className="flex flex-col items-center relative">
-                <div className="relative z-10 mb-6">
-                  <div className="w-20 h-20 rounded-full bg-[#14b8a6] flex items-center justify-center p-4">
-                    <Image
-                      src="/images/icon-ninos.png"
-                      alt="Niños"
-                      width={64}
-                      height={64}
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
-                  {/* Connection dot */}
-                  <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-white border-4 border-[#14b8a6]"></div>
+                {/* Icon circle */}
+                <div className="relative z-10 w-20 h-20 rounded-full bg-[#14b8a6] flex items-center justify-center p-4">
+                  <Image
+                    src="/images/icon-ninos.png"
+                    alt="Niños"
+                    width={64}
+                    height={64}
+                    className="w-full h-full object-contain"
+                  />
                 </div>
-                <h3 className="text-lg font-normal text-gray-700 text-center mt-8">Niños</h3>
+                {/* Connection dot - centered on line */}
+                <div className="absolute top-9 left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-white border-4 border-[#14b8a6] z-20"></div>
+                <h3 className="text-lg font-normal text-gray-700 text-center mt-12">Niños</h3>
               </div>
             </div>
-
-            {/* Timeline line - positioned below the dots */}
-            <div className="absolute top-24 left-0 right-0 h-0.5 bg-[#14b8a6] hidden md:block" style={{ top: '5.5rem' }}></div>
           </div>
         </div>
       </section>
