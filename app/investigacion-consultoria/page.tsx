@@ -409,15 +409,15 @@ export default function InvestigacionConsultoriaPage() {
           <div className="relative pt-20 pb-8">
             {/* Timeline Items Container */}
             <div className="relative">
-              {/* Timeline line - positioned below the green circles */}
-              <div className="absolute top-20 left-0 right-0 h-px bg-gray-400 hidden md:block" style={{ left: '10%', right: '10%' }}></div>
+              {/* Timeline line - thicker green line */}
+              <div className="absolute top-24 left-0 right-0 h-1 bg-[#14b8a6] hidden md:block" style={{ left: '5%', right: '5%' }}></div>
               
               {/* Timeline Items */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 {/* Item 1: Autismo */}
                 <div className="flex flex-col items-center relative">
-                  {/* Icon circle - above the line */}
-                  <div className="relative z-10 w-16 h-16 rounded-full bg-[#14b8a6] flex items-center justify-center p-3 shadow-md mb-4">
+                  {/* Icon circle - above the line with hover effect */}
+                  <div className="relative z-10 w-16 h-16 rounded-full bg-[#14b8a6] flex items-center justify-center p-3 shadow-md mb-8 transition-all duration-300 hover:scale-110 hover:shadow-xl hover:bg-[#0d9488] cursor-pointer">
                     <Image
                       src="/images/icon-autismo.png"
                       alt="Autismo"
@@ -427,14 +427,14 @@ export default function InvestigacionConsultoriaPage() {
                     />
                   </div>
                   {/* Connection dot - centered on the line */}
-                  <div className="absolute top-20 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-white border-2 border-gray-400 z-20 hidden md:block"></div>
-                  <h3 className="text-base font-normal text-gray-700 text-center mt-4">Autismo</h3>
+                  <div className="absolute top-24 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-white border-2 border-[#14b8a6] z-20 hidden md:block"></div>
+                  <h3 className="text-base font-normal text-gray-700 text-center mt-6">Autismo</h3>
                 </div>
 
                 {/* Item 2: Derechos Constitucionales */}
                 <div className="flex flex-col items-center relative">
-                  {/* Icon circle - above the line */}
-                  <div className="relative z-10 w-16 h-16 rounded-full bg-[#14b8a6] flex items-center justify-center p-3 shadow-md mb-4">
+                  {/* Icon circle - above the line with hover effect */}
+                  <div className="relative z-10 w-16 h-16 rounded-full bg-[#14b8a6] flex items-center justify-center p-3 shadow-md mb-8 transition-all duration-300 hover:scale-110 hover:shadow-xl hover:bg-[#0d9488] cursor-pointer">
                     <Image
                       src="/images/icon-derechos.png"
                       alt="Derechos Constitucionales"
@@ -444,14 +444,14 @@ export default function InvestigacionConsultoriaPage() {
                     />
                   </div>
                   {/* Connection dot - centered on the line */}
-                  <div className="absolute top-20 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-white border-2 border-gray-400 z-20 hidden md:block"></div>
-                  <h3 className="text-base font-normal text-gray-700 text-center mt-4">Derechos<br/>Constitucionales</h3>
+                  <div className="absolute top-24 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-white border-2 border-[#14b8a6] z-20 hidden md:block"></div>
+                  <h3 className="text-base font-normal text-gray-700 text-center mt-6">Derechos<br/>Constitucionales</h3>
                 </div>
 
                 {/* Item 3: Niños */}
                 <div className="flex flex-col items-center relative">
-                  {/* Icon circle - above the line */}
-                  <div className="relative z-10 w-16 h-16 rounded-full bg-[#14b8a6] flex items-center justify-center p-3 shadow-md mb-4">
+                  {/* Icon circle - above the line with hover effect */}
+                  <div className="relative z-10 w-16 h-16 rounded-full bg-[#14b8a6] flex items-center justify-center p-3 shadow-md mb-8 transition-all duration-300 hover:scale-110 hover:shadow-xl hover:bg-[#0d9488] cursor-pointer">
                     <Image
                       src="/images/icon-ninos.png"
                       alt="Niños"
@@ -461,8 +461,8 @@ export default function InvestigacionConsultoriaPage() {
                     />
                   </div>
                   {/* Connection dot - centered on the line */}
-                  <div className="absolute top-20 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-white border-2 border-gray-400 z-20 hidden md:block"></div>
-                  <h3 className="text-base font-normal text-gray-700 text-center mt-4">Niños</h3>
+                  <div className="absolute top-24 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-white border-2 border-[#14b8a6] z-20 hidden md:block"></div>
+                  <h3 className="text-base font-normal text-gray-700 text-center mt-6">Niños</h3>
                 </div>
               </div>
             </div>
