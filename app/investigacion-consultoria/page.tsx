@@ -349,12 +349,16 @@ export default function InvestigacionConsultoriaPage() {
 
       {/* Desarrollo Social - Derechos Constitucionales Section */}
       <section className="py-20 relative overflow-hidden bg-white">
-        {/* Single green leaf shape background - Right side */}
-        <div className="absolute top-0 right-0 w-full h-full pointer-events-none">
-          <div className="absolute top-0 right-0" style={{ width: '700px', height: '700px' }}>
-            <svg viewBox="0 0 700 700" className="w-full h-full">
-              <polygon points="350,0 700,350 350,700 0,350" fill="#10b981" opacity="0.3" />
-            </svg>
+        {/* Green leaf background - Right side */}
+        <div className="absolute top-0 right-0 w-full h-full pointer-events-none flex items-start justify-end">
+          <div className="relative" style={{ width: '800px', height: '800px', marginTop: '-100px', marginRight: '-100px' }}>
+            <Image
+              src="/images/hoja-verde-background.png"
+              alt=""
+              width={800}
+              height={800}
+              className="w-full h-full object-contain opacity-40"
+            />
           </div>
         </div>
 
@@ -402,61 +406,64 @@ export default function InvestigacionConsultoriaPage() {
           </div>
 
           {/* Timeline Section */}
-          <div className="relative pt-12 pb-8">
-            {/* Timeline line - horizontal line */}
-            <div className="absolute top-16 left-0 right-0 h-0.5 bg-[#14b8a6] hidden md:block"></div>
-            
-            {/* Timeline Items */}
-            <div className="relative grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Item 1: Autismo */}
-              <div className="flex flex-col items-center relative">
-                {/* Icon circle */}
-                <div className="relative z-10 w-20 h-20 rounded-full bg-[#14b8a6] flex items-center justify-center p-4">
-                  <Image
-                    src="/images/icon-autismo.png"
-                    alt="Autismo"
-                    width={64}
-                    height={64}
-                    className="w-full h-full object-contain"
-                  />
+          <div className="relative pt-20 pb-8">
+            {/* Timeline Items Container */}
+            <div className="relative">
+              {/* Timeline line - positioned where circles intersect */}
+              <div className="absolute top-8 left-0 right-0 h-px bg-gray-400 hidden md:block" style={{ left: '10%', right: '10%' }}></div>
+              
+              {/* Timeline Items */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                {/* Item 1: Autismo */}
+                <div className="flex flex-col items-center relative">
+                  {/* Icon circle - positioned to overlap line */}
+                  <div className="relative z-10 w-16 h-16 rounded-full bg-[#14b8a6] flex items-center justify-center p-3 shadow-md" style={{ marginBottom: '-8px' }}>
+                    <Image
+                      src="/images/icon-autismo.png"
+                      alt="Autismo"
+                      width={48}
+                      height={48}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                  {/* Connection dot - centered on line */}
+                  <div className="w-3 h-3 rounded-full bg-white border-2 border-gray-400 z-20 hidden md:block" style={{ marginTop: '8px', marginBottom: '16px' }}></div>
+                  <h3 className="text-base font-normal text-gray-700 text-center">Autismo</h3>
                 </div>
-                {/* Connection dot - centered on line */}
-                <div className="absolute top-9 left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-white border-4 border-[#14b8a6] z-20"></div>
-                <h3 className="text-lg font-normal text-gray-700 text-center mt-12">Autismo</h3>
-              </div>
 
-              {/* Item 2: Derechos Constitucionales */}
-              <div className="flex flex-col items-center relative">
-                {/* Icon circle */}
-                <div className="relative z-10 w-20 h-20 rounded-full bg-[#14b8a6] flex items-center justify-center p-4">
-                  <Image
-                    src="/images/icon-derechos.png"
-                    alt="Derechos Constitucionales"
-                    width={64}
-                    height={64}
-                    className="w-full h-full object-contain"
-                  />
+                {/* Item 2: Derechos Constitucionales */}
+                <div className="flex flex-col items-center relative">
+                  {/* Icon circle - positioned to overlap line */}
+                  <div className="relative z-10 w-16 h-16 rounded-full bg-[#14b8a6] flex items-center justify-center p-3 shadow-md" style={{ marginBottom: '-8px' }}>
+                    <Image
+                      src="/images/icon-derechos.png"
+                      alt="Derechos Constitucionales"
+                      width={48}
+                      height={48}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                  {/* Connection dot - centered on line */}
+                  <div className="w-3 h-3 rounded-full bg-white border-2 border-gray-400 z-20 hidden md:block" style={{ marginTop: '8px', marginBottom: '16px' }}></div>
+                  <h3 className="text-base font-normal text-gray-700 text-center">Derechos<br/>Constitucionales</h3>
                 </div>
-                {/* Connection dot - centered on line */}
-                <div className="absolute top-9 left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-white border-4 border-[#14b8a6] z-20"></div>
-                <h3 className="text-lg font-normal text-gray-700 text-center mt-12">Derechos<br/>Constitucionales</h3>
-              </div>
 
-              {/* Item 3: Niños */}
-              <div className="flex flex-col items-center relative">
-                {/* Icon circle */}
-                <div className="relative z-10 w-20 h-20 rounded-full bg-[#14b8a6] flex items-center justify-center p-4">
-                  <Image
-                    src="/images/icon-ninos.png"
-                    alt="Niños"
-                    width={64}
-                    height={64}
-                    className="w-full h-full object-contain"
-                  />
+                {/* Item 3: Niños */}
+                <div className="flex flex-col items-center relative">
+                  {/* Icon circle - positioned to overlap line */}
+                  <div className="relative z-10 w-16 h-16 rounded-full bg-[#14b8a6] flex items-center justify-center p-3 shadow-md" style={{ marginBottom: '-8px' }}>
+                    <Image
+                      src="/images/icon-ninos.png"
+                      alt="Niños"
+                      width={48}
+                      height={48}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                  {/* Connection dot - centered on line */}
+                  <div className="w-3 h-3 rounded-full bg-white border-2 border-gray-400 z-20 hidden md:block" style={{ marginTop: '8px', marginBottom: '16px' }}></div>
+                  <h3 className="text-base font-normal text-gray-700 text-center">Niños</h3>
                 </div>
-                {/* Connection dot - centered on line */}
-                <div className="absolute top-9 left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-white border-4 border-[#14b8a6] z-20"></div>
-                <h3 className="text-lg font-normal text-gray-700 text-center mt-12">Niños</h3>
               </div>
             </div>
           </div>
