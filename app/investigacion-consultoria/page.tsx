@@ -555,170 +555,138 @@ export default function InvestigacionConsultoriaPage() {
       </section>
 
       {/* Sectores Cards Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white relative">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {/* Sector Privado Card */}
-            <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200 hover:shadow-xl transition-shadow">
-              <h3 className="text-xl font-bold text-gray-800 mb-6">Sector Privado</h3>
-              
-              <div className="flex items-start gap-6">
-                {/* Icon */}
-                <div className="flex-shrink-0">
-                  <svg width="80" height="120" viewBox="0 0 80 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    {/* Person */}
-                    <defs>
-                      <linearGradient id="blueGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" stopColor="#93c5fd" />
-                        <stop offset="100%" stopColor="#0891b2" />
-                      </linearGradient>
-                    </defs>
-                    {/* Head */}
-                    <circle cx="30" cy="20" r="12" fill="url(#blueGradient)" />
-                    {/* Body */}
-                    <path d="M15 40 L15 75 L20 75 L20 50 L40 50 L40 75 L45 75 L45 40 Z" fill="url(#blueGradient)" />
-                    {/* Arms */}
-                    <rect x="10" y="45" width="5" height="20" rx="2" fill="url(#blueGradient)" />
-                    <rect x="45" y="45" width="5" height="20" rx="2" fill="url(#blueGradient)" />
-                    {/* Legs */}
-                    <rect x="18" y="75" width="8" height="25" rx="2" fill="url(#blueGradient)" />
-                    <rect x="34" y="75" width="8" height="25" rx="2" fill="url(#blueGradient)" />
-                    
-                    {/* Briefcase */}
-                    <rect x="50" y="85" width="28" height="20" rx="3" fill="#0891b2" />
-                    <rect x="62" y="80" width="4" height="5" rx="1" fill="#0891b2" />
-                  </svg>
-                </div>
-
-                {/* Divider */}
-                <div className="w-px bg-cyan-500 self-stretch"></div>
-
-                {/* Content */}
-                <div className="flex-1">
-                  <ul className="space-y-2 text-gray-700 text-sm">
-                    <li className="flex items-start">
-                      <span className="mr-2">•</span>
-                      <span>Operador empresarial</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="mr-2">•</span>
-                      <span>Formador</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="mr-2">•</span>
-                      <span>Instructor</span>
-                    </li>
-                  </ul>
-                </div>
+          <div className="relative max-w-6xl mx-auto">
+            {/* Connector lines */}
+            <div className="hidden md:block absolute top-1/2 left-0 right-0 -translate-y-1/2 z-0">
+              <div className="flex items-center justify-between px-8">
+                <div className="flex-1"></div>
+                <Image
+                  src="/images/connector-blue-purple.png"
+                  alt=""
+                  width={150}
+                  height={30}
+                  className="mx-4"
+                />
+                <Image
+                  src="/images/connector-purple-pink.png"
+                  alt=""
+                  width={150}
+                  height={30}
+                  className="mx-4"
+                />
+                <div className="flex-1"></div>
               </div>
             </div>
 
-            {/* Educando Card */}
-            <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200 hover:shadow-xl transition-shadow">
-              <h3 className="text-xl font-bold text-gray-800 mb-6">Educando</h3>
-              
-              <div className="flex items-start gap-6">
-                {/* Icon */}
-                <div className="flex-shrink-0">
-                  <svg width="80" height="120" viewBox="0 0 80 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                      <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" stopColor="#e879f9" />
-                        <stop offset="100%" stopColor="#a855f7" />
-                      </linearGradient>
-                    </defs>
-                    
-                    {/* Heart */}
-                    <path d="M40 25 C40 20 35 15 30 15 C25 15 20 20 20 25 C20 30 25 35 40 45 C55 35 60 30 60 25 C60 20 55 15 50 15 C45 15 40 20 40 25 Z" fill="#e879f9" />
-                    
-                    {/* Group of people - base */}
-                    <ellipse cx="40" cy="95" rx="35" ry="15" fill="url(#purpleGradient)" />
-                    
-                    {/* People silhouettes */}
-                    {/* Left person */}
-                    <circle cx="25" cy="70" r="6" fill="#c084fc" opacity="0.8" />
-                    <circle cx="25" cy="85" r="8" fill="#c084fc" opacity="0.8" />
-                    
-                    {/* Center person */}
-                    <circle cx="40" cy="65" r="7" fill="url(#purpleGradient)" />
-                    <circle cx="40" cy="82" r="10" fill="url(#purpleGradient)" />
-                    
-                    {/* Right person */}
-                    <circle cx="55" cy="70" r="6" fill="#c084fc" opacity="0.8" />
-                    <circle cx="55" cy="85" r="8" fill="#c084fc" opacity="0.8" />
-                  </svg>
-                </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+              {/* Sector Privado Card */}
+              <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200 hover:shadow-xl transition-shadow">
+                <h3 className="text-xl font-bold text-gray-800 mb-6">Sector Privado</h3>
+                
+                <div className="flex items-start gap-4">
+                  {/* Icon */}
+                  <div className="flex-shrink-0">
+                    <Image
+                      src="/images/icon-sector-privado.png"
+                      alt="Sector Privado"
+                      width={60}
+                      height={60}
+                      className="w-auto h-20 object-contain"
+                    />
+                  </div>
 
-                {/* Divider */}
-                <div className="w-px bg-purple-500 self-stretch"></div>
+                  {/* Divider */}
+                  <div className="w-px bg-cyan-500 self-stretch"></div>
 
-                {/* Content */}
-                <div className="flex-1">
-                  <ul className="space-y-2 text-gray-700 text-sm">
-                    <li className="flex items-start">
-                      <span className="mr-2">•</span>
-                      <span>Padres de familia</span>
-                    </li>
-                  </ul>
+                  {/* Content */}
+                  <div className="flex-1">
+                    <ul className="space-y-2 text-gray-800 text-sm">
+                      <li className="flex items-start">
+                        <span className="mr-2">•</span>
+                        <span>Operador empresarial</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="mr-2">•</span>
+                        <span>Formador</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="mr-2">•</span>
+                        <span>Instructor</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* Sector Educativo Card */}
-            <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200 hover:shadow-xl transition-shadow">
-              <h3 className="text-xl font-bold text-gray-800 mb-6">Sector Educativo</h3>
-              
-              <div className="flex items-start gap-6">
-                {/* Icon */}
-                <div className="flex-shrink-0">
-                  <svg width="80" height="120" viewBox="0 0 80 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                      <linearGradient id="pinkGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" stopColor="#fda4af" />
-                        <stop offset="100%" stopColor="#f43f5e" />
-                      </linearGradient>
-                    </defs>
-                    
-                    {/* ID Card/Presentation */}
-                    <rect x="15" y="20" width="50" height="35" rx="3" fill="url(#pinkGradient)" />
-                    {/* Person icon on card */}
-                    <circle cx="30" cy="35" r="6" fill="white" />
-                    {/* Lines on card */}
-                    <rect x="42" y="28" width="18" height="3" rx="1" fill="white" />
-                    <rect x="42" y="35" width="18" height="3" rx="1" fill="white" />
-                    <rect x="42" y="42" width="18" height="3" rx="1" fill="white" />
-                    
-                    {/* Podium */}
-                    <path d="M10 65 L20 95 L60 95 L70 65 Z" fill="#f43f5e" />
-                    
-                    {/* People group */}
-                    <circle cx="50" cy="85" r="6" fill="#fecdd3" />
-                    <circle cx="50" cy="97" r="7" fill="#fecdd3" />
-                    
-                    <circle cx="65" cy="85" r="6" fill="#fecdd3" />
-                    <circle cx="65" cy="97" r="7" fill="#fecdd3" />
-                  </svg>
+              {/* Educando Card */}
+              <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200 hover:shadow-xl transition-shadow">
+                <h3 className="text-xl font-bold text-gray-800 mb-6">Educando</h3>
+                
+                <div className="flex items-start gap-4">
+                  {/* Icon */}
+                  <div className="flex-shrink-0">
+                    <Image
+                      src="/images/icon-educando.png"
+                      alt="Educando"
+                      width={60}
+                      height={60}
+                      className="w-auto h-20 object-contain"
+                    />
+                  </div>
+
+                  {/* Divider */}
+                  <div className="w-px bg-purple-500 self-stretch"></div>
+
+                  {/* Content */}
+                  <div className="flex-1">
+                    <ul className="space-y-2 text-gray-800 text-sm">
+                      <li className="flex items-start">
+                        <span className="mr-2">•</span>
+                        <span>Padres de familia</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
+              </div>
 
-                {/* Divider */}
-                <div className="w-px bg-pink-500 self-stretch"></div>
+              {/* Sector Educativo Card */}
+              <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200 hover:shadow-xl transition-shadow">
+                <h3 className="text-xl font-bold text-gray-800 mb-6">Sector Educativo</h3>
+                
+                <div className="flex items-start gap-4">
+                  {/* Icon */}
+                  <div className="flex-shrink-0">
+                    <Image
+                      src="/images/icon-sector-educativo.png"
+                      alt="Sector Educativo"
+                      width={60}
+                      height={60}
+                      className="w-auto h-20 object-contain"
+                    />
+                  </div>
 
-                {/* Content */}
-                <div className="flex-1">
-                  <ul className="space-y-2 text-gray-700 text-sm">
-                    <li className="flex items-start">
-                      <span className="mr-2">•</span>
-                      <span>Coordinador educativo</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="mr-2">•</span>
-                      <span>Director/Gestor de vinculación</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="mr-2">•</span>
-                      <span>Tutor</span>
-                    </li>
-                  </ul>
+                  {/* Divider */}
+                  <div className="w-px bg-pink-500 self-stretch"></div>
+
+                  {/* Content */}
+                  <div className="flex-1">
+                    <ul className="space-y-2 text-gray-800 text-sm">
+                      <li className="flex items-start">
+                        <span className="mr-2">•</span>
+                        <span>Coordinador educativo</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="mr-2">•</span>
+                        <span>Director/Gestor de vinculación</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="mr-2">•</span>
+                        <span>Tutor</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
