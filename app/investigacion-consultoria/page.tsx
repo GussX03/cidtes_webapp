@@ -510,9 +510,6 @@ export default function InvestigacionConsultoriaPage() {
               <div className="text-white px-6 py-3 inline-block rounded" style={{ background: 'linear-gradient(90deg, #0E9991 0%, #662686 100%)' }}>
                 <h3 className="text-xl font-semibold">Sistemas de Gestión</h3>
               </div>
-              <div className="mt-2">
-                <span className="text-xs text-white bg-blue-500 px-3 py-1 rounded inline-block mb-4">146-50</span>
-              </div>
               <div className="mt-4">
                 <p className="text-gray-700 mb-4">
                   Se analiza para <span className="font-semibold">facilitar</span> la implementación o <span className="font-semibold">accesos</span> a los sistemas de gestión a las PYMES:
