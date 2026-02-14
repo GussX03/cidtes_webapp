@@ -507,9 +507,49 @@ export default function InvestigacionConsultoriaPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
             {/* Sistemas de Gestión Card */}
             <div>
-              <div className="text-white px-6 py-3 inline-block rounded" style={{ background: 'linear-gradient(90deg, #0E9991 0%, #662686 100%)' }}>
+              <div className="text-white px-8 py-3 rounded min-w-[280px] inline-block" style={{ background: 'linear-gradient(90deg, #0E9991 0%, #662686 100%)' }}>
                 <h3 className="text-xl font-semibold">Sistemas de Gestión</h3>
               </div>
+              <div className="mt-6">
+                <p className="text-gray-800 mb-4 text-base">
+                  Se analiza para <span className="font-bold">facilitar</span> la implementación o <span className="font-bold">accesos</span> a los sistemas de gestión a las PYMES:
+                </p>
+                <ul className="space-y-1 text-gray-800 text-base">
+                  <li className="flex items-start">
+                    <span className="mr-2">•</span>
+                    <span>Calidad</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2">•</span>
+                    <span>Energía</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2">•</span>
+                    <span>SyST</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2">•</span>
+                    <span>Sostenibilidad</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2">•</span>
+                    <span>Compliance (Texto)</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Educación Dual Card */}
+            <div>
+              <div className="text-white px-8 py-3 rounded min-w-[260px] inline-block" style={{ background: 'linear-gradient(90deg, #0E9991 0%, #662686 100%)' }}>
+                <h3 className="text-xl font-semibold">Educación Dual</h3>
+              </div>
+              <div className="mt-6">
+                <p className="text-gray-800 leading-relaxed text-base">
+                  La formación dual <span className="font-bold">es un modelo educativo</span> que integra teoría y práctica, <span className="font-bold">preparando a estudiantes</span> para el empleo mediante la colaboración entre instituciones educativas y empresas, lo que asegura su relevancia y alineación con el mercado laboral.
+                </p>
+              </div>
+            </div>
               <div className="mt-4">
                 <p className="text-gray-700 mb-4">
                   Se analiza para <span className="font-semibold">facilitar</span> la implementación o <span className="font-semibold">accesos</span> a los sistemas de gestión a las PYMES:
