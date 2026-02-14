@@ -559,7 +559,7 @@ export default function InvestigacionConsultoriaPage() {
         <div className="container mx-auto px-4">
           <div className="relative max-w-6xl mx-auto">
             {/* Connector 1 - Between Sector Privado and Educando */}
-            <div className="hidden md:block absolute top-1/2 left-[29.5%] -translate-y-1/2 z-30">
+            <div className="hidden md:block absolute top-1/2 left-[29.5%] -translate-y-1/2 z-30 transition-all duration-300 hover:scale-110 hover:brightness-110 cursor-pointer">
               <Image
                 src="/images/connector-1.png"
                 alt=""
@@ -570,7 +570,7 @@ export default function InvestigacionConsultoriaPage() {
             </div>
 
             {/* Connector 2 - Between Educando and Sector Educativo */}
-            <div className="hidden md:block absolute top-1/2 right-[31%] -translate-y-1/2 z-30">
+            <div className="hidden md:block absolute top-1/2 right-[31%] -translate-y-1/2 z-30 transition-all duration-300 hover:scale-110 hover:brightness-110 cursor-pointer">
               <Image
                 src="/images/connector-2.png"
                 alt=""
@@ -608,7 +608,7 @@ export default function InvestigacionConsultoriaPage() {
                         <span>Operador empresarial</span>
                       </li>
                       <li className="flex items-start">
-                        <span className="mr-2">•</span>
+                        <span className="mr-2">��</span>
                         <span>Formador</span>
                       </li>
                       <li className="flex items-start">
