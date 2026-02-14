@@ -62,7 +62,7 @@ export default function InvestigacionConsultoriaPage() {
   // Auto-advance carousel
   useEffect(() => {
     const interval = setInterval(() => {
-      nextSlide()
+      setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1))
     }, 4000)
     return () => clearInterval(interval)
   }, [maxIndex])
@@ -215,9 +215,8 @@ export default function InvestigacionConsultoriaPage() {
                 <button
                   key={index}
                   onClick={() => setCurrentIndex(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    currentIndex === index ? "bg-[#0891B2] w-6" : "bg-gray-300"
-                  }`}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${currentIndex === index ? "bg-[#0891B2] w-6" : "bg-gray-300"
+                    }`}
                   aria-label={`Go to slide ${index + 1}`}
                 />
               ))}
@@ -264,7 +263,7 @@ export default function InvestigacionConsultoriaPage() {
             {/* Content */}
             <div className="space-y-6">
               <div>
-                <h2 
+                <h2
                   className="text-4xl lg:text-5xl font-bold italic mb-2 bg-clip-text text-transparent"
                   style={{ backgroundImage: 'linear-gradient(90deg, #01A0E1 0%, #662686 100%)' }}
                 >
@@ -272,7 +271,7 @@ export default function InvestigacionConsultoriaPage() {
                 </h2>
                 <div className="flex items-center gap-3">
                   <div className="w-16 h-1 rounded-full" style={{ backgroundImage: 'linear-gradient(90deg, #01A0E1 0%, #662686 100%)' }}></div>
-                  <span 
+                  <span
                     className="text-2xl lg:text-3xl font-semibold bg-clip-text text-transparent"
                     style={{ backgroundImage: 'linear-gradient(90deg, #01A0E1 0%, #662686 100%)' }}
                   >
@@ -280,7 +279,7 @@ export default function InvestigacionConsultoriaPage() {
                   </span>
                 </div>
               </div>
-              
+
               <div className="space-y-4 text-gray-700 leading-relaxed">
                 <p>
                   Conocer los derechos constitucionales que defienden nuestra integridad y autonomía como seres humanos, nos permiten ejercer nuestra libertad y solicitar el apoyo a instituciones gubernamentales cuando se presenten situaciones que atenten contra nuestra soberanía.
@@ -314,7 +313,7 @@ export default function InvestigacionConsultoriaPage() {
             {/* Content */}
             <div className="space-y-6">
               <div>
-                <h2 
+                <h2
                   className="text-3xl lg:text-4xl font-bold italic mb-2 bg-clip-text text-transparent"
                   style={{ backgroundImage: 'linear-gradient(90deg, #01A0E1 0%, #662686 100%)' }}
                 >
@@ -322,7 +321,7 @@ export default function InvestigacionConsultoriaPage() {
                 </h2>
                 <div className="flex items-center gap-3">
                   <div className="w-16 h-1 rounded-full" style={{ backgroundImage: 'linear-gradient(90deg, #01A0E1 0%, #662686 100%)' }}></div>
-                  <span 
+                  <span
                     className="text-2xl lg:text-3xl font-semibold bg-clip-text text-transparent"
                     style={{ backgroundImage: 'linear-gradient(90deg, #01A0E1 0%, #662686 100%)' }}
                   >
@@ -330,7 +329,7 @@ export default function InvestigacionConsultoriaPage() {
                   </span>
                 </div>
               </div>
-              
+
               <div className="space-y-4 text-gray-700 leading-relaxed">
                 <p>
                   En CIDTES somos una asociación civil dedicada a la sustentabilidad, está comprometida con el avance de personas pertenecientes a grupos minoritarios o vulnerables.
@@ -377,7 +376,7 @@ export default function InvestigacionConsultoriaPage() {
                   Derechos Constitucionales
                 </h3>
               </div>
-              
+
               <div className="space-y-4 text-gray-700 leading-relaxed">
                 <p>
                   En CIDTES somos una asociación civil dedicada a la sustentabilidad, está comprometida con el avance de personas pertenecientes a grupos minoritarios o vulnerables.
@@ -411,7 +410,7 @@ export default function InvestigacionConsultoriaPage() {
             <div className="relative">
               {/* Timeline line - thicker green line */}
               <div className="absolute top-24 left-0 right-0 h-1 bg-[#14b8a6] hidden md:block" style={{ left: '5%', right: '5%' }}></div>
-              
+
               {/* Timeline Items */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 {/* Item 1: Autismo */}
@@ -445,7 +444,7 @@ export default function InvestigacionConsultoriaPage() {
                   </div>
                   {/* Connection dot - centered on the line */}
                   <div className="absolute top-24 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-white border-2 border-[#14b8a6] z-20 hidden md:block"></div>
-                  <h3 className="text-base font-normal text-gray-700 text-center mt-6">Derechos<br/>Constitucionales</h3>
+                  <h3 className="text-base font-normal text-gray-700 text-center mt-6">Derechos<br />Constitucionales</h3>
                 </div>
 
                 {/* Item 3: Niños */}
@@ -464,6 +463,91 @@ export default function InvestigacionConsultoriaPage() {
                   <div className="absolute top-24 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-white border-2 border-[#14b8a6] z-20 hidden md:block"></div>
                   <h3 className="text-base font-normal text-gray-700 text-center mt-6">Niños</h3>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Wave Separator */}
+      <div className="h-16 bg-white relative overflow-hidden">
+        <Image src="/images/wave-separator.png" alt="Wave separator" fill className="object-cover object-center" />
+      </div>
+
+      {/* Comunidades Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          {/* Title */}
+          <div className="text-center mb-12">
+            <h2
+              className="text-5xl lg:text-6xl font-bold inline-block pb-3"
+              style={{
+                color: '#14b8a6',
+                borderBottom: '5px solid #14b8a6'
+              }}
+            >
+              Comunidades
+            </h2>
+          </div>
+
+          {/* Image */}
+          <div className="mb-12 flex justify-center">
+            <div className="max-w-4xl w-full">
+              <Image
+                src="/images/comunidades-global.png"
+                alt="Comunidades globales conectadas"
+                width={1200}
+                height={400}
+                className="w-full h-auto object-contain"
+              />
+            </div>
+          </div>
+
+          {/* Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+            {/* Sistemas de Gestión Card */}
+            <div>
+              <div className="text-white px-12 py-3 rounded text-center" style={{ background: 'linear-gradient(90deg, #0E9991 0%, #662686 100%)', minWidth: '380px', display: 'inline-block' }}>
+                <h3 className="text-xl font-semibold">Sistemas de Gestión</h3>
+              </div>
+              <div className="mt-6">
+                <p className="text-gray-800 mb-4 text-sm">
+                  Se analiza para <span className="font-bold">facilitar</span> la implementación o <span className="font-bold">accesos</span> a los sistemas de gestión a las PYMES:
+                </p>
+                <ul className="space-y-1 text-gray-800 text-sm">
+                  <li className="flex items-start">
+                    <span className="mr-2">•</span>
+                    <span>Calidad</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2">•</span>
+                    <span>Energía</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2">•</span>
+                    <span>SyST</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2">•</span>
+                    <span>Sostenibilidad</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2">•</span>
+                    <span>Compliance (Texto)</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Educación Dual Card */}
+            <div>
+              <div className="text-white px-12 py-3 rounded text-center" style={{ background: 'linear-gradient(90deg, #0E9991 0%, #662686 100%)', minWidth: '340px', display: 'inline-block' }}>
+                <h3 className="text-xl font-semibold">Educación Dual</h3>
+              </div>
+              <div className="mt-6">
+                <p className="text-gray-800 leading-relaxed text-sm">
+                  La formación dual <span className="font-bold">es un modelo educativo</span> que integra teoría y práctica, <span className="font-bold">preparando a estudiantes</span> para el empleo mediante la colaboración entre instituciones educativas y empresas, lo que asegura su relevancia y alineación con el mercado laboral.
+                </p>
               </div>
             </div>
           </div>
