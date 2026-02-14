@@ -559,7 +559,7 @@ export default function InvestigacionConsultoriaPage() {
         <div className="container mx-auto px-4">
           <div className="relative max-w-6xl mx-auto">
             {/* Connector 1 - Between Sector Privado and Educando */}
-            <div className="hidden md:block absolute top-1/2 left-[31%] -translate-y-1/2 z-30">
+            <div className="hidden md:block absolute top-1/2 left-[29.5%] -translate-y-1/2 z-30">
               <Image
                 src="/images/connector-1.png"
                 alt=""
@@ -582,12 +582,12 @@ export default function InvestigacionConsultoriaPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
               {/* Sector Privado Card */}
-              <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200 hover:shadow-xl transition-shadow">
+              <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200 hover:shadow-2xl hover:scale-105 hover:-translate-y-2 transition-all duration-300">
                 <h3 className="text-xl font-bold text-gray-800 mb-6">Sector Privado</h3>
                 
                 <div className="flex items-start gap-4">
                   {/* Icon */}
-                  <div className="flex-shrink-0">
+                  <div className="flex-shrink-0 transition-transform duration-300 hover:scale-110">
                     <Image
                       src="/images/icon-sector-privado.png"
                       alt="Sector Privado"
@@ -621,12 +621,12 @@ export default function InvestigacionConsultoriaPage() {
               </div>
 
               {/* Educando Card */}
-              <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200 hover:shadow-xl transition-shadow">
+              <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200 hover:shadow-2xl hover:scale-105 hover:-translate-y-2 transition-all duration-300">
                 <h3 className="text-xl font-bold text-gray-800 mb-6">Educando</h3>
                 
                 <div className="flex items-start gap-4">
                   {/* Icon */}
-                  <div className="flex-shrink-0">
+                  <div className="flex-shrink-0 transition-transform duration-300 hover:scale-110">
                     <Image
                       src="/images/icon-educando.png"
                       alt="Educando"
@@ -652,12 +652,12 @@ export default function InvestigacionConsultoriaPage() {
               </div>
 
               {/* Sector Educativo Card */}
-              <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200 hover:shadow-xl transition-shadow">
+              <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200 hover:shadow-2xl hover:scale-105 hover:-translate-y-2 transition-all duration-300">
                 <h3 className="text-xl font-bold text-gray-800 mb-6">Sector Educativo</h3>
                 
                 <div className="flex items-start gap-4">
                   {/* Icon */}
-                  <div className="flex-shrink-0">
+                  <div className="flex-shrink-0 transition-transform duration-300 hover:scale-110">
                     <Image
                       src="/images/icon-sector-educativo.png"
                       alt="Sector Educativo"
