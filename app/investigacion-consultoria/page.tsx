@@ -624,7 +624,7 @@ export default function InvestigacionConsultoriaPage() {
                         <span>Operador empresarial</span>
                       </li>
                       <li className="flex items-start">
-                        <span className="mr-2">��</span>
+                        <span className="mr-2">•</span>
                         <span>Formador</span>
                       </li>
                       <li className="flex items-start">
