@@ -470,12 +470,16 @@ export default function InvestigacionConsultoriaPage() {
         </div>
       </section>
 
-      {/* Divider - Gradient azul */}
-      <div className="w-full h-24 relative overflow-hidden">
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(90deg, #14b8a6 0%, #0891B2 50%, #7c3aed 100%)' }}></div>
-        <svg className="absolute bottom-0 w-full h-8" viewBox="0 0 1440 48" preserveAspectRatio="none">
-          <path d="M0,0 Q360,48 720,24 T1440,0 L1440,48 L0,48 Z" fill="white" opacity="0.3"/>
-          <path d="M0,12 Q360,36 720,18 T1440,12 L1440,48 L0,48 Z" fill="white" opacity="0.5"/>
+      {/* Divider - Wave Pattern */}
+      <div className="w-full h-8 relative overflow-hidden">
+        <svg className="w-full h-full" viewBox="0 0 1440 48" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#0E9991" />
+              <stop offset="100%" stopColor="#662686" />
+            </linearGradient>
+          </defs>
+          <path d="M0,24 C240,40 480,8 720,24 C960,40 1200,8 1440,24 L1440,48 L0,48 Z" fill="url(#waveGradient)"/>
         </svg>
       </div>
 
@@ -485,10 +489,10 @@ export default function InvestigacionConsultoriaPage() {
           {/* Title */}
           <div className="text-center mb-12">
             <h2 
-              className="text-4xl lg:text-5xl font-bold inline-block pb-2"
+              className="text-5xl lg:text-6xl font-bold inline-block pb-3"
               style={{ 
                 color: '#14b8a6',
-                borderBottom: '4px solid #14b8a6'
+                borderBottom: '5px solid #14b8a6'
               }}
             >
               Comunidades
@@ -509,13 +513,16 @@ export default function InvestigacionConsultoriaPage() {
           </div>
 
           {/* Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
             {/* Sistemas de Gestión Card */}
-            <div className="relative">
-              <div className="bg-[#14b8a6] text-white px-6 py-3 inline-block rounded-t-lg">
+            <div>
+              <div className="text-white px-6 py-3 inline-block rounded" style={{ background: 'linear-gradient(90deg, #0E9991 0%, #662686 100%)' }}>
                 <h3 className="text-xl font-semibold">Sistemas de Gestión</h3>
               </div>
-              <div className="bg-white border-2 border-gray-200 p-6 rounded-b-lg rounded-tr-lg shadow-md">
+              <div className="mt-2">
+                <span className="text-xs text-white bg-blue-500 px-3 py-1 rounded inline-block mb-4">146-50</span>
+              </div>
+              <div className="mt-4">
                 <p className="text-gray-700 mb-4">
                   Se analiza para <span className="font-semibold">facilitar</span> la implementación o <span className="font-semibold">accesos</span> a los sistemas de gestión a las PYMES:
                 </p>
@@ -545,13 +552,13 @@ export default function InvestigacionConsultoriaPage() {
             </div>
 
             {/* Educación Dual Card */}
-            <div className="relative">
-              <div className="text-white px-6 py-3 inline-block rounded-t-lg" style={{ background: 'linear-gradient(90deg, #14b8a6 0%, #7c3aed 100%)' }}>
+            <div>
+              <div className="text-white px-6 py-3 inline-block rounded" style={{ background: 'linear-gradient(90deg, #0E9991 0%, #662686 100%)' }}>
                 <h3 className="text-xl font-semibold">Educación Dual</h3>
               </div>
-              <div className="bg-white border-2 border-gray-200 p-6 rounded-b-lg rounded-tr-lg shadow-md">
+              <div className="mt-4">
                 <p className="text-gray-700 leading-relaxed">
-                  La formación dual <span className="font-semibold">es un modelo educativo</span> que integra teoría y práctica, <span className="font-semibold">preparando a estudiantes</span> para el empleo mediante la vinculación entre instituciones educativas y empresas, lo que asegura su relevancia y alineación con el mercado laboral.
+                  La formación dual <span className="font-semibold">es un modelo educativo</span> que integra teoría y práctica, <span className="font-semibold">preparando a estudiantes</span> para el empleo mediante la colaboración entre instituciones educativas y empresas, lo que asegura su relevancia y alineación con el mercado laboral.
                 </p>
               </div>
             </div>
