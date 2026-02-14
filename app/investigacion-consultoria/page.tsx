@@ -558,7 +558,29 @@ export default function InvestigacionConsultoriaPage() {
       <section className="py-16 bg-white relative">
         <div className="container mx-auto px-4">
           <div className="relative max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative">
+            {/* Connector 1 - Between Sector Privado and Educando */}
+            <div className="hidden md:block absolute top-1/2 left-[31%] -translate-y-1/2 z-10">
+              <Image
+                src="/images/connector-1.png"
+                alt=""
+                width={80}
+                height={20}
+                className="w-20 h-auto"
+              />
+            </div>
+
+            {/* Connector 2 - Between Educando and Sector Educativo */}
+            <div className="hidden md:block absolute top-1/2 right-[31%] -translate-y-1/2 z-10">
+              <Image
+                src="/images/connector-2.png"
+                alt=""
+                width={80}
+                height={20}
+                className="w-20 h-auto"
+              />
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-20">
               {/* Sector Privado Card */}
               <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200 hover:shadow-xl transition-shadow">
                 <h3 className="text-xl font-bold text-gray-800 mb-6">Sector Privado</h3>
@@ -595,22 +617,11 @@ export default function InvestigacionConsultoriaPage() {
                       </li>
                     </ul>
                   </div>
+                </div>
               </div>
-            </div>
 
-            {/* Connector 1 */}
-            <div className="hidden md:flex items-center justify-center relative z-20">
-              <Image
-                src="/images/connector-1.png"
-                alt=""
-                width={200}
-                height={50}
-                className="w-full max-w-[200px]"
-              />
-            </div>
-
-            {/* Educando Card */}
-            <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200 hover:shadow-xl transition-shadow">
+              {/* Educando Card */}
+              <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200 hover:shadow-xl transition-shadow">
                 <h3 className="text-xl font-bold text-gray-800 mb-6">Educando</h3>
                 
                 <div className="flex items-start gap-4">
@@ -637,22 +648,11 @@ export default function InvestigacionConsultoriaPage() {
                       </li>
                     </ul>
                   </div>
+                </div>
               </div>
-            </div>
 
-            {/* Connector 2 */}
-            <div className="hidden md:flex items-center justify-center relative z-20">
-              <Image
-                src="/images/connector-2.png"
-                alt=""
-                width={200}
-                height={50}
-                className="w-full max-w-[200px]"
-              />
-            </div>
-
-            {/* Sector Educativo Card */}
-            <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200 hover:shadow-xl transition-shadow">
+              {/* Sector Educativo Card */}
+              <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200 hover:shadow-xl transition-shadow">
                 <h3 className="text-xl font-bold text-gray-800 mb-6">Sector Educativo</h3>
                 
                 <div className="flex items-start gap-4">
