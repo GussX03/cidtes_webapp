@@ -557,9 +557,9 @@ export default function InvestigacionConsultoriaPage() {
       {/* Sectores Cards Section */}
       <section className="py-16 bg-white relative">
         <div className="container mx-auto px-4">
-          <div className="relative max-w-6xl mx-auto">
+          <div className="relative max-w-6xl mx-auto sectores-container">
             {/* Connector 1 - Between Sector Privado and Educando */}
-            <div className="hidden md:block absolute top-1/2 left-[29.5%] -translate-y-1/2 z-30 transition-all duration-300 hover:scale-110 hover:brightness-110 cursor-pointer">
+            <div id="connector-1" className="hidden md:block absolute top-1/2 left-[29.5%] -translate-y-1/2 z-30 transition-all duration-300 hover:scale-110 hover:brightness-110 cursor-pointer">
               <Image
                 src="/images/connector-1.png"
                 alt=""
@@ -570,7 +570,7 @@ export default function InvestigacionConsultoriaPage() {
             </div>
 
             {/* Connector 2 - Between Educando and Sector Educativo */}
-            <div className="hidden md:block absolute top-1/2 right-[31%] -translate-y-1/2 z-30 transition-all duration-300 hover:scale-110 hover:brightness-110 cursor-pointer">
+            <div id="connector-2" className="hidden md:block absolute top-1/2 right-[31%] -translate-y-1/2 z-30 transition-all duration-300 hover:scale-110 hover:brightness-110 cursor-pointer">
               <Image
                 src="/images/connector-2.png"
                 alt=""
@@ -582,7 +582,23 @@ export default function InvestigacionConsultoriaPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
               {/* Sector Privado Card */}
-              <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200 hover:shadow-2xl hover:scale-105 hover:-translate-y-2 transition-all duration-300">
+              <div 
+                className="bg-white rounded-xl shadow-lg p-6 border border-gray-200 hover:shadow-2xl hover:scale-105 hover:-translate-y-2 transition-all duration-300 card-privado"
+                onMouseEnter={() => {
+                  const connector = document.getElementById('connector-1');
+                  if (connector) {
+                    connector.style.transform = 'translateY(-50%) scale(1.1)';
+                    connector.style.filter = 'brightness(1.2)';
+                  }
+                }}
+                onMouseLeave={() => {
+                  const connector = document.getElementById('connector-1');
+                  if (connector) {
+                    connector.style.transform = 'translateY(-50%) scale(1)';
+                    connector.style.filter = 'brightness(1)';
+                  }
+                }}
+              >
                 <h3 className="text-xl font-bold text-gray-800 mb-6">Sector Privado</h3>
                 
                 <div className="flex items-start gap-4">
@@ -621,7 +637,33 @@ export default function InvestigacionConsultoriaPage() {
               </div>
 
               {/* Educando Card */}
-              <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200 hover:shadow-2xl hover:scale-105 hover:-translate-y-2 transition-all duration-300">
+              <div 
+                className="bg-white rounded-xl shadow-lg p-6 border border-gray-200 hover:shadow-2xl hover:scale-105 hover:-translate-y-2 transition-all duration-300"
+                onMouseEnter={() => {
+                  const connector1 = document.getElementById('connector-1');
+                  const connector2 = document.getElementById('connector-2');
+                  if (connector1) {
+                    connector1.style.transform = 'translateY(-50%) scale(1.1)';
+                    connector1.style.filter = 'brightness(1.2)';
+                  }
+                  if (connector2) {
+                    connector2.style.transform = 'translateY(-50%) scale(1.1)';
+                    connector2.style.filter = 'brightness(1.2)';
+                  }
+                }}
+                onMouseLeave={() => {
+                  const connector1 = document.getElementById('connector-1');
+                  const connector2 = document.getElementById('connector-2');
+                  if (connector1) {
+                    connector1.style.transform = 'translateY(-50%) scale(1)';
+                    connector1.style.filter = 'brightness(1)';
+                  }
+                  if (connector2) {
+                    connector2.style.transform = 'translateY(-50%) scale(1)';
+                    connector2.style.filter = 'brightness(1)';
+                  }
+                }}
+              >
                 <h3 className="text-xl font-bold text-gray-800 mb-6">Educando</h3>
                 
                 <div className="flex items-start gap-4">
@@ -652,7 +694,23 @@ export default function InvestigacionConsultoriaPage() {
               </div>
 
               {/* Sector Educativo Card */}
-              <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200 hover:shadow-2xl hover:scale-105 hover:-translate-y-2 transition-all duration-300">
+              <div 
+                className="bg-white rounded-xl shadow-lg p-6 border border-gray-200 hover:shadow-2xl hover:scale-105 hover:-translate-y-2 transition-all duration-300"
+                onMouseEnter={() => {
+                  const connector = document.getElementById('connector-2');
+                  if (connector) {
+                    connector.style.transform = 'translateY(-50%) scale(1.1)';
+                    connector.style.filter = 'brightness(1.2)';
+                  }
+                }}
+                onMouseLeave={() => {
+                  const connector = document.getElementById('connector-2');
+                  if (connector) {
+                    connector.style.transform = 'translateY(-50%) scale(1)';
+                    connector.style.filter = 'brightness(1)';
+                  }
+                }}
+              >
                 <h3 className="text-xl font-bold text-gray-800 mb-6">Sector Educativo</h3>
                 
                 <div className="flex items-start gap-4">
