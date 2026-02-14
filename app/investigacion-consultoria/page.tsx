@@ -62,7 +62,7 @@ export default function InvestigacionConsultoriaPage() {
   // Auto-advance carousel
   useEffect(() => {
     const interval = setInterval(() => {
-      nextSlide()
+      setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1))
     }, 4000)
     return () => clearInterval(interval)
   }, [maxIndex])
