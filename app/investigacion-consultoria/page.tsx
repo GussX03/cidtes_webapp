@@ -470,6 +470,95 @@ export default function InvestigacionConsultoriaPage() {
         </div>
       </section>
 
+      {/* Divider - Gradient azul */}
+      <div className="w-full h-24 relative overflow-hidden">
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(90deg, #14b8a6 0%, #0891B2 50%, #7c3aed 100%)' }}></div>
+        <svg className="absolute bottom-0 w-full h-8" viewBox="0 0 1440 48" preserveAspectRatio="none">
+          <path d="M0,0 Q360,48 720,24 T1440,0 L1440,48 L0,48 Z" fill="white" opacity="0.3"/>
+          <path d="M0,12 Q360,36 720,18 T1440,12 L1440,48 L0,48 Z" fill="white" opacity="0.5"/>
+        </svg>
+      </div>
+
+      {/* Comunidades Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          {/* Title */}
+          <div className="text-center mb-12">
+            <h2 
+              className="text-4xl lg:text-5xl font-bold inline-block pb-2"
+              style={{ 
+                color: '#14b8a6',
+                borderBottom: '4px solid #14b8a6'
+              }}
+            >
+              Comunidades
+            </h2>
+          </div>
+
+          {/* Image */}
+          <div className="mb-12 flex justify-center">
+            <div className="max-w-4xl w-full">
+              <Image
+                src="/images/comunidades-global.png"
+                alt="Comunidades globales conectadas"
+                width={1200}
+                height={400}
+                className="w-full h-auto object-contain"
+              />
+            </div>
+          </div>
+
+          {/* Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {/* Sistemas de Gestión Card */}
+            <div className="relative">
+              <div className="bg-[#14b8a6] text-white px-6 py-3 inline-block rounded-t-lg">
+                <h3 className="text-xl font-semibold">Sistemas de Gestión</h3>
+              </div>
+              <div className="bg-white border-2 border-gray-200 p-6 rounded-b-lg rounded-tr-lg shadow-md">
+                <p className="text-gray-700 mb-4">
+                  Se analiza para <span className="font-semibold">facilitar</span> la implementación o <span className="font-semibold">accesos</span> a los sistemas de gestión a las PYMES:
+                </p>
+                <ul className="space-y-2 text-gray-700">
+                  <li className="flex items-start">
+                    <span className="mr-2">•</span>
+                    <span>Calidad</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2">•</span>
+                    <span>Energía</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2">•</span>
+                    <span>SyST</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2">•</span>
+                    <span>Sostenibilidad</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2">•</span>
+                    <span>Compliance (Texto)</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Educación Dual Card */}
+            <div className="relative">
+              <div className="text-white px-6 py-3 inline-block rounded-t-lg" style={{ background: 'linear-gradient(90deg, #14b8a6 0%, #7c3aed 100%)' }}>
+                <h3 className="text-xl font-semibold">Educación Dual</h3>
+              </div>
+              <div className="bg-white border-2 border-gray-200 p-6 rounded-b-lg rounded-tr-lg shadow-md">
+                <p className="text-gray-700 leading-relaxed">
+                  La formación dual <span className="font-semibold">es un modelo educativo</span> que integra teoría y práctica, <span className="font-semibold">preparando a estudiantes</span> para el empleo mediante la vinculación entre instituciones educativas y empresas, lo que asegura su relevancia y alineación con el mercado laboral.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Footer Section */}
       <footer className="bg-gray-100 shadow-[0_-5px_6px_rgba(0,0,0,0.05)] font-sans">
         <div className="w-full px-8 py-12">
