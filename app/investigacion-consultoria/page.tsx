@@ -559,7 +559,7 @@ export default function InvestigacionConsultoriaPage() {
         <div className="container mx-auto px-4">
           <div className="relative max-w-6xl mx-auto">
             {/* Connector 1 - Between Sector Privado and Educando */}
-            <div className="hidden md:block absolute top-1/2 left-[31%] -translate-y-1/2 z-10">
+            <div className="hidden md:block absolute top-1/2 left-[31%] -translate-y-1/2 z-30">
               <Image
                 src="/images/connector-1.png"
                 alt=""
@@ -570,7 +570,7 @@ export default function InvestigacionConsultoriaPage() {
             </div>
 
             {/* Connector 2 - Between Educando and Sector Educativo */}
-            <div className="hidden md:block absolute top-1/2 right-[31%] -translate-y-1/2 z-10">
+            <div className="hidden md:block absolute top-1/2 right-[31%] -translate-y-1/2 z-30">
               <Image
                 src="/images/connector-2.png"
                 alt=""
@@ -580,7 +580,7 @@ export default function InvestigacionConsultoriaPage() {
               />
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-20">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
               {/* Sector Privado Card */}
               <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200 hover:shadow-xl transition-shadow">
                 <h3 className="text-xl font-bold text-gray-800 mb-6">Sector Privado</h3>
