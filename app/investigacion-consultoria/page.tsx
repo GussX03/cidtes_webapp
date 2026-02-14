@@ -507,7 +507,7 @@ export default function InvestigacionConsultoriaPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
             {/* Sistemas de Gestión Card */}
             <div>
-              <div className="text-white px-10 py-3 rounded inline-block" style={{ background: 'linear-gradient(90deg, #0E9991 0%, #662686 100%)', minWidth: '300px' }}>
+              <div className="text-white px-12 py-3 rounded text-center" style={{ background: 'linear-gradient(90deg, #0E9991 0%, #662686 100%)', minWidth: '380px', display: 'inline-block' }}>
                 <h3 className="text-xl font-semibold">Sistemas de Gestión</h3>
               </div>
               <div className="mt-6">
@@ -541,7 +541,7 @@ export default function InvestigacionConsultoriaPage() {
 
             {/* Educación Dual Card */}
             <div>
-              <div className="text-white px-10 py-3 rounded inline-block" style={{ background: 'linear-gradient(90deg, #0E9991 0%, #662686 100%)', minWidth: '280px' }}>
+              <div className="text-white px-12 py-3 rounded text-center" style={{ background: 'linear-gradient(90deg, #0E9991 0%, #662686 100%)', minWidth: '340px', display: 'inline-block' }}>
                 <h3 className="text-xl font-semibold">Educación Dual</h3>
               </div>
               <div className="mt-6">
