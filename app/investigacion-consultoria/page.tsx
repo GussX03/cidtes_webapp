@@ -563,18 +563,18 @@ export default function InvestigacionConsultoriaPage() {
               <div className="flex items-center justify-between px-8">
                 <div className="flex-1"></div>
                 <Image
-                  src="/images/connector-blue-purple.png"
+                  src="/images/connector-1.png"
                   alt=""
-                  width={150}
-                  height={30}
-                  className="mx-4"
+                  width={180}
+                  height={40}
+                  className="mx-2"
                 />
                 <Image
-                  src="/images/connector-purple-pink.png"
+                  src="/images/connector-2.png"
                   alt=""
-                  width={150}
-                  height={30}
-                  className="mx-4"
+                  width={180}
+                  height={40}
+                  className="mx-2"
                 />
                 <div className="flex-1"></div>
               </div>
