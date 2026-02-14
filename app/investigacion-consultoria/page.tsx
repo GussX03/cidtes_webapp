@@ -555,7 +555,7 @@ export default function InvestigacionConsultoriaPage() {
       </section>
 
       {/* Sectores Cards Section */}
-      <section className="py-16 bg-white relative">
+      <section className="pt-8 pb-16 bg-white relative">
         <div className="container mx-auto px-4">
           <div className="relative max-w-6xl mx-auto sectores-container">
             {/* Connector 1 - Between Sector Privado and Educando */}
