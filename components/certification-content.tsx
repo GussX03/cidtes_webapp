@@ -279,8 +279,74 @@ export default function CertificationContent({ activeSection }: CertificationCon
         )}
 
         {activeSection === 3 && (
-          <div className="w-full space-y-12 lg:space-y-20">
-            <StandardsCarousel />
+          <div className="space-y-6">
+            {/* Formativo */}
+            <div className="space-y-3">
+              <h3 className="text-2xl font-bold bg-white px-4 py-2 rounded-lg shadow-sm inline-block" style={{ color: "#13D4CB" }}>
+                Formativo
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {["EC0076", "EC0217.01", "EC0301", "EC0366"].map((code) => (
+                  <button
+                    key={code}
+                    className="px-4 py-2 bg-gray-100/80 backdrop-blur-sm text-gray-700 text-sm font-medium rounded-lg shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105 border border-gray-300"
+                  >
+                    {code}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Valuación */}
+            <div className="space-y-3">
+              <h3 className="text-2xl font-bold bg-white px-4 py-2 rounded-lg shadow-sm inline-block" style={{ color: "#13D4CB" }}>
+                Valuación
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {["EC0664", "EC0865", "EC1182", "EC1306"].map((code) => (
+                  <button
+                    key={code}
+                    className="px-4 py-2 bg-gray-100/80 backdrop-blur-sm text-gray-700 text-sm font-medium rounded-lg shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105 border border-gray-300"
+                  >
+                    {code}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Energía */}
+            <div className="space-y-3">
+              <h3 className="text-2xl font-bold bg-white px-4 py-2 rounded-lg shadow-sm inline-block" style={{ color: "#13D4CB" }}>
+                Energía
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {["EC0412", "EC0413", "EC0416", "EC0431", "EC0414"].map((code) => (
+                  <button
+                    key={code}
+                    className="px-4 py-2 bg-gray-100/80 backdrop-blur-sm text-gray-700 text-sm font-medium rounded-lg shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105 border border-gray-300"
+                  >
+                    {code}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* S.Salud en el */}
+            <div className="space-y-3">
+              <h3 className="text-2xl font-bold bg-white px-4 py-2 rounded-lg shadow-sm inline-block" style={{ color: "#13D4CB" }}>
+                S.Salud en el Trabajo
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {["EC0391.01", "EC0493", "EC0397.01", "EC0680"].map((code) => (
+                  <button
+                    key={code}
+                    className="px-4 py-2 bg-gray-100/80 backdrop-blur-sm text-gray-700 text-sm font-medium rounded-lg shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105 border border-gray-300"
+                  >
+                    {code}
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
         )}
       </div>

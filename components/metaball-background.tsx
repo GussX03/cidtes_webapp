@@ -88,12 +88,13 @@ export function MetaballBackground({ color }: MetaballBackgroundProps) {
 
     const canvas = renderer.domElement
     canvas.style.cssText = `
-      position: absolute !important;
+      position: fixed !important;
       top: 0 !important;
       left: 0 !important;
-      width: 100% !important;
-      height: 100% !important;
+      width: 100vw !important;
+      height: 100vh !important;
       z-index: 0 !important;
+      pointer-events: none !important;
     `
     container.appendChild(canvas)
 
@@ -194,8 +195,8 @@ export function MetaballBackground({ color }: MetaballBackgroundProps) {
         
         vec3 screenToWorld(vec2 normalizedPos) {
           vec2 uv = normalizedPos * 2.0 - 1.0;
-          uv.x *= uResolution.x / uResolution.y;
-          return vec3(uv * 2.0, 0.0);
+          float aspect = uResolution.x / uResolution.y;
+          return vec3(uv.x * aspect * 2.0, uv.y * 2.0, 0.0);
         }
         
         float sceneSDF(vec3 pos) {
@@ -427,7 +428,8 @@ export function MetaballBackground({ color }: MetaballBackgroundProps) {
     animate()
 
     // Inicializar posición del cursor en el centro
-    handleMouseMove({ clientX: window.innerWidth / 2, clientY: window.innerHeight / 2 } as MouseEvent)
+    const rect = container.getBoundingClientRect()
+    handleMouseMove({ clientX: rect.left + rect.width / 2, clientY: rect.top + rect.height / 2 } as MouseEvent)
 
     // Store refs
     sceneRef.current = { scene, camera, renderer, material, clock, mousePosition, targetMousePosition, cursorSphere3D }
@@ -459,5 +461,5 @@ export function MetaballBackground({ color }: MetaballBackgroundProps) {
     }
   }, [color])
 
-  return <div ref={containerRef} className="absolute inset-0" />
+  return <div ref={containerRef} className="fixed inset-0 pointer-events-none" />
 }
