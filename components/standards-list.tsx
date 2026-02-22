@@ -34,23 +34,23 @@ const STANDARDS_CATEGORIES: StandardCategory[] = [
 
 export default function StandardsList() {
   return (
-    <div className="w-full flex flex-col md:flex-row gap-8">
-      {/* Left side - Images only */}
-      <div className="flex flex-col gap-6 md:w-1/3">
+    <div className="w-full flex flex-col md:flex-row gap-12 items-start">
+      {/* Left side - Images only - Larger */}
+      <div className="flex flex-col gap-8 md:w-5/12 flex-shrink-0">
         <img
           src="/images/gestion-ambiental.png"
           alt="Gestión ambiental"
-          className="w-full h-80 object-cover rounded-2xl shadow-xl"
+          className="w-full h-96 object-cover rounded-2xl shadow-xl"
         />
         <img
           src="/images/administracion-contabilidad.png"
           alt="Administración y Contabilidad"
-          className="w-full h-80 object-cover rounded-2xl shadow-xl"
+          className="w-full h-96 object-cover rounded-2xl shadow-xl"
         />
       </div>
 
-      {/* Right side - All categories */}
-      <div className="flex-1 space-y-8">
+      {/* Right side - All categories aligned to the right */}
+      <div className="flex-1 space-y-8 ml-auto">
         {STANDARDS_CATEGORIES.map((category, index) => (
           <div key={index} className="space-y-3">
             {/* Category Title with white background */}
