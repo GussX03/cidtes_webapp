@@ -130,12 +130,12 @@ const servicesData: Record<string, ServiceCard[]> = {
   ],
   seguridad: [
     {
-      title: "NOM-001-STPS-2010",
-      image: "/images/subestacion-electrica-2.png",
+      title: "NOM-002-STPS-2010",
+      image: "/images/nom-002-stps.png",
     },
     {
-      title: "NOM-002-STPS-1999",
-      image: "/images/inspeccion-obra.png",
+      title: "NOM-004-STPS-1999",
+      image: "/images/nom-004-stps.png",
     },
     {
       title: "NOM-005-STPS-1998",
@@ -150,47 +150,55 @@ const servicesData: Record<string, ServiceCard[]> = {
       image: "/images/trabajo-alturas.png",
     },
     {
+      title: "NOM-009-STPS-2011",
+      image: "/images/trabajo-alturas-2.png",
+    },
+    {
       title: "NOM-017-STPS-2008",
       image: "/images/capacitacion-seguridad.png",
     },
     {
-      title: "NOM-018-STPS-2015",
+      title: "NOM-018-STPS-2018",
       image: "/images/quimicos-peligrosos.png",
     },
     {
-      title: "NOM-019-STPS-2018",
-      image: "/images/inspeccion-seguridad.png",
+      title: "NOM-018-STPS-2018",
+      image: "/images/biohazard.png",
     },
     {
       title: "NOM-027-STPS-2008",
       image: "/images/soldadura.png",
     },
     {
-      title: "NOM-020-STPS-2009",
-      image: "/images/inspeccion-obra.png",
+      title: "NOM-029-STPS-2011",
+      image: "/images/nom-029-stps.png",
+    },
+    {
+      title: "NOM-030-STPS-2009",
+      image: "/images/nom-030-stps.png",
     },
     {
       title: "NOM-035-STPS-2018",
-      image: "/images/capacitacion-seguridad.png",
+      image: "/images/nom-035-stps.png",
     },
     {
       title: "NOM-036-1-STPS-2018",
       image: "/images/inspeccion-seguridad.png",
     },
     {
-      title: "Formación De Brigadas De Protección Civil",
+      title: "Formación De Brigadas En Protección Civil",
       image: "/images/capacitacion-seguridad.png",
     },
     {
       title: "Primeros Auxilios",
-      image: "/images/capacitacion-seguridad.png",
+      image: "/images/primeros-auxilios.png",
     },
     {
-      title: "Protocolo De Seguridad: Electricistas",
-      image: "/images/electricistas.png",
+      title: "Protocolo De Seguridad: Derrames",
+      image: "/images/protocolo-derrames.png",
     },
     {
-      title: "Manejo Residuos Biológico-Infecciosos",
+      title: "Manejo Residual: Biológico-Infecciosos",
       image: "/images/biohazard.png",
     },
     {
@@ -199,19 +207,7 @@ const servicesData: Record<string, ServiceCard[]> = {
     },
     {
       title: "NOM-025-STPS-2008",
-      image: "/images/inspeccion-obra.png",
-    },
-    {
-      title: "NOM-026-STPS-2008",
-      image: "/images/inspeccion-seguridad.png",
-    },
-    {
-      title: "NOM De Residuos Peligrosos",
-      image: "/images/residuos-quimicos.png",
-    },
-    {
-      title: "Manejo De Residuos Peligrosos",
-      image: "/images/residuos-quimicos.png",
+      image: "/images/nom-025-stps.png",
     },
   ],
   "desarrollo-personal": [],
