@@ -88,12 +88,13 @@ export function MetaballBackground({ color }: MetaballBackgroundProps) {
 
     const canvas = renderer.domElement
     canvas.style.cssText = `
-      position: absolute !important;
+      position: fixed !important;
       top: 0 !important;
       left: 0 !important;
-      width: 100% !important;
-      height: 100% !important;
+      width: 100vw !important;
+      height: 100vh !important;
       z-index: 0 !important;
+      pointer-events: none !important;
     `
     container.appendChild(canvas)
 
@@ -460,5 +461,5 @@ export function MetaballBackground({ color }: MetaballBackgroundProps) {
     }
   }, [color])
 
-  return <div ref={containerRef} className="absolute inset-0" />
+  return <div ref={containerRef} className="fixed inset-0 pointer-events-none" />
 }
