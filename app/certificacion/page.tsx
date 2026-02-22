@@ -130,15 +130,15 @@ export default function CertificacionPage() {
           </div>
         </section>
 
-        <section className="relative w-full bg-white px-8 lg:px-16 py-16 overflow-hidden">
-          {(activeSection === 2 || activeSection === 3) && (
+        {(activeSection === 2 || activeSection === 3) && (
+          <section className="relative w-full bg-[#0f0f0f] px-8 lg:px-16 py-16 overflow-hidden">
             <MetaballBackground color={currentColor} />
-          )}
-          <div className="max-w-6xl mx-auto relative z-10">
-            {activeSection === 2 && <CertificationExtendedContent />}
-            {activeSection === 3 && <StandardsList />}
-          </div>
-        </section>
+            <div className="max-w-6xl mx-auto relative z-10">
+              {activeSection === 2 && <CertificationExtendedContent />}
+              {activeSection === 3 && <StandardsList />}
+            </div>
+          </section>
+        )}
       </main>
 
       {/* Footer Section */}
