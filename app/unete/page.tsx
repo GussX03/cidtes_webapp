@@ -125,7 +125,7 @@ export default function UnetePage() {
       </header>
 
       <main
-        className="flex-1 pt-24 pb-40 relative"
+        className="flex-1 pt-24 pb-8 relative"
         style={{
           backgroundImage: "url('/images/wave-background.png')",
           backgroundSize: "cover",
@@ -194,56 +194,56 @@ export default function UnetePage() {
             </div>
           )}
         </div>
-      </main>
 
-      {/* Floating Bottom Navigation Bar */}
-      <div className="fixed left-0 right-0 z-50 px-2" style={{ bottom: "10px" }}>
-        <div className="max-w-[1400px] mx-auto">
-          <div
-            className="rounded-2xl shadow-2xl p-4 md:p-5"
-            style={{
-              background: "linear-gradient(90deg, #0293D8 0%, #075EAB 100%)",
-            }}
-          >
-            <div className="flex flex-wrap gap-3 md:gap-4 justify-center items-center">
-              {categories.map((category) => (
-                <button
-                  key={category.id}
-                  onClick={() => setActiveCategory(category.id)}
-                  className={`flex items-center gap-2 md:gap-3 px-4 md:px-6 py-3 md:py-4 rounded-xl transition-all duration-300 ${
-                    activeCategory === category.id
-                      ? "bg-white text-[#075EAB] shadow-md scale-105"
-                      : "bg-transparent text-white hover:bg-white/20"
-                  }`}
-                >
-                  <div className="relative w-6 h-6 md:w-8 md:h-8 flex-shrink-0">
-                    <Image
-                      src={category.icon}
-                      alt={category.name}
-                      fill
-                      className="object-contain transition-all duration-300"
-                      style={
-                        activeCategory === category.id
-                          ? {
-                              filter:
-                                "invert(27%) sepia(82%) saturate(2270%) hue-rotate(195deg) brightness(91%) contrast(95%)",
-                            }
-                          : {}
-                      }
-                    />
-                  </div>
-                  <span className="font-semibold text-xs md:text-sm whitespace-nowrap">
-                    {category.name}
-                  </span>
-                </button>
-              ))}
+        {/* Floating Bottom Navigation Bar */}
+        <div className="sticky bottom-4 left-0 right-0 z-50 px-2 mt-12">
+          <div className="max-w-[1400px] mx-auto">
+            <div
+              className="rounded-2xl shadow-2xl p-4 md:p-5"
+              style={{
+                background: "linear-gradient(90deg, #0293D8 0%, #075EAB 100%)",
+              }}
+            >
+              <div className="flex flex-wrap gap-3 md:gap-4 justify-center items-center">
+                {categories.map((category) => (
+                  <button
+                    key={category.id}
+                    onClick={() => setActiveCategory(category.id)}
+                    className={`flex items-center gap-2 md:gap-3 px-4 md:px-6 py-3 md:py-4 rounded-xl transition-all duration-300 ${
+                      activeCategory === category.id
+                        ? "bg-white text-[#075EAB] shadow-md scale-105"
+                        : "bg-transparent text-white hover:bg-white/20"
+                    }`}
+                  >
+                    <div className="relative w-6 h-6 md:w-8 md:h-8 flex-shrink-0">
+                      <Image
+                        src={category.icon}
+                        alt={category.name}
+                        fill
+                        className="object-contain transition-all duration-300"
+                        style={
+                          activeCategory === category.id
+                            ? {
+                                filter:
+                                  "invert(27%) sepia(82%) saturate(2270%) hue-rotate(195deg) brightness(91%) contrast(95%)",
+                              }
+                            : {}
+                        }
+                      />
+                    </div>
+                    <span className="font-semibold text-xs md:text-sm whitespace-nowrap">
+                      {category.name}
+                    </span>
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </main>
 
       {/* Footer Section */}
-      <footer className="relative z-10 bg-gray-100 shadow-[0_-5px_6px_rgba(0,0,0,0.05)] font-sans pt-20">
+      <footer className="relative z-10 bg-gray-100 shadow-[0_-5px_6px_rgba(0,0,0,0.05)] font-sans">
         <div className="w-full px-8 py-12">
           {/* Main Footer Content */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16 mb-8">
