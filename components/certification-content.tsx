@@ -334,7 +334,7 @@ export default function CertificationContent({ activeSection }: CertificationCon
             {/* S.Salud en el */}
             <div className="space-y-3">
               <h3 className="text-2xl font-bold bg-white px-4 py-2 rounded-lg shadow-sm inline-block" style={{ color: "#13D4CB" }}>
-                S.Salud en el
+                S.Salud en el Trabajo
               </h3>
               <div className="flex flex-wrap gap-2">
                 {["EC0391.01", "EC0493", "EC0397.01", "EC0680"].map((code) => (
