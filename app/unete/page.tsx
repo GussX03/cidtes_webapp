@@ -52,7 +52,7 @@ const servicesData: Record<string, ServiceCard[]> = {
 }
 
 export default function UnetePage() {
-  const [activeCategory, setActiveCategory] = useState<string>("seguridad")
+  const [activeCategory, setActiveCategory] = useState<string>("energia")
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -182,33 +182,44 @@ export default function UnetePage() {
       </main>
 
       {/* Floating Bottom Navigation Bar */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 pb-4 px-4">
+      <div className="fixed bottom-0 left-0 right-0 z-40 pb-4 px-4">
         <div className="max-w-7xl mx-auto">
           <div
-            className="rounded-2xl shadow-2xl p-4 overflow-x-auto"
+            className="rounded-2xl shadow-2xl p-3 md:p-4"
             style={{
               background: "linear-gradient(90deg, #0293D8 0%, #075EAB 100%)",
             }}
           >
-            <div className="flex gap-2 justify-center items-center min-w-max">
+            <div className="flex flex-wrap gap-2 justify-center items-center">
               {categories.map((category) => (
                 <button
                   key={category.id}
                   onClick={() => setActiveCategory(category.id)}
-                  className={`flex items-center gap-3 px-6 py-3 rounded-xl transition-all duration-300 whitespace-nowrap ${
+                  className={`flex items-center gap-2 md:gap-3 px-3 md:px-6 py-2 md:py-3 rounded-xl transition-all duration-300 ${
                     activeCategory === category.id
                       ? "bg-white text-[#075EAB] shadow-md scale-105"
                       : "bg-transparent text-white hover:bg-white/20"
                   }`}
                 >
-                  <Image
-                    src={category.icon}
-                    alt={category.name}
-                    width={32}
-                    height={32}
-                    className="flex-shrink-0"
-                  />
-                  <span className="font-semibold text-sm">{category.name}</span>
+                  <div className="relative w-6 h-6 md:w-8 md:h-8 flex-shrink-0">
+                    <Image
+                      src={category.icon}
+                      alt={category.name}
+                      fill
+                      className="object-contain transition-all duration-300"
+                      style={
+                        activeCategory === category.id
+                          ? {
+                              filter:
+                                "invert(27%) sepia(82%) saturate(2270%) hue-rotate(195deg) brightness(91%) contrast(95%)",
+                            }
+                          : {}
+                      }
+                    />
+                  </div>
+                  <span className="font-semibold text-xs md:text-sm whitespace-nowrap">
+                    {category.name}
+                  </span>
                 </button>
               ))}
             </div>
@@ -217,7 +228,7 @@ export default function UnetePage() {
       </div>
 
       {/* Footer Section */}
-      <footer className="relative z-20 bg-gray-100 shadow-[0_-5px_6px_rgba(0,0,0,0.05)] font-sans">
+      <footer className="relative z-30 bg-gray-100 shadow-[0_-5px_6px_rgba(0,0,0,0.05)] font-sans">
         <div className="w-full px-8 py-12">
           {/* Main Footer Content */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16 mb-8">
