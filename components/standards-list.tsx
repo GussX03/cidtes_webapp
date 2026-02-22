@@ -9,21 +9,6 @@ interface StandardCategory {
 
 const STANDARDS_CATEGORIES: StandardCategory[] = [
   {
-    title: "Formativo",
-    color: "#5DCCCC",
-    codes: ["EC0076", "EC0217.01", "EC0301", "EC0366"],
-  },
-  {
-    title: "Valuación",
-    color: "#5DCCCC",
-    codes: ["EC0664", "EC0865", "EC1182", "EC1306"],
-  },
-  {
-    title: "Energía",
-    color: "#5DCCCC",
-    codes: ["EC0412", "EC0413", "EC0416", "EC0431", "EC0414"],
-  },
-  {
     title: "S.Salud en el",
     color: "#5DCCCC",
     codes: ["EC0330101", "EC0493", "EC0309701", "EC0680"],
@@ -44,6 +29,7 @@ const STANDARDS_CATEGORIES: StandardCategory[] = [
     title: "Manufactura",
     color: "#5DCCCC",
     codes: ["EC0467"],
+    image: "/images/administracion-contabilidad.png",
   },
   {
     title: "Sustancias químicas",
@@ -54,38 +40,43 @@ const STANDARDS_CATEGORIES: StandardCategory[] = [
 
 export default function StandardsList() {
   return (
-    <div className="w-full space-y-8">
+    <div className="w-full space-y-10">
       {STANDARDS_CATEGORIES.map((category, index) => (
         <div key={index} className="space-y-4">
-          {/* Category Title */}
-          <h3
-            className="text-2xl md:text-3xl font-bold"
-            style={{ color: category.color }}
-          >
-            {category.title}
-          </h3>
+          <div className={`flex ${category.image ? 'flex-col md:flex-row gap-6 items-start' : 'flex-col'}`}>
+            {/* Image on the left if exists */}
+            {category.image && (
+              <div className="flex-shrink-0">
+                <img
+                  src={category.image}
+                  alt={category.title}
+                  className="w-full md:w-72 h-56 object-cover rounded-2xl shadow-xl"
+                />
+              </div>
+            )}
 
-          {/* Category Image if exists */}
-          {category.image && (
-            <div className="mb-4">
-              <img
-                src={category.image}
-                alt={category.title}
-                className="w-64 h-48 object-cover rounded-xl shadow-lg"
-              />
-            </div>
-          )}
-
-          {/* Standards Pills */}
-          <div className="flex flex-wrap gap-3">
-            {category.codes.map((code, codeIndex) => (
-              <button
-                key={codeIndex}
-                className="px-5 py-2.5 bg-white border-2 border-gray-300 rounded-full text-gray-700 font-medium text-sm hover:border-cyan-500 hover:bg-cyan-50 hover:text-cyan-700 transition-all duration-200 shadow-sm hover:shadow-md"
+            {/* Content on the right */}
+            <div className="flex-1 space-y-4">
+              {/* Category Title */}
+              <h3
+                className="text-3xl md:text-4xl font-bold"
+                style={{ color: category.color }}
               >
-                {code}
-              </button>
-            ))}
+                {category.title}
+              </h3>
+
+              {/* Standards Pills */}
+              <div className="flex flex-wrap gap-3">
+                {category.codes.map((code, codeIndex) => (
+                  <button
+                    key={codeIndex}
+                    className="px-5 py-2.5 bg-white border-2 border-gray-300 rounded-full text-gray-700 font-medium text-sm hover:border-cyan-500 hover:bg-cyan-50 hover:text-cyan-700 transition-all duration-200 shadow-sm hover:shadow-md"
+                  >
+                    {code}
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       ))}
