@@ -182,20 +182,20 @@ export default function UnetePage() {
       </main>
 
       {/* Floating Bottom Navigation Bar */}
-      <div className="fixed bottom-0 left-0 right-0 z-40 pb-4 px-4">
-        <div className="max-w-7xl mx-auto">
+      <div className="fixed bottom-0 left-0 right-0 z-40 pb-4 px-2">
+        <div className="max-w-[1400px] mx-auto">
           <div
-            className="rounded-2xl shadow-2xl p-3 md:p-4"
+            className="rounded-2xl shadow-2xl p-4 md:p-5"
             style={{
               background: "linear-gradient(90deg, #0293D8 0%, #075EAB 100%)",
             }}
           >
-            <div className="flex flex-wrap gap-2 justify-center items-center">
+            <div className="flex flex-wrap gap-3 md:gap-4 justify-center items-center">
               {categories.map((category) => (
                 <button
                   key={category.id}
                   onClick={() => setActiveCategory(category.id)}
-                  className={`flex items-center gap-2 md:gap-3 px-3 md:px-6 py-2 md:py-3 rounded-xl transition-all duration-300 ${
+                  className={`flex items-center gap-2 md:gap-3 px-4 md:px-6 py-3 md:py-4 rounded-xl transition-all duration-300 ${
                     activeCategory === category.id
                       ? "bg-white text-[#075EAB] shadow-md scale-105"
                       : "bg-transparent text-white hover:bg-white/20"
