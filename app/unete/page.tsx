@@ -257,15 +257,15 @@ const servicesData: Record<string, ServiceCard[]> = {
     },
     {
       title: "NOM-029-STPS-2011",
-      image: "/images/nom-029-stps.png",
+      image: "/images/electricistas.png",
     },
     {
       title: "NOM-030-STPS-2009",
-      image: "/images/nom-030-stps.png",
+      image: "/images/inspeccion-obra.png",
     },
     {
       title: "NOM-035-STPS-2018",
-      image: "/images/nom-035-stps.png",
+      image: "/images/desarrollo-social.png",
     },
     {
       title: "NOM-036-1-STPS-2018",
@@ -293,11 +293,11 @@ const servicesData: Record<string, ServiceCard[]> = {
     },
     {
       title: "NOM-025-STPS-2008",
-      image: "/images/nom-025-stps.png",
+      image: "/images/subestacion-electrica-2.png",
     },
     {
       title: "NOM-026-STPS-2008",
-      image: "/images/nom-026-stps.png",
+      image: "/images/capacitacion-seguridad.png",
     },
     {
       title: "Manejo De Residuos Peligrosos",
