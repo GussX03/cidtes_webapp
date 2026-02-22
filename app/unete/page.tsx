@@ -297,10 +297,6 @@ const servicesData: Record<string, ServiceCard[]> = {
       image: "/images/nom-025-stps.png",
     },
   ],
-  "desarrollo-personal": [],
-  "desarrollo-org": [],
-  formativo: [],
-  valuacion: [],
 }
 
 export default function UnetePage() {
