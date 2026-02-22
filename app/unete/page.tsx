@@ -43,6 +43,38 @@ const servicesData: Record<string, ServiceCard[]> = {
       title: "Código De Red",
       image: "/images/codigo-red.png",
     },
+    {
+      title: "Compraventa De Energía En Mercados Eléctricos",
+      image: "/images/compraventa-energia.png",
+    },
+    {
+      title: "Control De La Demanda Eléctrica",
+      image: "/images/control-demanda.png",
+    },
+    {
+      title: "Cortocircuito Y Coordinación De Protecciones",
+      image: "/images/cortocircuito-protecciones.png",
+    },
+    {
+      title: "Edificación Sustentable",
+      image: "/images/edificacion-sustentable.png",
+    },
+    {
+      title: "Eficiencia En Aire Acondicionado Y Refrigeración",
+      image: "/images/eficiencia-aire.png",
+    },
+    {
+      title: "Evaluación De Proyectos De Energía",
+      image: "/images/evaluacion-proyectos.png",
+    },
+    {
+      title: "Factor De Potencia Y Demanda",
+      image: "/images/factor-potencia.png",
+    },
+    {
+      title: "Generación Con Sistemas Fotovoltaicos",
+      image: "/images/sistemas-fotovoltaicos.png",
+    },
   ],
   seguridad: [],
   "desarrollo-personal": [],
@@ -177,7 +209,12 @@ export default function UnetePage() {
                   <h3 className="text-xl font-bold text-[#075EAB] mb-4">
                     {service.title}
                   </h3>
-                  <button className="w-full bg-[#0293D8] hover:bg-[#075EAB] text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300">
+                  <button
+                    className="w-full text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-lg"
+                    style={{
+                      background: "linear-gradient(90deg, #0296DA 0%, #065BA9 100%)",
+                    }}
+                  >
                     Información
                   </button>
                 </div>
