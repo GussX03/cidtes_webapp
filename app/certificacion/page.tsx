@@ -8,7 +8,6 @@ import CertificationWheel from "@/components/certification-wheel"
 import CertificationContent from "@/components/certification-content"
 import CertificationExtendedContent from "@/components/certification-extended-content"
 import StandardsList from "@/components/standards-list"
-import { MetaballBackgroundSubtle } from "@/components/metaball-background-subtle"
 
 type SectionKey = 0 | 1 | 2 | 3
 
@@ -133,7 +132,7 @@ export default function CertificacionPage() {
 
         <section className="relative w-full bg-white px-8 lg:px-16 py-16 overflow-hidden">
           {(activeSection === 2 || activeSection === 3) && (
-            <MetaballBackgroundSubtle color={currentColor} />
+            <MetaballBackground color={currentColor} />
           )}
           <div className="max-w-6xl mx-auto relative z-10">
             {activeSection === 2 && <CertificationExtendedContent />}
