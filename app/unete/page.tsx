@@ -22,7 +22,6 @@ const categories: Category[] = [
   { id: "desarrollo-personal", name: "Desarrollo Personal", icon: "/icons/energia-icon.png" },
   { id: "desarrollo-org", name: "Desarrollo Organizacional", icon: "/icons/valuacion-icon.png" },
   { id: "formativo", name: "Formativo", icon: "/icons/desarrollo-personal-icon.png" },
-  { id: "valuacion", name: "Valuación", icon: "/icons/seguridad-icon.png" },
 ]
 
 const servicesData: Record<string, ServiceCard[]> = {
@@ -128,6 +127,93 @@ const servicesData: Record<string, ServiceCard[]> = {
       image: "/images/normativa-regulacion.png",
     },
   ],
+  formativo: [
+    {
+      title: "Formación De Instructores En Cursos Presenciales",
+      image: "/images/formacion-instructores.png",
+    },
+    {
+      title: "Diseño de cursos y materiales didácticos",
+      image: "/images/diseno-cursos-materiales.png",
+    },
+    {
+      title: "Formación De Evaluadores De Competencias",
+      image: "/images/formacion-evaluadores.png",
+    },
+    {
+      title: "Diseño De Cursos En Línea",
+      image: "/images/diseno-cursos-linea.png",
+    },
+    {
+      title: "Valuación De Alhajas, Relojes Y Joyas",
+      image: "/images/valuacion-alhajas.png",
+    },
+    {
+      title: "Valuación de vehículos sin resguardo",
+      image: "/images/valuacion-vehiculos.png",
+    },
+    {
+      title: "Valuación De Artículos Varios",
+      image: "/images/valuacion-articulos.png",
+    },
+  ],
+  "desarrollo-personal": [
+    {
+      title: "Autoestima",
+      image: "/images/autoestima.png",
+    },
+    {
+      title: "Asertividad",
+      image: "/images/asertividad.png",
+    },
+    {
+      title: "Comunicación Efectiva",
+      image: "/images/comunicacion-efectiva.png",
+    },
+    {
+      title: "Desarrollo Del Pensamiento Lógico",
+      image: "/images/pensamiento-logico.png",
+    },
+    {
+      title: "Programación Neurolingüística",
+      image: "/images/programacion-neurolinguistica.png",
+    },
+    {
+      title: "Relaciones Humanas",
+      image: "/images/relaciones-humanas.png",
+    },
+    {
+      title: "Administración Del Tiempo",
+      image: "/images/administracion-tiempo.png",
+    },
+  ],
+  "desarrollo-org": [
+    {
+      title: "Liderazgo",
+      image: "/images/liderazgo.png",
+    },
+    {
+      title: "Equipos de trabajo de alto rendimiento",
+      image: "/images/equipos-alto-rendimiento.png",
+    },
+    {
+      title: "Atención Al Cliente",
+      image: "/images/atencion-cliente.png",
+    },
+    {
+      title: "Evaluación Económica De Proyectos",
+      image: "/images/evaluacion-economica.png",
+    },
+    {
+      title: "Análisis E Interpretación De Estados Financieros",
+      image: "/images/estados-financieros.png",
+    },
+    {
+      title: "Manejo De Conflictos",
+      image: "/images/manejo-conflictos.png",
+    },
+  ],
+  valuacion: [],
   seguridad: [
     {
       title: "NOM-002-STPS-2010",
@@ -203,16 +289,21 @@ const servicesData: Record<string, ServiceCard[]> = {
     },
     {
       title: "NOM-022-STPS-2015",
-      image: "/images/electricistas.png",
+      image: "/images/nom-022-stps.png",
     },
     {
       title: "NOM-025-STPS-2008",
       image: "/images/nom-025-stps.png",
     },
+    {
+      title: "NOM-026-STPS-2008",
+      image: "/images/nom-026-stps.png",
+    },
+    {
+      title: "Manejo De Residuos Peligrosos",
+      image: "/images/manejo-residuos-peligrosos.png",
+    },
   ],
-  "desarrollo-personal": [],
-  "desarrollo-org": [],
-  formativo: [],
   valuacion: [],
 }
 
@@ -451,7 +542,7 @@ export default function UnetePage() {
                     href="tel:+525568125783"
                     className="text-gray-800 hover:text-[#1D63ED] transition-colors duration-300"
                   >
-                    +52 55 6812-5783
+                    +52 55 6812 5783
                   </a>
                 </div>
               </div>
