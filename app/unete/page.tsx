@@ -107,8 +107,113 @@ const servicesData: Record<string, ServiceCard[]> = {
       title: "Gestión Energética Bajo La ISO 50001",
       image: "/images/gestion-iso-50001.png",
     },
+    {
+      title: "NOM 001-SEDE 2018 Y Puesta A Tierra",
+      image: "/images/nom-001-sede.png",
+    },
+    {
+      title: "Subestaciones Eléctricas Y Puesta Tierra",
+      image: "/images/subestaciones-electricas.png",
+    },
+    {
+      title: "Diseño De Indicadores Energéticos",
+      image: "/images/indicadores-energeticos.png",
+    },
+    {
+      title: "Tecnologías De Acondicionamiento Ambiental",
+      image: "/images/tecnologias-acondicionamiento.png",
+    },
+    {
+      title: "Normativa Y Regulación Energética",
+      image: "/images/normativa-regulacion.png",
+    },
   ],
-  seguridad: [],
+  seguridad: [
+    {
+      title: "NOM-001-STPS-2010",
+      image: "/images/subestacion-electrica-2.png",
+    },
+    {
+      title: "NOM-002-STPS-1999",
+      image: "/images/inspeccion-obra.png",
+    },
+    {
+      title: "NOM-005-STPS-1998",
+      image: "/images/residuos-quimicos.png",
+    },
+    {
+      title: "NOM-006-STPS-2014",
+      image: "/images/maquinaria-equipos.png",
+    },
+    {
+      title: "NOM-009-STPS-2011",
+      image: "/images/trabajo-alturas.png",
+    },
+    {
+      title: "NOM-017-STPS-2008",
+      image: "/images/capacitacion-seguridad.png",
+    },
+    {
+      title: "NOM-018-STPS-2015",
+      image: "/images/quimicos-peligrosos.png",
+    },
+    {
+      title: "NOM-019-STPS-2018",
+      image: "/images/inspeccion-seguridad.png",
+    },
+    {
+      title: "NOM-027-STPS-2008",
+      image: "/images/soldadura.png",
+    },
+    {
+      title: "NOM-020-STPS-2009",
+      image: "/images/inspeccion-obra.png",
+    },
+    {
+      title: "NOM-035-STPS-2018",
+      image: "/images/capacitacion-seguridad.png",
+    },
+    {
+      title: "NOM-036-1-STPS-2018",
+      image: "/images/inspeccion-seguridad.png",
+    },
+    {
+      title: "Formación De Brigadas De Protección Civil",
+      image: "/images/capacitacion-seguridad.png",
+    },
+    {
+      title: "Primeros Auxilios",
+      image: "/images/capacitacion-seguridad.png",
+    },
+    {
+      title: "Protocolo De Seguridad: Electricistas",
+      image: "/images/electricistas.png",
+    },
+    {
+      title: "Manejo Residuos Biológico-Infecciosos",
+      image: "/images/biohazard.png",
+    },
+    {
+      title: "NOM-022-STPS-2015",
+      image: "/images/electricistas.png",
+    },
+    {
+      title: "NOM-025-STPS-2008",
+      image: "/images/inspeccion-obra.png",
+    },
+    {
+      title: "NOM-026-STPS-2008",
+      image: "/images/inspeccion-seguridad.png",
+    },
+    {
+      title: "NOM De Residuos Peligrosos",
+      image: "/images/residuos-quimicos.png",
+    },
+    {
+      title: "Manejo De Residuos Peligrosos",
+      image: "/images/residuos-quimicos.png",
+    },
+  ],
   "desarrollo-personal": [],
   "desarrollo-org": [],
   formativo: [],
