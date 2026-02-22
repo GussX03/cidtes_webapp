@@ -74,11 +74,10 @@ export default function UnetePage() {
                   <button
                     key={category.id}
                     onClick={() => setActiveCategory(category.id)}
-                    className={`flex items-center gap-3 px-6 py-3 rounded-xl transition-all duration-300 whitespace-nowrap ${
-                      activeCategory === category.id
+                    className={`flex items-center gap-3 px-6 py-3 rounded-xl transition-all duration-300 whitespace-nowrap ${activeCategory === category.id
                         ? "bg-white text-[#075EAB] shadow-md"
                         : "bg-transparent text-white hover:bg-white/20"
-                    }`}
+                      }`}
                   >
                     <Image
                       src={category.icon}
