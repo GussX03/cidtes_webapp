@@ -111,12 +111,12 @@ export default function CertificacionPage() {
 
       {/* Main Content */}
       <main className="pt-20">
-        {/* Interactive Metaball Section */}
-        <section className="relative w-full min-h-screen overflow-hidden bg-[#0f0f0f]">
+        {/* Interactive Metaball Section - Unified */}
+        <section className="relative w-full overflow-hidden bg-[#0f0f0f]">
           <MetaballBackground color={currentColor} />
 
-          {/* Content Overlay */}
-          <div className="absolute inset-0 z-10 flex items-center justify-between px-8 lg:px-16 py-12">
+          {/* Main Content - Circle and Initial Content */}
+          <div className="relative z-10 min-h-screen flex items-center justify-between px-8 lg:px-16 py-12">
             {/* Left Side - Certification Wheel */}
             <div className="flex flex-col items-center justify-end gap-4 w-2/5">
               <CertificationWheel onSectionChange={handleSectionChange} currentColor={currentColor} />
@@ -128,17 +128,17 @@ export default function CertificacionPage() {
               <CertificationContent activeSection={activeSection} />
             </div>
           </div>
-        </section>
 
-        {(activeSection === 2 || activeSection === 3) && (
-          <section className="relative w-full bg-[#0f0f0f] px-8 lg:px-16 py-16 overflow-hidden">
-            <MetaballBackground color={currentColor} />
-            <div className="max-w-6xl mx-auto relative z-10">
-              {activeSection === 2 && <CertificationExtendedContent />}
-              {activeSection === 3 && <StandardsList />}
+          {/* Extended Content - Same Background Continues */}
+          {(activeSection === 2 || activeSection === 3) && (
+            <div className="relative z-10 px-8 lg:px-16 pb-16">
+              <div className="max-w-6xl mx-auto">
+                {activeSection === 2 && <CertificationExtendedContent />}
+                {activeSection === 3 && <StandardsList />}
+              </div>
             </div>
-          </section>
-        )}
+          )}
+        </section>
       </main>
 
       {/* Footer Section */}
