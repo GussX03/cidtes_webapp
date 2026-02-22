@@ -81,8 +81,8 @@ export function MetaballBackground({ color }: MetaballBackgroundProps) {
     })
 
     renderer.setPixelRatio(devicePixelRatio)
-    const viewportWidth = container.clientWidth || window.innerWidth
-    const viewportHeight = container.clientHeight || window.innerHeight
+    const viewportWidth = window.innerWidth
+    const viewportHeight = window.innerHeight
     renderer.setSize(viewportWidth, viewportHeight)
     renderer.setClearColor(0xffffff, 1)
 
@@ -353,22 +353,16 @@ export function MetaballBackground({ color }: MetaballBackgroundProps) {
     const screenToWorldJS = (normalizedX: number, normalizedY: number) => {
       const uv_x = normalizedX * 2.0 - 1.0
       const uv_y = normalizedY * 2.0 - 1.0
-      const width = container.clientWidth || window.innerWidth
-      const height = container.clientHeight || window.innerHeight
-      const aspect = width / height
+      const aspect = window.innerWidth / window.innerHeight
       return new THREE.Vector3(uv_x * aspect * 2.0, uv_y * 2.0, 0.0)
     }
 
     const handleMouseMove = (event: MouseEvent | Touch) => {
       const clientX = "clientX" in event ? event.clientX : event.clientX
       const clientY = "clientY" in event ? event.clientY : event.clientY
-      
-      const rect = container.getBoundingClientRect()
-      const relativeX = clientX - rect.left
-      const relativeY = clientY - rect.top
 
-      targetMousePosition.x = relativeX / rect.width
-      targetMousePosition.y = 1.0 - relativeY / rect.height
+      targetMousePosition.x = clientX / window.innerWidth
+      targetMousePosition.y = 1.0 - clientY / window.innerHeight
 
       const worldPos = screenToWorldJS(targetMousePosition.x, targetMousePosition.y)
       cursorSphere3D.copy(worldPos)
@@ -406,8 +400,8 @@ export function MetaballBackground({ color }: MetaballBackgroundProps) {
 
     // Resize handler
     const handleResize = () => {
-      const width = container.clientWidth || window.innerWidth
-      const height = container.clientHeight || window.innerHeight
+      const width = window.innerWidth
+      const height = window.innerHeight
       const currentPixelRatio = Math.min(devicePixelRatio, isMobile ? 1.5 : 2)
 
       renderer.setSize(width, height)
