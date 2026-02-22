@@ -142,7 +142,7 @@ export default function ConsultoriaPage() {
               </Link>
               <span className="text-gray-400 mx-2">|</span>
               <Link
-                href="#"
+                href="/unete"
                 className="relative text-gray-700 font-medium px-6 py-3 rounded-lg transition-all duration-500 hover:text-white group overflow-hidden transform hover:scale-105"
               >
                 <span className="relative z-10 transition-colors duration-500">Únete</span>
@@ -268,9 +268,8 @@ export default function ConsultoriaPage() {
                   <button
                     key={index}
                     onClick={() => setCurrentIndex(index)}
-                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                      currentIndex === index ? "w-6 bg-[#0891B2]" : "bg-gray-300 hover:bg-gray-400"
-                    }`}
+                    className={`w-2 h-2 rounded-full transition-all duration-300 ${currentIndex === index ? "w-6 bg-[#0891B2]" : "bg-gray-300 hover:bg-gray-400"
+                      }`}
                     aria-label={`Go to slide ${index + 1}`}
                   />
                 ))}
