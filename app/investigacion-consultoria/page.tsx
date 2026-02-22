@@ -752,6 +752,169 @@ export default function InvestigacionConsultoriaPage() {
         </div>
       </section>
 
+      {/* Categorías Section */}
+      <section className="py-16 bg-gradient-to-b from-white to-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
+            {/* Card 1 - Estudiantes */}
+            <div className="group relative h-[600px] rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105">
+              <Image
+                src="/images/estudiantes-bg.png"
+                alt="Estudiantes"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30 group-hover:from-black/90 group-hover:via-black/70 group-hover:to-black/50 transition-all duration-500"></div>
+              
+              {/* White border frame */}
+              <div className="absolute inset-6 border-4 border-white/80 rounded-xl pointer-events-none"></div>
+              
+              {/* Number */}
+              <div className="absolute top-12 left-12 text-white/90 text-8xl font-bold z-10">1</div>
+              
+              {/* Title - Always visible */}
+              <div className="absolute bottom-12 left-12 right-12 z-10">
+                <h3 className="text-4xl font-bold text-white mb-4">Estudiantes</h3>
+                
+                {/* Content - Visible on hover */}
+                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 max-h-0 group-hover:max-h-[400px] overflow-hidden">
+                  <ul className="space-y-3 text-white text-sm">
+                    <li className="flex items-start">
+                      <span className="mr-2">•</span>
+                      <span>Contacto de manera temprana con el entorno profesional</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="mr-2">•</span>
+                      <span>Desarrollo estudiantes maduros, reflexivos y críticos</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="mr-2">•</span>
+                      <span>Desarrollan la responsabilidad y el trabajo en equipo</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="mr-2">•</span>
+                      <span>Experiencia y competitividad profesional</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="mr-2">•</span>
+                      <span>Aprovechamiento y aplicación de herramientas tecnológicas y procedimientos que posee la empresa actoral</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 2 - Institución Educativa */}
+            <div className="group relative h-[600px] rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105">
+              <Image
+                src="/images/institucion-bg.png"
+                alt="Institución Educativa"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30 group-hover:from-black/90 group-hover:via-black/70 group-hover:to-black/50 transition-all duration-500"></div>
+              
+              {/* White border frame */}
+              <div className="absolute inset-6 border-4 border-white/80 rounded-xl pointer-events-none"></div>
+              
+              {/* Number */}
+              <div className="absolute top-12 left-12 text-white/90 text-8xl font-bold z-10">2</div>
+              
+              {/* Title - Always visible */}
+              <div className="absolute bottom-12 left-12 right-12 z-10">
+                <h3 className="text-4xl font-bold text-white mb-4">Institución Educativa</h3>
+                
+                {/* Content - Visible on hover */}
+                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 max-h-0 group-hover:max-h-[400px] overflow-hidden">
+                  <ul className="space-y-3 text-white text-sm">
+                    <li className="flex items-start">
+                      <span className="mr-2">•</span>
+                      <span>Pertinencia en los programas</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="mr-2">•</span>
+                      <span>Altas tasas de empleabilidad de egresados</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="mr-2">•</span>
+                      <span>Menor deserción</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="mr-2">•</span>
+                      <span>Estándares de eficiencia y competitividad en las empresas</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="mr-2">•</span>
+                      <span>Actualización de conocimientos de los docentes por la interacción directa con los formadores</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="mr-2">•</span>
+                      <span>Actualización en la línea curricular</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="mr-2">•</span>
+                      <span>Concepción humanista y tecnológica</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 3 - Organizaciones productivas */}
+            <div className="group relative h-[600px] rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105">
+              <Image
+                src="/images/organizaciones-bg.png"
+                alt="Organizaciones productivas"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30 group-hover:from-black/90 group-hover:via-black/70 group-hover:to-black/50 transition-all duration-500"></div>
+              
+              {/* White border frame */}
+              <div className="absolute inset-6 border-4 border-white/80 rounded-xl pointer-events-none"></div>
+              
+              {/* Number */}
+              <div className="absolute top-12 left-12 text-white/90 text-8xl font-bold z-10">3</div>
+              
+              {/* Title - Always visible */}
+              <div className="absolute bottom-12 left-12 right-12 z-10">
+                <h3 className="text-3xl font-bold text-white mb-4">Organizaciones productivas</h3>
+                
+                {/* Content - Visible on hover */}
+                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 max-h-0 group-hover:max-h-[400px] overflow-hidden">
+                  <ul className="space-y-3 text-white text-sm">
+                    <li className="flex items-start">
+                      <span className="mr-2">•</span>
+                      <span>Desarrollo de talento humano aumentando la productividad y calidad de los productos y procesos</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="mr-2">•</span>
+                      <span>Seleccionar perfiles profesionales, con capacidades, habilidades y competencias que les permitan cubrir sus necesidades</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="mr-2">•</span>
+                      <span>Aseguran en forma simultánea las competencias necesarias que requiere la organización Productiva</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="mr-2">•</span>
+                      <span>Contar con trabajadores motivados</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="mr-2">•</span>
+                      <span>Disminuir la rotación del personal</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="mr-2">•</span>
+                      <span>Ahorrar los costos de reclutamiento e inducción/ entrenamiento</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Footer Section */}
       <footer className="bg-gray-100 shadow-[0_-5px_6px_rgba(0,0,0,0.05)] font-sans">
         <div className="w-full px-8 py-12">
