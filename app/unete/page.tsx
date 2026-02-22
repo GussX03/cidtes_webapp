@@ -75,6 +75,38 @@ const servicesData: Record<string, ServiceCard[]> = {
       title: "Generación Con Sistemas Fotovoltaicos",
       image: "/images/sistemas-fotovoltaicos.png",
     },
+    {
+      title: "Variaciones De Voltaje",
+      image: "/images/variaciones-voltaje.png",
+    },
+    {
+      title: "Análisis Transitorio De Capacitores",
+      image: "/images/analisis-capacitores.png",
+    },
+    {
+      title: "Compensación De Potencia Reactiva",
+      image: "/images/compensacion-potencia.png",
+    },
+    {
+      title: "Corrección De Factor De Potencia",
+      image: "/images/correccion-factor-potencia.png",
+    },
+    {
+      title: "Puesta A Tierra En Redes Eléctricas",
+      image: "/images/puesta-tierra.png",
+    },
+    {
+      title: "Electricidad Básica",
+      image: "/images/electricidad-basica.png",
+    },
+    {
+      title: "Diagnósticos Energéticos",
+      image: "/images/diagnosticos-energeticos.png",
+    },
+    {
+      title: "Gestión Energética Bajo La ISO 50001",
+      image: "/images/gestion-iso-50001.png",
+    },
   ],
   seguridad: [],
   "desarrollo-personal": [],
