@@ -112,11 +112,11 @@ export default function CertificacionPage() {
       {/* Main Content */}
       <main className="pt-20">
         {/* Interactive Metaball Section - Unified */}
-        <section className="relative w-full overflow-hidden bg-[#0f0f0f]">
+        <section className="relative w-full overflow-hidden bg-[#0f0f0f] min-h-screen">
           <MetaballBackground color={currentColor} />
 
           {/* Main Content - Circle and Initial Content */}
-          <div className="relative z-10 min-h-screen flex items-center justify-between px-8 lg:px-16 py-12">
+          <div className="relative z-10 flex items-center justify-between px-8 lg:px-16 py-12" style={{ minHeight: '100vh' }}>
             {/* Left Side - Certification Wheel */}
             <div className="flex flex-col items-center justify-end gap-4 w-2/5">
               <CertificationWheel onSectionChange={handleSectionChange} currentColor={currentColor} />
@@ -131,7 +131,7 @@ export default function CertificacionPage() {
 
           {/* Extended Content - Same Background Continues */}
           {(activeSection === 2 || activeSection === 3) && (
-            <div className="relative z-10 px-8 lg:px-16 pb-16">
+            <div className="relative z-10 px-8 lg:px-16 pb-16 pt-0">
               <div className="max-w-6xl mx-auto">
                 {activeSection === 2 && <CertificationExtendedContent />}
                 {activeSection === 3 && <StandardsList />}
@@ -142,7 +142,7 @@ export default function CertificacionPage() {
       </main>
 
       {/* Footer Section */}
-      <footer className="bg-gray-100 shadow-[0_-5px_6px_rgba(0,0,0,0.05)] font-sans">
+      <footer className="relative z-20 bg-gray-100 shadow-[0_-5px_6px_rgba(0,0,0,0.05)] font-sans">
         <div className="w-full px-8 py-12">
           {/* Main Footer Content */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16 mb-8">
