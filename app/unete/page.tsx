@@ -125,7 +125,7 @@ export default function UnetePage() {
       </header>
 
       <main
-        className="flex-1 pt-24 pb-20 relative"
+        className="flex-1 pt-24 pb-32 relative"
         style={{
           backgroundImage: "url('/images/wave-background.png')",
           backgroundSize: "cover",
@@ -133,39 +133,6 @@ export default function UnetePage() {
           backgroundRepeat: "no-repeat",
         }}
       >
-        {/* Floating Navigation Bar */}
-        <div className="sticky top-20 z-30 mb-12">
-          <div className="max-w-7xl mx-auto px-4">
-            <div
-              className="rounded-2xl shadow-lg p-4 overflow-x-auto"
-              style={{
-                background: "linear-gradient(90deg, #0293D8 0%, #075EAB 100%)",
-              }}
-            >
-              <div className="flex gap-2 min-w-max">
-                {categories.map((category) => (
-                  <button
-                    key={category.id}
-                    onClick={() => setActiveCategory(category.id)}
-                    className={`flex items-center gap-3 px-6 py-3 rounded-xl transition-all duration-300 whitespace-nowrap ${activeCategory === category.id
-                        ? "bg-white text-[#075EAB] shadow-md"
-                        : "bg-transparent text-white hover:bg-white/20"
-                      }`}
-                  >
-                    <Image
-                      src={category.icon}
-                      alt={category.name}
-                      width={32}
-                      height={32}
-                      className="flex-shrink-0"
-                    />
-                    <span className="font-semibold text-sm">{category.name}</span>
-                  </button>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
 
         {/* Content Section */}
         <div className="max-w-7xl mx-auto px-4">
@@ -179,9 +146,10 @@ export default function UnetePage() {
             {servicesData[activeCategory].map((service, index) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-row"
               >
-                <div className="relative h-56 w-full">
+                {/* Image on Left */}
+                <div className="relative w-1/3 min-w-[200px] flex-shrink-0">
                   <Image
                     src={service.image}
                     alt={service.title}
@@ -189,8 +157,9 @@ export default function UnetePage() {
                     className="object-cover"
                   />
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-[#075EAB] mb-3">
+                {/* Content on Right */}
+                <div className="p-6 flex flex-col justify-between flex-1">
+                  <h3 className="text-xl font-bold text-[#075EAB] mb-4">
                     {service.title}
                   </h3>
                   <button className="w-full bg-[#0293D8] hover:bg-[#075EAB] text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300">
@@ -211,6 +180,41 @@ export default function UnetePage() {
           )}
         </div>
       </main>
+
+      {/* Floating Bottom Navigation Bar */}
+      <div className="fixed bottom-0 left-0 right-0 z-50 pb-4 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div
+            className="rounded-2xl shadow-2xl p-4 overflow-x-auto"
+            style={{
+              background: "linear-gradient(90deg, #0293D8 0%, #075EAB 100%)",
+            }}
+          >
+            <div className="flex gap-2 justify-center items-center min-w-max">
+              {categories.map((category) => (
+                <button
+                  key={category.id}
+                  onClick={() => setActiveCategory(category.id)}
+                  className={`flex items-center gap-3 px-6 py-3 rounded-xl transition-all duration-300 whitespace-nowrap ${
+                    activeCategory === category.id
+                      ? "bg-white text-[#075EAB] shadow-md scale-105"
+                      : "bg-transparent text-white hover:bg-white/20"
+                  }`}
+                >
+                  <Image
+                    src={category.icon}
+                    alt={category.name}
+                    width={32}
+                    height={32}
+                    className="flex-shrink-0"
+                  />
+                  <span className="font-semibold text-sm">{category.name}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* Footer Section */}
       <footer className="relative z-20 bg-gray-100 shadow-[0_-5px_6px_rgba(0,0,0,0.05)] font-sans">
