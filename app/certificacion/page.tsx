@@ -7,7 +7,7 @@ import { MetaballBackground } from "@/components/metaball-background"
 import CertificationWheel from "@/components/certification-wheel"
 import CertificationContent from "@/components/certification-content"
 import CertificationExtendedContent from "@/components/certification-extended-content"
-import StandardsCarousel from "@/components/standards-carousel"
+import StandardsList from "@/components/standards-list"
 
 type SectionKey = 0 | 1 | 2 | 3
 
@@ -133,12 +133,7 @@ export default function CertificacionPage() {
         <section className="relative w-full bg-white px-8 lg:px-16 py-16">
           <div className="max-w-6xl mx-auto">
             {activeSection === 2 && <CertificationExtendedContent />}
-            {activeSection === 3 && (
-              <div className="space-y-8">
-                <h3 className="text-3xl font-bold text-gray-800 mb-6">Categorías de Estándares</h3>
-                <StandardsCarousel />
-              </div>
-            )}
+            {activeSection === 3 && <StandardsList />}
           </div>
         </section>
       </main>
