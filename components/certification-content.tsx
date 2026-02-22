@@ -279,8 +279,25 @@ export default function CertificationContent({ activeSection }: CertificationCon
         )}
 
         {activeSection === 3 && (
-          <div className="w-full space-y-12 lg:space-y-20">
-            <StandardsCarousel />
+          <div className="space-y-4">
+            <div
+              className="border-l-4 px-6 py-5 rounded-xl shadow-md"
+              style={{
+                borderColor: style.borderColor,
+                backgroundColor: "white",
+                borderLeftWidth: "6px",
+              }}
+            >
+              <p className="text-base text-gray-800 leading-relaxed">
+                <span className="font-bold" style={{ color: style.title }}>
+                  Estándares de Competencia
+                </span>{" "}
+                disponibles en nuestro Centro de Evaluación.{" "}
+                <span className="font-normal">
+                  Navega por las diferentes categorías y conoce más sobre cada estándar.
+                </span>
+              </p>
+            </div>
           </div>
         )}
       </div>
