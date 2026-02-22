@@ -22,7 +22,6 @@ const categories: Category[] = [
   { id: "desarrollo-personal", name: "Desarrollo Personal", icon: "/icons/energia-icon.png" },
   { id: "desarrollo-org", name: "Desarrollo Organizacional", icon: "/icons/valuacion-icon.png" },
   { id: "formativo", name: "Formativo", icon: "/icons/desarrollo-personal-icon.png" },
-  { id: "valuacion", name: "Valuación", icon: "/icons/seguridad-icon.png" },
 ]
 
 const servicesData: Record<string, ServiceCard[]> = {
@@ -296,7 +295,16 @@ const servicesData: Record<string, ServiceCard[]> = {
       title: "NOM-025-STPS-2008",
       image: "/images/nom-025-stps.png",
     },
+    {
+      title: "NOM-026-STPS-2008",
+      image: "/images/nom-026-stps.png",
+    },
+    {
+      title: "Manejo De Residuos Peligrosos",
+      image: "/images/manejo-residuos-peligrosos.png",
+    },
   ],
+  valuacion: [],
 }
 
 export default function UnetePage() {
