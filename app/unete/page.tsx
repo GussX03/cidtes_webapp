@@ -21,8 +21,8 @@ const categories: Category[] = [
   { id: "seguridad", name: "Seguridad y Salud en el Trabajo", icon: "/icons/formativo-icon.png" },
   { id: "desarrollo-personal", name: "Desarrollo Personal", icon: "/icons/energia-icon.png" },
   { id: "desarrollo-org", name: "Desarrollo Organizacional", icon: "/icons/valuacion-icon.png" },
-  { id: "formativo", name: "Formativo", icon: "/icons/energia-icon.png" },
-  { id: "valuacion", name: "Valuación", icon: "/icons/desarrollo-personal-icon.png" },
+  { id: "formativo", name: "Formativo", icon: "/icons/desarrollo-personal-icon.png" },
+  { id: "valuacion", name: "Valuación", icon: "/icons/seguridad-icon.png" },
 ]
 
 const servicesData: Record<string, ServiceCard[]> = {
