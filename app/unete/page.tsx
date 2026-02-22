@@ -17,12 +17,12 @@ type ServiceCard = {
 }
 
 const categories: Category[] = [
-  { id: "energia", name: "Energía", icon: "/icons/energia-icon.png" },
-  { id: "seguridad", name: "Seguridad y Salud en el Trabajo", icon: "/icons/seguridad-icon.png" },
-  { id: "desarrollo-personal", name: "Desarrollo Personal", icon: "/icons/desarrollo-personal-icon.png" },
+  { id: "energia", name: "Energía", icon: "/icons/desarrollo-organizacional-icon.png" },
+  { id: "seguridad", name: "Seguridad y Salud en el Trabajo", icon: "/icons/formativo-icon.png" },
+  { id: "desarrollo-personal", name: "Desarrollo Personal", icon: "/icons/valuacion-icon.png" },
   { id: "desarrollo-org", name: "Desarrollo Organizacional", icon: "/icons/desarrollo-organizacional-icon.png" },
-  { id: "formativo", name: "Formativo", icon: "/icons/formativo-icon.png" },
-  { id: "valuacion", name: "Valuación", icon: "/icons/valuacion-icon.png" },
+  { id: "formativo", name: "Formativo", icon: "/icons/energia-icon.png" },
+  { id: "valuacion", name: "Valuación", icon: "/icons/desarrollo-personal-icon.png" },
 ]
 
 const servicesData: Record<string, ServiceCard[]> = {
@@ -209,11 +209,10 @@ export default function UnetePage() {
                   <button
                     key={category.id}
                     onClick={() => setActiveCategory(category.id)}
-                    className={`flex items-center gap-2 md:gap-3 px-4 md:px-6 py-3 md:py-4 rounded-xl transition-all duration-300 ${
-                      activeCategory === category.id
+                    className={`flex items-center gap-2 md:gap-3 px-4 md:px-6 py-3 md:py-4 rounded-xl transition-all duration-300 ${activeCategory === category.id
                         ? "bg-white text-[#075EAB] shadow-md scale-105"
                         : "bg-transparent text-white hover:bg-white/20"
-                    }`}
+                      }`}
                   >
                     <div className="relative w-6 h-6 md:w-8 md:h-8 flex-shrink-0">
                       <Image
@@ -224,9 +223,9 @@ export default function UnetePage() {
                         style={
                           activeCategory === category.id
                             ? {
-                                filter:
-                                  "invert(27%) sepia(82%) saturate(2270%) hue-rotate(195deg) brightness(91%) contrast(95%)",
-                              }
+                              filter:
+                                "invert(27%) sepia(82%) saturate(2270%) hue-rotate(195deg) brightness(91%) contrast(95%)",
+                            }
                             : {}
                         }
                       />
