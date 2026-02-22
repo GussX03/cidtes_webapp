@@ -289,7 +289,7 @@ const servicesData: Record<string, ServiceCard[]> = {
     },
     {
       title: "NOM-022-STPS-2015",
-      image: "/images/electricistas.png",
+      image: "/images/nom-022-stps.png",
     },
     {
       title: "NOM-025-STPS-2008",
