@@ -125,7 +125,7 @@ export default function UnetePage() {
       </header>
 
       <main
-        className="flex-1 pt-24 pb-32 relative"
+        className="flex-1 pt-24 pb-40 relative"
         style={{
           backgroundImage: "url('/images/wave-background.png')",
           backgroundSize: "cover",
@@ -137,9 +137,24 @@ export default function UnetePage() {
         {/* Content Section */}
         <div className="max-w-7xl mx-auto px-4">
           {/* Category Title */}
-          <h2 className="text-4xl md:text-5xl font-bold text-[#075EAB] mb-12 text-center">
-            {categories.find((c) => c.id === activeCategory)?.name}
-          </h2>
+          <div className="flex items-center justify-center mb-12">
+            <div
+              className="w-1 h-12 md:h-16 mr-4 rounded-full"
+              style={{
+                background: "linear-gradient(270deg, #01A0E1 0%, #662686 100%)",
+              }}
+            />
+            <h2
+              className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent"
+              style={{
+                backgroundImage: "linear-gradient(270deg, #01A0E1 0%, #662686 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+            >
+              {categories.find((c) => c.id === activeCategory)?.name}
+            </h2>
+          </div>
 
           {/* Service Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -182,7 +197,7 @@ export default function UnetePage() {
       </main>
 
       {/* Floating Bottom Navigation Bar */}
-      <div className="fixed bottom-0 left-0 right-0 z-20 pb-4 px-2">
+      <div className="fixed bottom-0 left-0 right-0 z-20 pb-[10px] px-2" style={{ marginBottom: "10px" }}>
         <div className="max-w-[1400px] mx-auto">
           <div
             className="rounded-2xl shadow-2xl p-4 md:p-5"
