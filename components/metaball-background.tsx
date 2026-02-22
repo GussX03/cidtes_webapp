@@ -66,7 +66,8 @@ export function MetaballBackground({ color }: MetaballBackgroundProps) {
 
     // Scene setup
     const scene = new THREE.Scene()
-    const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0.1, 10)
+    const aspect = (container.clientWidth || window.innerWidth) / (container.clientHeight || window.innerHeight)
+    const camera = new THREE.OrthographicCamera(-aspect, aspect, 1, -1, 0.1, 10)
     camera.position.z = 1
     const clock = new THREE.Clock()
 
@@ -94,6 +95,7 @@ export function MetaballBackground({ color }: MetaballBackgroundProps) {
       width: 100% !important;
       height: 100% !important;
       z-index: 0 !important;
+      object-fit: cover !important;
     `
     container.appendChild(canvas)
 
@@ -409,6 +411,14 @@ export function MetaballBackground({ color }: MetaballBackgroundProps) {
       const width = container.clientWidth || window.innerWidth
       const height = container.clientHeight || window.innerHeight
       const currentPixelRatio = Math.min(devicePixelRatio, isMobile ? 1.5 : 2)
+      const aspect = width / height
+
+      // Update camera
+      camera.left = -aspect
+      camera.right = aspect
+      camera.top = 1
+      camera.bottom = -1
+      camera.updateProjectionMatrix()
 
       renderer.setSize(width, height)
       renderer.setPixelRatio(currentPixelRatio)
@@ -441,12 +451,20 @@ export function MetaballBackground({ color }: MetaballBackgroundProps) {
 
     // Cleanup
     return () => {
-      window.removeEventListener("mousemove", onMouseMove)
-      window.removeEventListener("touchmove", onTouchMove)
+      resizeObserver.disconnect()
       window.removeEventListener("resize", handleResize)
-      if (sceneRef.current.animationId) {
-        cancelAnimationFrame(sceneRef.current.animationId)
+      window.removeEventListener("mousemove", handleMouseMove)
+      window.removeEventListener("touchmove", handleTouchMove)
+      window.removeEventListener("touchstart", handleTouchStart)
+
+      if (container.contains(canvas)) {
+        container.removeChild(canvas)
       }
+      renderer.dispose()
+      material.dispose()
+      geometry.dispose()
+    }
+      resizeObserver.disconnect()
       if (container.contains(canvas)) {
         container.removeChild(canvas)
       }
