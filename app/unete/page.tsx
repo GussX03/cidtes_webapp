@@ -128,6 +128,93 @@ const servicesData: Record<string, ServiceCard[]> = {
       image: "/images/normativa-regulacion.png",
     },
   ],
+  formativo: [
+    {
+      title: "Formación De Instructores En Cursos Presenciales",
+      image: "/images/formacion-instructores.png",
+    },
+    {
+      title: "Diseño de cursos y materiales didácticos",
+      image: "/images/diseno-cursos-materiales.png",
+    },
+    {
+      title: "Formación De Evaluadores De Competencias",
+      image: "/images/formacion-evaluadores.png",
+    },
+    {
+      title: "Diseño De Cursos En Línea",
+      image: "/images/diseno-cursos-linea.png",
+    },
+    {
+      title: "Valuación De Alhajas, Relojes Y Joyas",
+      image: "/images/valuacion-alhajas.png",
+    },
+    {
+      title: "Valuación de vehículos sin resguardo",
+      image: "/images/valuacion-vehiculos.png",
+    },
+    {
+      title: "Valuación De Artículos Varios",
+      image: "/images/valuacion-articulos.png",
+    },
+  ],
+  "desarrollo-personal": [
+    {
+      title: "Autoestima",
+      image: "/images/autoestima.png",
+    },
+    {
+      title: "Asertividad",
+      image: "/images/asertividad.png",
+    },
+    {
+      title: "Comunicación Efectiva",
+      image: "/images/comunicacion-efectiva.png",
+    },
+    {
+      title: "Desarrollo Del Pensamiento Lógico",
+      image: "/images/pensamiento-logico.png",
+    },
+    {
+      title: "Programación Neurolingüística",
+      image: "/images/programacion-neurolinguistica.png",
+    },
+    {
+      title: "Relaciones Humanas",
+      image: "/images/relaciones-humanas.png",
+    },
+    {
+      title: "Administración Del Tiempo",
+      image: "/images/administracion-tiempo.png",
+    },
+  ],
+  "desarrollo-org": [
+    {
+      title: "Liderazgo",
+      image: "/images/liderazgo.png",
+    },
+    {
+      title: "Equipos de trabajo de alto rendimiento",
+      image: "/images/equipos-alto-rendimiento.png",
+    },
+    {
+      title: "Atención Al Cliente",
+      image: "/images/atencion-cliente.png",
+    },
+    {
+      title: "Evaluación Económica De Proyectos",
+      image: "/images/evaluacion-economica.png",
+    },
+    {
+      title: "Análisis E Interpretación De Estados Financieros",
+      image: "/images/estados-financieros.png",
+    },
+    {
+      title: "Manejo De Conflictos",
+      image: "/images/manejo-conflictos.png",
+    },
+  ],
+  valuacion: [],
   seguridad: [
     {
       title: "NOM-002-STPS-2010",
