@@ -194,8 +194,8 @@ export function MetaballBackground({ color }: MetaballBackgroundProps) {
         
         vec3 screenToWorld(vec2 normalizedPos) {
           vec2 uv = normalizedPos * 2.0 - 1.0;
-          uv.x *= uResolution.x / uResolution.y;
-          return vec3(uv * 2.0, 0.0);
+          float aspect = uResolution.x / uResolution.y;
+          return vec3(uv.x * aspect * 2.0, uv.y * 2.0, 0.0);
         }
         
         float sceneSDF(vec3 pos) {
