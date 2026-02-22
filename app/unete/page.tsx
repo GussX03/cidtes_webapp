@@ -197,7 +197,7 @@ export default function UnetePage() {
       </main>
 
       {/* Floating Bottom Navigation Bar */}
-      <div className="fixed bottom-0 left-0 right-0 z-20 pb-[10px] px-2" style={{ marginBottom: "10px" }}>
+      <div className="fixed left-0 right-0 z-50 px-2" style={{ bottom: "10px" }}>
         <div className="max-w-[1400px] mx-auto">
           <div
             className="rounded-2xl shadow-2xl p-4 md:p-5"
@@ -243,7 +243,7 @@ export default function UnetePage() {
       </div>
 
       {/* Footer Section */}
-      <footer className="relative z-50 bg-gray-100 shadow-[0_-5px_6px_rgba(0,0,0,0.05)] font-sans">
+      <footer className="relative z-10 bg-gray-100 shadow-[0_-5px_6px_rgba(0,0,0,0.05)] font-sans pt-20">
         <div className="w-full px-8 py-12">
           {/* Main Footer Content */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16 mb-8">
