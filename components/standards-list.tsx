@@ -9,11 +9,6 @@ interface StandardCategory {
 
 const STANDARDS_CATEGORIES: StandardCategory[] = [
   {
-    title: "S.Salud en el",
-    color: "#5DCCCC",
-    codes: ["EC0330101", "EC0493", "EC0309701", "EC0680"],
-  },
-  {
     title: "Gestión ambiental",
     color: "#5DCCCC",
     codes: ["EC0490", "EC0517", "EC1543"],
@@ -29,7 +24,6 @@ const STANDARDS_CATEGORIES: StandardCategory[] = [
     title: "Manufactura",
     color: "#5DCCCC",
     codes: ["EC0467"],
-    image: "/images/administracion-contabilidad.png",
   },
   {
     title: "Sustancias químicas",
@@ -43,23 +37,12 @@ export default function StandardsList() {
     <div className="w-full space-y-10">
       {STANDARDS_CATEGORIES.map((category, index) => (
         <div key={index} className="space-y-4">
-          <div className={`flex ${category.image ? 'flex-col md:flex-row gap-6 items-start' : 'flex-col'}`}>
-            {/* Image on the left if exists */}
-            {category.image && (
-              <div className="flex-shrink-0">
-                <img
-                  src={category.image}
-                  alt={category.title}
-                  className="w-full md:w-72 h-56 object-cover rounded-2xl shadow-xl"
-                />
-              </div>
-            )}
-
-            {/* Content on the right */}
+          <div className={`flex ${category.image ? 'flex-col md:flex-row-reverse gap-8 items-start' : 'flex-col'}`}>
+            {/* Content on the LEFT (or on top on mobile) */}
             <div className="flex-1 space-y-4">
-              {/* Category Title */}
+              {/* Category Title with white background */}
               <h3
-                className="text-3xl md:text-4xl font-bold"
+                className="text-3xl md:text-4xl font-bold bg-white px-4 py-2 rounded-lg shadow-sm inline-block"
                 style={{ color: category.color }}
               >
                 {category.title}
@@ -77,6 +60,17 @@ export default function StandardsList() {
                 ))}
               </div>
             </div>
+
+            {/* Image on the RIGHT if exists (bigger size) */}
+            {category.image && (
+              <div className="flex-shrink-0">
+                <img
+                  src={category.image}
+                  alt={category.title}
+                  className="w-full md:w-96 h-72 object-cover rounded-2xl shadow-xl"
+                />
+              </div>
+            )}
           </div>
         </div>
       ))}

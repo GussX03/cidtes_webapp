@@ -281,7 +281,7 @@ export default function CertificationContent({ activeSection }: CertificationCon
         {activeSection === 3 && (
           <div className="space-y-6">
             {/* Formativo */}
-            <div>
+            <div className="bg-white rounded-lg p-4 shadow-sm">
               <h3 className="text-2xl font-bold mb-3" style={{ color: "#13D4CB" }}>
                 Formativo
               </h3>
@@ -289,7 +289,7 @@ export default function CertificationContent({ activeSection }: CertificationCon
                 {["EC0076", "EC0217.01", "EC0301", "EC0366"].map((code) => (
                   <button
                     key={code}
-                    className="px-4 py-2 bg-white text-gray-700 text-sm font-medium rounded-lg shadow hover:shadow-md transition-all duration-200 hover:scale-105"
+                    className="px-4 py-2 bg-gray-50 text-gray-700 text-sm font-medium rounded-lg shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105 border border-gray-200"
                   >
                     {code}
                   </button>
@@ -298,7 +298,7 @@ export default function CertificationContent({ activeSection }: CertificationCon
             </div>
 
             {/* Valuación */}
-            <div>
+            <div className="bg-white rounded-lg p-4 shadow-sm">
               <h3 className="text-2xl font-bold mb-3" style={{ color: "#13D4CB" }}>
                 Valuación
               </h3>
@@ -306,7 +306,7 @@ export default function CertificationContent({ activeSection }: CertificationCon
                 {["EC0664", "EC0865", "EC1182", "EC1306"].map((code) => (
                   <button
                     key={code}
-                    className="px-4 py-2 bg-white text-gray-700 text-sm font-medium rounded-lg shadow hover:shadow-md transition-all duration-200 hover:scale-105"
+                    className="px-4 py-2 bg-gray-50 text-gray-700 text-sm font-medium rounded-lg shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105 border border-gray-200"
                   >
                     {code}
                   </button>
@@ -315,7 +315,7 @@ export default function CertificationContent({ activeSection }: CertificationCon
             </div>
 
             {/* Energía */}
-            <div>
+            <div className="bg-white rounded-lg p-4 shadow-sm">
               <h3 className="text-2xl font-bold mb-3" style={{ color: "#13D4CB" }}>
                 Energía
               </h3>
@@ -323,7 +323,24 @@ export default function CertificationContent({ activeSection }: CertificationCon
                 {["EC0412", "EC0413", "EC0416", "EC0431", "EC0414"].map((code) => (
                   <button
                     key={code}
-                    className="px-4 py-2 bg-white text-gray-700 text-sm font-medium rounded-lg shadow hover:shadow-md transition-all duration-200 hover:scale-105"
+                    className="px-4 py-2 bg-gray-50 text-gray-700 text-sm font-medium rounded-lg shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105 border border-gray-200"
+                  >
+                    {code}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* S.Salud en el */}
+            <div className="bg-white rounded-lg p-4 shadow-sm">
+              <h3 className="text-2xl font-bold mb-3" style={{ color: "#13D4CB" }}>
+                S.Salud en el
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {["EC0391.01", "EC0493", "EC0397.01", "EC0680"].map((code) => (
+                  <button
+                    key={code}
+                    className="px-4 py-2 bg-gray-50 text-gray-700 text-sm font-medium rounded-lg shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105 border border-gray-200"
                   >
                     {code}
                   </button>
