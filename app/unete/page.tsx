@@ -206,7 +206,7 @@ export default function UnetePage() {
                 </div>
                 {/* Content on Right */}
                 <div className="p-6 flex flex-col justify-between flex-1">
-                  <h3 className="text-xl font-bold text-[#075EAB] mb-4">
+                  <h3 className="text-xl font-bold mb-4" style={{ color: "#333333" }}>
                     {service.title}
                   </h3>
                   <button
