@@ -125,7 +125,7 @@ export default function InvestigacionConsultoriaPage() {
               </Link>
               <span className="text-gray-400 mx-2">|</span>
               <Link
-                href="#"
+                href="/unete"
                 className="relative text-gray-700 font-medium px-6 py-3 rounded-lg transition-all duration-500 hover:text-white group overflow-hidden transform hover:scale-105"
               >
                 <span className="relative z-10 transition-colors duration-500">Únete</span>
@@ -582,7 +582,7 @@ export default function InvestigacionConsultoriaPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
               {/* Sector Privado Card */}
-              <div 
+              <div
                 className="bg-white rounded-xl shadow-lg p-6 border border-gray-200 hover:shadow-2xl hover:scale-105 hover:-translate-y-2 transition-all duration-300 card-privado"
                 onMouseEnter={() => {
                   const connector = document.getElementById('connector-1');
@@ -600,7 +600,7 @@ export default function InvestigacionConsultoriaPage() {
                 }}
               >
                 <h3 className="text-xl font-bold text-gray-800 mb-6">Sector Privado</h3>
-                
+
                 <div className="flex items-start gap-4">
                   {/* Icon */}
                   <div className="flex-shrink-0 transition-transform duration-300 hover:scale-110">
@@ -637,7 +637,7 @@ export default function InvestigacionConsultoriaPage() {
               </div>
 
               {/* Educando Card */}
-              <div 
+              <div
                 className="bg-white rounded-xl shadow-lg p-6 border border-gray-200 hover:shadow-2xl hover:scale-105 hover:-translate-y-2 transition-all duration-300"
                 onMouseEnter={() => {
                   const connector1 = document.getElementById('connector-1');
@@ -665,7 +665,7 @@ export default function InvestigacionConsultoriaPage() {
                 }}
               >
                 <h3 className="text-xl font-bold text-gray-800 mb-6">Educando</h3>
-                
+
                 <div className="flex items-start gap-4">
                   {/* Icon */}
                   <div className="flex-shrink-0 transition-transform duration-300 hover:scale-110">
@@ -694,7 +694,7 @@ export default function InvestigacionConsultoriaPage() {
               </div>
 
               {/* Sector Educativo Card */}
-              <div 
+              <div
                 className="bg-white rounded-xl shadow-lg p-6 border border-gray-200 hover:shadow-2xl hover:scale-105 hover:-translate-y-2 transition-all duration-300"
                 onMouseEnter={() => {
                   const connector = document.getElementById('connector-2');
@@ -712,7 +712,7 @@ export default function InvestigacionConsultoriaPage() {
                 }}
               >
                 <h3 className="text-xl font-bold text-gray-800 mb-6">Sector Educativo</h3>
-                
+
                 <div className="flex items-start gap-4">
                   {/* Icon */}
                   <div className="flex-shrink-0 transition-transform duration-300 hover:scale-110">
@@ -765,17 +765,17 @@ export default function InvestigacionConsultoriaPage() {
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30 group-hover:from-black/90 group-hover:via-black/70 group-hover:to-black/50 transition-all duration-500"></div>
-              
+
               {/* White border frame */}
               <div className="absolute inset-6 border-4 border-white/80 rounded-xl pointer-events-none"></div>
-              
+
               {/* Number */}
               <div className="absolute top-12 left-12 text-white/90 text-8xl font-bold z-10">1</div>
-              
+
               {/* Title - Always visible */}
               <div className="absolute bottom-12 left-12 right-12 z-10">
                 <h3 className="text-4xl font-bold text-white mb-4">Estudiantes</h3>
-                
+
                 {/* Content - Visible on hover */}
                 <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 max-h-0 group-hover:max-h-[400px] overflow-hidden">
                   <ul className="space-y-3 text-white text-sm">
@@ -813,17 +813,17 @@ export default function InvestigacionConsultoriaPage() {
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30 group-hover:from-black/90 group-hover:via-black/70 group-hover:to-black/50 transition-all duration-500"></div>
-              
+
               {/* White border frame */}
               <div className="absolute inset-6 border-4 border-white/80 rounded-xl pointer-events-none"></div>
-              
+
               {/* Number */}
               <div className="absolute top-12 left-12 text-white/90 text-8xl font-bold z-10">2</div>
-              
+
               {/* Title - Always visible */}
               <div className="absolute bottom-12 left-12 right-12 z-10">
                 <h3 className="text-4xl font-bold text-white mb-4">Institución Educativa</h3>
-                
+
                 {/* Content - Visible on hover */}
                 <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 max-h-0 group-hover:max-h-[400px] overflow-hidden">
                   <ul className="space-y-3 text-white text-sm">
@@ -869,17 +869,17 @@ export default function InvestigacionConsultoriaPage() {
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30 group-hover:from-black/90 group-hover:via-black/70 group-hover:to-black/50 transition-all duration-500"></div>
-              
+
               {/* White border frame */}
               <div className="absolute inset-6 border-4 border-white/80 rounded-xl pointer-events-none"></div>
-              
+
               {/* Number */}
               <div className="absolute top-12 left-12 text-white/90 text-8xl font-bold z-10">3</div>
-              
+
               {/* Title - Always visible */}
               <div className="absolute bottom-12 left-12 right-12 z-10">
                 <h3 className="text-3xl font-bold text-white mb-4">Organizaciones productivas</h3>
-                
+
                 {/* Content - Visible on hover */}
                 <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 max-h-0 group-hover:max-h-[400px] overflow-hidden">
                   <ul className="space-y-3 text-white text-sm">

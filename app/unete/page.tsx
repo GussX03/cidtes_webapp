@@ -1,12 +1,226 @@
 "use client"
 
+import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { CourseSection } from "@/components/course-section"
 
-export default function CapacitacionPage() {
+type Category = {
+  id: string
+  name: string
+  icon: string
+}
+
+type ServiceCard = {
+  title: string
+  image: string
+  description?: string
+}
+
+const categories: Category[] = [
+  { id: "energia", name: "Energía", icon: "/icons/desarrollo-organizacional-icon.png" },
+  { id: "seguridad", name: "Seguridad y Salud en el Trabajo", icon: "/icons/formativo-icon.png" },
+  { id: "desarrollo-personal", name: "Desarrollo Personal", icon: "/icons/energia-icon.png" },
+  { id: "desarrollo-org", name: "Desarrollo Organizacional", icon: "/icons/valuacion-icon.png" },
+  { id: "formativo", name: "Formativo", icon: "/icons/desarrollo-personal-icon.png" },
+  { id: "valuacion", name: "Valuación", icon: "/icons/seguridad-icon.png" },
+]
+
+const servicesData: Record<string, ServiceCard[]> = {
+  energia: [
+    {
+      title: "Diagnósticos Energéticos Residenciales",
+      image: "/images/diagnosticos-residenciales.png",
+    },
+    {
+      title: "Diagnósticos Energéticos Empresariales",
+      image: "/images/diagnosticos-empresariales.png",
+    },
+    {
+      title: "Alumbrado Público Eficiente",
+      image: "/images/alumbrado-publico.png",
+    },
+    {
+      title: "Código De Red",
+      image: "/images/codigo-red.png",
+    },
+    {
+      title: "Compraventa De Energía En Mercados Eléctricos",
+      image: "/images/compraventa-energia.png",
+    },
+    {
+      title: "Control De La Demanda Eléctrica",
+      image: "/images/control-demanda.png",
+    },
+    {
+      title: "Cortocircuito Y Coordinación De Protecciones",
+      image: "/images/cortocircuito-protecciones.png",
+    },
+    {
+      title: "Edificación Sustentable",
+      image: "/images/edificacion-sustentable.png",
+    },
+    {
+      title: "Eficiencia En Aire Acondicionado Y Refrigeración",
+      image: "/images/eficiencia-aire.png",
+    },
+    {
+      title: "Evaluación De Proyectos De Energía",
+      image: "/images/evaluacion-proyectos.png",
+    },
+    {
+      title: "Factor De Potencia Y Demanda",
+      image: "/images/factor-potencia.png",
+    },
+    {
+      title: "Generación Con Sistemas Fotovoltaicos",
+      image: "/images/sistemas-fotovoltaicos.png",
+    },
+    {
+      title: "Variaciones De Voltaje",
+      image: "/images/variaciones-voltaje.png",
+    },
+    {
+      title: "Análisis Transitorio De Capacitores",
+      image: "/images/analisis-capacitores.png",
+    },
+    {
+      title: "Compensación De Potencia Reactiva",
+      image: "/images/compensacion-potencia.png",
+    },
+    {
+      title: "Corrección De Factor De Potencia",
+      image: "/images/correccion-factor-potencia.png",
+    },
+    {
+      title: "Puesta A Tierra En Redes Eléctricas",
+      image: "/images/puesta-tierra.png",
+    },
+    {
+      title: "Electricidad Básica",
+      image: "/images/electricidad-basica.png",
+    },
+    {
+      title: "Diagnósticos Energéticos",
+      image: "/images/diagnosticos-energeticos.png",
+    },
+    {
+      title: "Gestión Energética Bajo La ISO 50001",
+      image: "/images/gestion-iso-50001.png",
+    },
+    {
+      title: "NOM 001-SEDE 2018 Y Puesta A Tierra",
+      image: "/images/nom-001-sede.png",
+    },
+    {
+      title: "Subestaciones Eléctricas Y Puesta Tierra",
+      image: "/images/subestaciones-electricas.png",
+    },
+    {
+      title: "Diseño De Indicadores Energéticos",
+      image: "/images/indicadores-energeticos.png",
+    },
+    {
+      title: "Tecnologías De Acondicionamiento Ambiental",
+      image: "/images/tecnologias-acondicionamiento.png",
+    },
+    {
+      title: "Normativa Y Regulación Energética",
+      image: "/images/normativa-regulacion.png",
+    },
+  ],
+  seguridad: [
+    {
+      title: "NOM-002-STPS-2010",
+      image: "/images/nom-002-stps.png",
+    },
+    {
+      title: "NOM-004-STPS-1999",
+      image: "/images/nom-004-stps.png",
+    },
+    {
+      title: "NOM-005-STPS-1998",
+      image: "/images/residuos-quimicos.png",
+    },
+    {
+      title: "NOM-006-STPS-2014",
+      image: "/images/maquinaria-equipos.png",
+    },
+    {
+      title: "NOM-009-STPS-2011",
+      image: "/images/trabajo-alturas.png",
+    },
+    {
+      title: "NOM-009-STPS-2011",
+      image: "/images/trabajo-alturas-2.png",
+    },
+    {
+      title: "NOM-017-STPS-2008",
+      image: "/images/capacitacion-seguridad.png",
+    },
+    {
+      title: "NOM-018-STPS-2018",
+      image: "/images/quimicos-peligrosos.png",
+    },
+    {
+      title: "NOM-018-STPS-2018",
+      image: "/images/biohazard.png",
+    },
+    {
+      title: "NOM-027-STPS-2008",
+      image: "/images/soldadura.png",
+    },
+    {
+      title: "NOM-029-STPS-2011",
+      image: "/images/nom-029-stps.png",
+    },
+    {
+      title: "NOM-030-STPS-2009",
+      image: "/images/nom-030-stps.png",
+    },
+    {
+      title: "NOM-035-STPS-2018",
+      image: "/images/nom-035-stps.png",
+    },
+    {
+      title: "NOM-036-1-STPS-2018",
+      image: "/images/inspeccion-seguridad.png",
+    },
+    {
+      title: "Formación De Brigadas En Protección Civil",
+      image: "/images/capacitacion-seguridad.png",
+    },
+    {
+      title: "Primeros Auxilios",
+      image: "/images/primeros-auxilios.png",
+    },
+    {
+      title: "Protocolo De Seguridad: Derrames",
+      image: "/images/protocolo-derrames.png",
+    },
+    {
+      title: "Manejo Residual: Biológico-Infecciosos",
+      image: "/images/biohazard.png",
+    },
+    {
+      title: "NOM-022-STPS-2015",
+      image: "/images/electricistas.png",
+    },
+    {
+      title: "NOM-025-STPS-2008",
+      image: "/images/nom-025-stps.png",
+    },
+  ],
+  "desarrollo-personal": [],
+  "desarrollo-org": [],
+  formativo: [],
+  valuacion: [],
+}
+
+export default function UnetePage() {
+  const [activeCategory, setActiveCategory] = useState<string>("energia")
+
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen flex flex-col">
       {/* Header */}
       <header className="bg-gray-100 border-b border-gray-200 fixed top-0 left-0 right-0 z-50">
         <div className="container mx-auto px-4">
@@ -75,170 +289,130 @@ export default function CapacitacionPage() {
         </div>
       </header>
 
-      {/* Main Content */}
-      <main className="pt-16">
-        {/* Capacitación Section */}
-        <section
-          className="relative overflow-hidden min-h-screen py-20"
-          style={{
-            backgroundImage: "url(/images/capacitacion/waves-background.jpg)",
-            backgroundSize: "cover",
-            backgroundPosition: "left center",
-            backgroundRepeat: "no-repeat",
-          }}
-        >
-          <div className="container mx-auto px-4 relative z-10">
-            <div className="grid lg:grid-cols-2 gap-16 items-start max-w-7xl mx-auto">
-              {/* Left Content */}
-              <div className="space-y-8 relative">
-                {/* Title */}
-                <div>
-                  <svg width="126" height="10" viewBox="0 0 126 10" fill="none" className="mb-4">
-                    <path d="M5 5H121" stroke="url(#paint0_linear_cap_line)" strokeWidth="9" strokeLinecap="round" />
-                    <defs>
-                      <linearGradient
-                        id="paint0_linear_cap_line"
-                        x1="5"
-                        y1="5.5"
-                        x2="121"
-                        y2="5.5"
-                        gradientUnits="userSpaceOnUse"
-                      >
-                        <stop stopColor="#084E9F" />
-                        <stop offset="1" stopColor="#662686" />
-                      </linearGradient>
-                    </defs>
-                  </svg>
-                </div>
+      <main
+        className="flex-1 pt-24 pb-8 relative"
+        style={{
+          backgroundImage: "url('/images/wave-background.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
 
-                {/* Subtitle with Gradient Background */}
-                <div className="inline-block">
-                  <div
-                    className="text-white px-8 py-3 rounded-lg"
-                    style={{ background: "linear-gradient(to right, #084E9F 0%, #01A0E1 47.9%, #662686 95.8%)" }}
-                  >
-                    <h2 className="text-white text-2xl font-semibold">Metodología de capacitación</h2>
-                  </div>
-                </div>
+        {/* Content Section */}
+        <div className="max-w-7xl mx-auto px-4">
+          {/* Category Title */}
+          <div className="flex items-center justify-center mb-12">
+            <div
+              className="w-1 h-12 md:h-16 mr-4 rounded-full"
+              style={{
+                background: "linear-gradient(270deg, #01A0E1 0%, #662686 100%)",
+              }}
+            />
+            <h2
+              className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent"
+              style={{
+                backgroundImage: "linear-gradient(270deg, #01A0E1 0%, #662686 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+            >
+              {categories.find((c) => c.id === activeCategory)?.name}
+            </h2>
+          </div>
 
-                {/* Description Text */}
-                <div className="space-y-6 text-gray-800 leading-relaxed text-lg">
-                  <p>
-                    En nuestros cursos, hemos desarrollado una metodología sólida alineada con la competitividad,{" "}
-                    <span className="font-bold">fomentando un entorno de aprendizaje</span> relevante para el desarrollo
-                    personal y profesional.
-                  </p>
-
-                  <p>
-                    Valoramos la experiencia, autonomía y motivación del aprendiz, utilizando la andragogía para
-                    facilitar la conexión de nueva información con experiencias previas y promover conocimientos
-                    duraderos y funcionales.
-                  </p>
-
-                  <p>Hemos capacitado a más de 40,000 personas, potencializando sus competencias laborales.</p>
-                </div>
-              </div>
-
-              {/* Right Content - Single PNG Image */}
-              <div className="relative flex justify-center items-start pt-[-50px]">
-                <div className="relative w-full max-w-2xl">
+          {/* Service Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {servicesData[activeCategory].map((service, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-row"
+              >
+                {/* Image on Left */}
+                <div className="relative w-1/3 min-w-[200px] flex-shrink-0">
                   <Image
-                    src="/images/capacitacion/team-with-circles.png"
-                    alt="Equipo de capacitación"
-                    width={1000}
-                    height={1000}
-                    className="w-full h-auto object-contain"
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-cover"
                   />
                 </div>
+                {/* Content on Right */}
+                <div className="p-6 flex flex-col justify-between flex-1">
+                  <h3 className="text-xl font-bold mb-4" style={{ color: "#333333" }}>
+                    {service.title}
+                  </h3>
+                  <button
+                    className="w-full text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-lg"
+                    style={{
+                      background: "linear-gradient(90deg, #0296DA 0%, #065BA9 100%)",
+                    }}
+                  >
+                    Información
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Empty State */}
+          {servicesData[activeCategory].length === 0 && (
+            <div className="text-center py-20">
+              <p className="text-gray-500 text-lg">
+                Contenido próximamente disponible
+              </p>
+            </div>
+          )}
+        </div>
+
+        {/* Floating Bottom Navigation Bar */}
+        <div className="sticky bottom-4 left-0 right-0 z-50 px-2 mt-12">
+          <div className="max-w-[1400px] mx-auto">
+            <div
+              className="rounded-2xl shadow-2xl p-4 md:p-5"
+              style={{
+                background: "linear-gradient(90deg, #0293D8 0%, #075EAB 100%)",
+              }}
+            >
+              <div className="flex flex-wrap gap-3 md:gap-4 justify-center items-center">
+                {categories.map((category) => (
+                  <button
+                    key={category.id}
+                    onClick={() => setActiveCategory(category.id)}
+                    className={`flex items-center gap-2 md:gap-3 px-4 md:px-6 py-3 md:py-4 rounded-xl transition-all duration-300 ${activeCategory === category.id
+                      ? "bg-white text-[#075EAB] shadow-md scale-105"
+                      : "bg-transparent text-white hover:bg-white/20"
+                      }`}
+                  >
+                    <div className="relative w-6 h-6 md:w-8 md:h-8 flex-shrink-0">
+                      <Image
+                        src={category.icon}
+                        alt={category.name}
+                        fill
+                        className="object-contain transition-all duration-300"
+                        style={
+                          activeCategory === category.id
+                            ? {
+                              filter:
+                                "invert(27%) sepia(82%) saturate(2270%) hue-rotate(195deg) brightness(91%) contrast(95%)",
+                            }
+                            : {}
+                        }
+                      />
+                    </div>
+                    <span className="font-semibold text-xs md:text-sm whitespace-nowrap">
+                      {category.name}
+                    </span>
+                  </button>
+                ))}
               </div>
             </div>
           </div>
-        </section>
-
-        {/* Wave Separator */}
-        <div className="h-16 bg-white relative overflow-hidden">
-          <Image src="/images/wave-separator.png" alt="Wave separator" fill className="object-cover object-center" />
-        </div>
-
-        {/* Course Sections */}
-        <CourseSection
-          title="Energía"
-          imageSrc="/images/capacitacion/energia-bg.png"
-          imageAlt="Energía - Cursos de energía"
-          courseKey="energia"
-        />
-
-        {/* Wave Separator */}
-        <div className="h-16 bg-white relative overflow-hidden">
-          <Image src="/images/wave-separator.png" alt="Wave separator" fill className="object-cover object-center" />
-        </div>
-
-        <CourseSection
-          title="Seguridad y Salud en el trabajo"
-          imageSrc="/images/capacitacion/seguridad-bg.png"
-          imageAlt="Seguridad y Salud en el trabajo"
-          reverse={true}
-          courseKey="seguridad"
-        />
-
-        {/* Wave Separator */}
-        <div className="h-16 bg-white relative overflow-hidden">
-          <Image src="/images/wave-separator.png" alt="Wave separator" fill className="object-cover object-center" />
-        </div>
-
-        <CourseSection
-          title="Desarrollo Personal"
-          imageSrc="/images/capacitacion/desarrollo-bg.png"
-          imageAlt="Desarrollo Personal"
-          courseKey="desarrollo-personal"
-        />
-
-        {/* Wave Separator */}
-        <div className="h-16 bg-white relative overflow-hidden">
-          <Image src="/images/wave-separator.png" alt="Wave separator" fill className="object-cover object-center" />
-        </div>
-
-        <CourseSection
-          title="Formativo"
-          imageSrc="/images/capacitacion/formativo-bg.png"
-          imageAlt="Formativo - Cursos formativos"
-          reverse={true}
-          courseKey="formativo"
-        />
-
-        {/* Wave Separator */}
-        <div className="h-16 bg-white relative overflow-hidden">
-          <Image src="/images/wave-separator.png" alt="Wave separator" fill className="object-cover object-center" />
-        </div>
-
-        <CourseSection
-          title="Valuación"
-          imageSrc="/images/capacitacion/valuacion-bg.png"
-          imageAlt="Valuación - Cursos de valuación"
-          courseKey="valuacion"
-        />
-
-        {/* Wave Separator */}
-        <div className="h-16 bg-white relative overflow-hidden">
-          <Image src="/images/wave-separator.png" alt="Wave separator" fill className="object-cover object-center" />
-        </div>
-
-        <CourseSection
-          title="Desarrollo Organizacional"
-          imageSrc="/images/capacitacion/desarrollo-organizacional-bg.png"
-          imageAlt="Desarrollo Organizacional"
-          reverse={true}
-          courseKey="desarrollo-organizacional"
-        />
-
-        {/* Wave Separator */}
-        <div className="h-16 bg-white relative overflow-hidden">
-          <Image src="/images/wave-separator.png" alt="Wave separator" fill className="object-cover object-center" />
         </div>
       </main>
 
       {/* Footer Section */}
-      <footer className="bg-gray-100 shadow-[0_-5px_6px_rgba(0,0,0,0.05)] font-sans">
+      <footer className="relative z-10 bg-gray-100 shadow-[0_-5px_6px_rgba(0,0,0,0.05)] font-sans">
         <div className="w-full px-8 py-12">
           {/* Main Footer Content */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16 mb-8">
@@ -289,7 +463,7 @@ export default function CapacitacionPage() {
               <div className="flex items-start mb-4">
                 <div className="w-2 h-2 bg-[#1D63ED] rounded-full mr-3 mt-2"></div>
                 <p className="text-gray-800 text-center lg:text-left leading-relaxed">
-                  Real de Los Reyes #303, Los Reyes, Alc. Coyoacán, Ciudad de México, C.P. 04330, México.
+                  Real de Los Reyes #303, Los Reyes, Coyoacán, Ciudad de México, C.P. 04330, México.
                 </p>
               </div>
               <div className="w-full max-w-sm">
@@ -336,7 +510,7 @@ export default function CapacitacionPage() {
                   className="w-10 h-10 bg-[#1D63ED] rounded-full flex items-center justify-center text-white hover:bg-[#0E4BB8] transition-all duration-300 hover:scale-110"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93-.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
                   </svg>
                 </a>
                 <a
@@ -351,23 +525,10 @@ export default function CapacitacionPage() {
                 </a>
               </div>
 
-              <div className="flex flex-wrap items-center justify-center gap-2 text-sm text-gray-700">
-                <span>© 2025 CIDTES Energía y Sustentabilidad.</span>
-                <span>|</span>
-                <span>Todos los derechos reservados.</span>
-                <span>|</span>
-                <Link href="#" className="hover:text-[#1D63ED] transition-colors duration-300">
-                  Aviso de privacidad
-                </Link>
-                <span>|</span>
-                <Link href="#" className="hover:text-[#1D63ED] transition-colors duration-300">
-                  Términos y condiciones
-                </Link>
-                <span>|</span>
-                <Link href="#" className="hover:text-[#1D63ED] transition-colors duration-300">
-                  Legal
-                </Link>
-              </div>
+              {/* Copyright */}
+              <p className="text-gray-700 text-sm text-center lg:text-right">
+                © 2024 CIDTES. Todos los derechos reservados.
+              </p>
             </div>
           </div>
         </div>
