@@ -1,0 +1,30 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"args": [
+				"run",
+				"dev"
+			],
+			"command": "pnpm",
+			"group": "none",
+			"isBackground": true,
+			"label": "Run Dev Server",
+			"problemMatcher": [
+				"$tsc-watch"
+			],
+			"type": "shell"
+		},
+		{
+			"label": "Install Dependencies",
+			"type": "shell",
+			"command": "pnpm",
+			"args": [
+				"install"
+			],
+			"group": "none",
+			"isBackground": false,
+			"problemMatcher": []
+		}
+	]
+}

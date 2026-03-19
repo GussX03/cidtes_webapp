@@ -1,0 +1,563 @@
+"use client"
+
+import { useState } from "react"
+import Image from "next/image"
+import { NavHeader } from "@/components/nav-header"
+
+type Category = {
+  id: string
+  name: string
+  icon: string
+}
+
+type ServiceCard = {
+  title: string
+  image: string
+  description?: string
+}
+
+const categories: Category[] = [
+  { id: "energia", name: "Energía", icon: "/icons/desarrollo-organizacional-icon.png" },
+  { id: "seguridad", name: "Seguridad y Salud en el Trabajo", icon: "/icons/formativo-icon.png" },
+  { id: "desarrollo-personal", name: "Desarrollo Personal", icon: "/icons/energia-icon.png" },
+  { id: "desarrollo-org", name: "Desarrollo Organizacional", icon: "/icons/valuacion-icon.png" },
+  { id: "formativo", name: "Formativo", icon: "/icons/desarrollo-personal-icon.png" },
+]
+
+const servicesData: Record<string, ServiceCard[]> = {
+  energia: [
+    {
+      title: "Diagnósticos Energéticos Residenciales",
+      image: "/images/diagnosticos-residenciales.png",
+    },
+    {
+      title: "Diagnósticos Energéticos Empresariales",
+      image: "/images/diagnosticos-empresariales.png",
+    },
+    {
+      title: "Alumbrado Público Eficiente",
+      image: "/images/alumbrado-publico.png",
+    },
+    {
+      title: "Código De Red",
+      image: "/images/codigo-red.png",
+    },
+    {
+      title: "Compraventa De Energía En Mercados Eléctricos",
+      image: "/images/compraventa-energia.png",
+    },
+    {
+      title: "Control De La Demanda Eléctrica",
+      image: "/images/control-demanda.png",
+    },
+    {
+      title: "Cortocircuito Y Coordinación De Protecciones",
+      image: "/images/cortocircuito-protecciones.png",
+    },
+    {
+      title: "Edificación Sustentable",
+      image: "/images/edificacion-sustentable.png",
+    },
+    {
+      title: "Eficiencia En Aire Acondicionado Y Refrigeración",
+      image: "/images/eficiencia-aire.png",
+    },
+    {
+      title: "Evaluación De Proyectos De Energía",
+      image: "/images/evaluacion-proyectos.png",
+    },
+    {
+      title: "Factor De Potencia Y Demanda",
+      image: "/images/factor-potencia.png",
+    },
+    {
+      title: "Generación Con Sistemas Fotovoltaicos",
+      image: "/images/sistemas-fotovoltaicos.png",
+    },
+    {
+      title: "Variaciones De Voltaje",
+      image: "/images/variaciones-voltaje.png",
+    },
+    {
+      title: "Análisis Transitorio De Capacitores",
+      image: "/images/analisis-capacitores.png",
+    },
+    {
+      title: "Compensación De Potencia Reactiva",
+      image: "/images/compensacion-potencia.png",
+    },
+    {
+      title: "Corrección De Factor De Potencia",
+      image: "/images/correccion-factor-potencia.png",
+    },
+    {
+      title: "Puesta A Tierra En Redes Eléctricas",
+      image: "/images/puesta-tierra.png",
+    },
+    {
+      title: "Electricidad Básica",
+      image: "/images/electricidad-basica.png",
+    },
+    {
+      title: "Diagnósticos Energéticos",
+      image: "/images/diagnosticos-energeticos.png",
+    },
+    {
+      title: "Gestión Energética Bajo La ISO 50001",
+      image: "/images/gestion-iso-50001.png",
+    },
+    {
+      title: "NOM 001-SEDE 2018 Y Puesta A Tierra",
+      image: "/images/nom-001-sede.png",
+    },
+    {
+      title: "Subestaciones Eléctricas Y Puesta Tierra",
+      image: "/images/subestaciones-electricas.png",
+    },
+    {
+      title: "Diseño De Indicadores Energéticos",
+      image: "/images/indicadores-energeticos.png",
+    },
+    {
+      title: "Tecnologías De Acondicionamiento Ambiental",
+      image: "/images/tecnologias-acondicionamiento.png",
+    },
+    {
+      title: "Normativa Y Regulación Energética",
+      image: "/images/normativa-regulacion.png",
+    },
+  ],
+  formativo: [
+    {
+      title: "Formación De Instructores En Cursos Presenciales",
+      image: "/images/formacion-instructores.png",
+    },
+    {
+      title: "Diseño de cursos y materiales didácticos",
+      image: "/images/diseno-cursos-materiales.png",
+    },
+    {
+      title: "Formación De Evaluadores De Competencias",
+      image: "/images/formacion-evaluadores.png",
+    },
+    {
+      title: "Diseño De Cursos En Línea",
+      image: "/images/diseno-cursos-linea.png",
+    },
+    {
+      title: "Valuación De Alhajas, Relojes Y Joyas",
+      image: "/images/valuacion-alhajas.png",
+    },
+    {
+      title: "Valuación de vehículos sin resguardo",
+      image: "/images/valuacion-vehiculos.png",
+    },
+    {
+      title: "Valuación De Artículos Varios",
+      image: "/images/valuacion-articulos.png",
+    },
+  ],
+  "desarrollo-personal": [
+    {
+      title: "Autoestima",
+      image: "/images/autoestima.png",
+    },
+    {
+      title: "Asertividad",
+      image: "/images/asertividad.png",
+    },
+    {
+      title: "Comunicación Efectiva",
+      image: "/images/comunicacion-efectiva.png",
+    },
+    {
+      title: "Desarrollo Del Pensamiento Lógico",
+      image: "/images/pensamiento-logico.png",
+    },
+    {
+      title: "Programación Neurolingüística",
+      image: "/images/programacion-neurolinguistica.png",
+    },
+    {
+      title: "Relaciones Humanas",
+      image: "/images/relaciones-humanas.png",
+    },
+    {
+      title: "Administración Del Tiempo",
+      image: "/images/administracion-tiempo.png",
+    },
+  ],
+  "desarrollo-org": [
+    {
+      title: "Liderazgo",
+      image: "/images/liderazgo.png",
+    },
+    {
+      title: "Equipos de trabajo de alto rendimiento",
+      image: "/images/equipos-alto-rendimiento.png",
+    },
+    {
+      title: "Atención Al Cliente",
+      image: "/images/atencion-cliente.png",
+    },
+    {
+      title: "Evaluación Económica De Proyectos",
+      image: "/images/evaluacion-economica.png",
+    },
+    {
+      title: "Análisis E Interpretación De Estados Financieros",
+      image: "/images/estados-financieros.png",
+    },
+    {
+      title: "Manejo De Conflictos",
+      image: "/images/manejo-conflictos.png",
+    },
+  ],
+  valuacion: [],
+  seguridad: [
+    {
+      title: "NOM-002-STPS-2010",
+      image: "/images/nom-002-stps.png",
+    },
+    {
+      title: "NOM-004-STPS-1999",
+      image: "/images/nom-004-stps.png",
+    },
+    {
+      title: "NOM-005-STPS-1998",
+      image: "/images/residuos-quimicos.png",
+    },
+    {
+      title: "NOM-006-STPS-2014",
+      image: "/images/maquinaria-equipos.png",
+    },
+    {
+      title: "NOM-009-STPS-2011",
+      image: "/images/trabajo-alturas.png",
+    },
+    {
+      title: "NOM-009-STPS-2011",
+      image: "/images/trabajo-alturas-2.png",
+    },
+    {
+      title: "NOM-017-STPS-2008",
+      image: "/images/capacitacion-seguridad.png",
+    },
+    {
+      title: "NOM-018-STPS-2018",
+      image: "/images/quimicos-peligrosos.png",
+    },
+    {
+      title: "NOM-018-STPS-2018",
+      image: "/images/biohazard.png",
+    },
+    {
+      title: "NOM-027-STPS-2008",
+      image: "/images/soldadura.png",
+    },
+    {
+      title: "NOM-029-STPS-2011",
+      image: "/images/electricistas.png",
+    },
+    {
+      title: "NOM-030-STPS-2009",
+      image: "/images/inspeccion-obra.png",
+    },
+    {
+      title: "NOM-035-STPS-2018",
+      image: "/images/desarrollo-social.png",
+    },
+    {
+      title: "NOM-036-1-STPS-2018",
+      image: "/images/inspeccion-seguridad.png",
+    },
+    {
+      title: "Formación De Brigadas En Protección Civil",
+      image: "/images/capacitacion-seguridad.png",
+    },
+    {
+      title: "Primeros Auxilios",
+      image: "/images/primeros-auxilios.png",
+    },
+    {
+      title: "Protocolo De Seguridad: Derrames",
+      image: "/images/protocolo-derrames.png",
+    },
+    {
+      title: "Manejo Residual: Biológico-Infecciosos",
+      image: "/images/biohazard.png",
+    },
+    {
+      title: "NOM-022-STPS-2015",
+      image: "/images/nom-022-stps.png",
+    },
+    {
+      title: "NOM-025-STPS-2008",
+      image: "/images/subestacion-electrica-2.png",
+    },
+    {
+      title: "NOM-026-STPS-2008",
+      image: "/images/capacitacion-seguridad.png",
+    },
+    {
+      title: "Manejo De Residuos Peligrosos",
+      image: "/images/manejo-residuos-peligrosos.png",
+    },
+  ],
+  valuacion: [],
+}
+
+export default function UnetePage() {
+  const [activeCategory, setActiveCategory] = useState<string>("energia")
+
+  return (
+    <div className="min-h-screen flex flex-col">
+      <NavHeader />
+
+      <main
+        className="flex-1 pt-24 pb-8 relative"
+        style={{
+          backgroundImage: "url('/images/wave-background.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+
+        {/* Content Section */}
+        <div className="max-w-7xl mx-auto px-4">
+          {/* Category Title */}
+          <div className="flex items-center justify-center mb-12">
+            <div
+              className="w-1 h-12 md:h-16 mr-4 rounded-full"
+              style={{
+                background: "linear-gradient(270deg, #01A0E1 0%, #662686 100%)",
+              }}
+            />
+            <h2
+              className="text-2xl sm:text-4xl md:text-5xl font-bold bg-clip-text text-transparent"
+              style={{
+                backgroundImage: "linear-gradient(270deg, #01A0E1 0%, #662686 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+            >
+              {categories.find((c) => c.id === activeCategory)?.name}
+            </h2>
+          </div>
+
+          {/* Service Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {servicesData[activeCategory].map((service, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col sm:flex-row"
+              >
+                {/* Image on Left */}
+                <div className="relative w-full sm:w-1/3 sm:min-w-[140px] flex-shrink-0 h-48 sm:h-auto">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                {/* Content on Right */}
+                <div className="p-6 flex flex-col justify-between flex-1">
+                  <h3 className="text-xl font-bold mb-4" style={{ color: "#333333" }}>
+                    {service.title}
+                  </h3>
+                  <button
+                    className="w-full text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-lg"
+                    style={{
+                      background: "linear-gradient(90deg, #0296DA 0%, #065BA9 100%)",
+                    }}
+                  >
+                    Información
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Empty State */}
+          {servicesData[activeCategory].length === 0 && (
+            <div className="text-center py-20">
+              <p className="text-gray-500 text-lg">
+                Contenido próximamente disponible
+              </p>
+            </div>
+          )}
+        </div>
+
+        {/* Floating Bottom Navigation Bar */}
+        <div className="sticky bottom-4 left-0 right-0 z-50 px-2 mt-8">
+          <div className="max-w-[1400px] mx-auto">
+            <div
+              className="rounded-2xl shadow-2xl p-2 sm:p-4 md:p-5"
+              style={{
+                background: "linear-gradient(90deg, #0293D8 0%, #075EAB 100%)",
+              }}
+            >
+              <div className="flex overflow-x-auto gap-2 sm:gap-3 md:gap-4 justify-start sm:justify-center items-center pb-1 scrollbar-none">
+                {categories.map((category) => (
+                  <button
+                    key={category.id}
+                    onClick={() => setActiveCategory(category.id)}
+                    className={`flex items-center gap-2 md:gap-3 px-3 sm:px-4 md:px-6 py-2 sm:py-3 md:py-4 rounded-xl transition-all duration-300 ${activeCategory === category.id
+                      ? "bg-white text-[#075EAB] shadow-md scale-105"
+                      : "bg-transparent text-white hover:bg-white/20"
+                      }`}
+                  >
+                    <div className="relative w-6 h-6 md:w-8 md:h-8 flex-shrink-0">
+                      <Image
+                        src={category.icon}
+                        alt={category.name}
+                        fill
+                        className="object-contain transition-all duration-300"
+                        style={
+                          activeCategory === category.id
+                            ? {
+                              filter:
+                                "invert(27%) sepia(82%) saturate(2270%) hue-rotate(195deg) brightness(91%) contrast(95%)",
+                            }
+                            : {}
+                        }
+                      />
+                    </div>
+                    <span className="font-semibold text-xs md:text-sm whitespace-nowrap">
+                      {category.name}
+                    </span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      {/* Footer Section */}
+      <footer className="relative z-10 bg-gray-100 shadow-[0_-5px_6px_rgba(0,0,0,0.05)] font-sans">
+        <div className="w-full px-8 py-12">
+          {/* Main Footer Content */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16 mb-8">
+            {/* Logo and Tagline */}
+            <div className="flex flex-col items-center lg:items-start">
+              <div className="w-20 h-20 p-3 rounded-2xl bg-white shadow-lg mb-4 flex items-center justify-center">
+                <Image
+                  src="/images/logo2.png"
+                  alt="CIDTES Logo"
+                  width={60}
+                  height={60}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <p className="text-lg text-gray-800 text-center lg:text-left leading-relaxed font-bold">
+                Tu aventura con CIDTES Energía y Sustentabilidad comienza aquí.
+              </p>
+            </div>
+
+            {/* Contact Information */}
+            <div className="flex flex-col items-center">
+              <h2 className="text-2xl font-semibold text-[#1D63ED] mb-6">Contacto</h2>
+              <div className="space-y-3">
+                <div className="flex items-center">
+                  <div className="w-2 h-2 bg-[#1D63ED] rounded-full mr-3"></div>
+                  <a
+                    href="mailto:cidtes@energiaysustentabilidad.org"
+                    className="text-gray-800 hover:text-[#1D63ED] transition-colors duration-300"
+                  >
+                    cidtes@energiaysustentabilidad.org
+                  </a>
+                </div>
+                <div className="flex items-center">
+                  <div className="w-2 h-2 bg-[#1D63ED] rounded-full mr-3"></div>
+                  <a
+                    href="tel:+525568125783"
+                    className="text-gray-800 hover:text-[#1D63ED] transition-colors duration-300"
+                  >
+                    +52 55 6812 5783
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Location */}
+            <div className="flex flex-col items-center">
+              <h2 className="text-2xl font-semibold text-[#1D63ED] mb-6">Ubicación</h2>
+              <div className="flex items-start mb-4">
+                <div className="w-2 h-2 bg-[#1D63ED] rounded-full mr-3 mt-2"></div>
+                <p className="text-gray-800 text-center lg:text-left leading-relaxed">
+                  Real de Los Reyes #303, Los Reyes, Coyoacán, Ciudad de México, C.P. 04330, México.
+                </p>
+              </div>
+              <div className="w-full max-w-sm">
+                <iframe
+                  title="Mapa de Ubicación"
+                  loading="lazy"
+                  referrerPolicy="no-referrer"
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3764.727999171979!2d-99.1502399!3d19.3376058!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce0029f9da7505%3A0x23b2d1cdacd123b8!2sReal%20de%20Los%20Reyes%20303%2C%20Los%20Reyes%2C%20Coyoac%C3%A1n%2C%2004330%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses!2smx!4v1718144001766!5m2!1ses!2smx"
+                  className="w-full h-40 rounded-lg shadow-md border-0"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Footer */}
+          <div className="border-t border-gray-300 pt-8">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
+              {/* Social Media Links */}
+              <div className="flex gap-4">
+                <a
+                  href="https://www.linkedin.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-10 h-10 bg-[#1D63ED] rounded-full flex items-center justify-center text-white hover:bg-[#0E4BB8] transition-all duration-300 hover:scale-110"
+                >
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                  </svg>
+                </a>
+                <a
+                  href="https://www.facebook.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-10 h-10 bg-[#1D63ED] rounded-full flex items-center justify-center text-white hover:bg-[#0E4BB8] transition-all duration-300 hover:scale-110"
+                >
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                  </svg>
+                </a>
+                <a
+                  href="https://www.youtube.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-10 h-10 bg-[#1D63ED] rounded-full flex items-center justify-center text-white hover:bg-[#0E4BB8] transition-all duration-300 hover:scale-110"
+                >
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93-.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                  </svg>
+                </a>
+                <a
+                  href="https://www.instagram.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-10 h-10 bg-[#1D63ED] rounded-full flex items-center justify-center text-white hover:bg-[#0E4BB8] transition-all duration-300 hover:scale-110"
+                >
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                  </svg>
+                </a>
+              </div>
+
+              {/* Copyright */}
+              <p className="text-gray-700 text-sm text-center lg:text-right">
+                © 2024 CIDTES. Todos los derechos reservados.
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  )
+}
