@@ -259,7 +259,7 @@ export default function InvestigacionConsultoriaPage() {
                     className="text-2xl lg:text-3xl font-semibold bg-clip-text text-transparent"
                     style={{ backgroundImage: 'linear-gradient(90deg, #01A0E1 0%, #662686 100%)' }}
                   >
-                    Autismos
+                    Autismo
                   </span>
                 </div>
               </div>
