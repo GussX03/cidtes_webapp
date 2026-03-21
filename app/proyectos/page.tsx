@@ -304,7 +304,94 @@ const servicesData: Record<string, ServiceCard[]> = {
       image: "/images/manejo-residuos-peligrosos.png",
     },
   ],
-  valuacion: [],
+  organizacional: [
+    {
+      title: "Despacho Y Servicio Al Cliente",
+      image: "/images/atencion-cliente.png",
+    },
+    {
+      title: "Planeación Y Dirección Gubernamental",
+      image: "/images/desarrollo-economico.png",
+    },
+    {
+      title: "Motivación Social Comunitaria",
+      image: "/images/comunidades-global.png",
+    },
+    {
+      title: "Estrategias De Solución De Conflictos",
+      image: "/images/solucion-de-problemas.png",
+    },
+    {
+      title: "Asertividad Laboral Institucional",
+      image: "/images/asertividad.png",
+    },
+    {
+      title: "Plan De Desarrollo Social Integral",
+      image: "/images/desarrollo-social.png",
+    },
+    {
+      title: "Atención Y Calidad En El Servicio De Tránsito",
+      image: "/images/transito-policias.png",
+    },
+    {
+      title: "Conciencia Social Comunitaria",
+      image: "/images/desarrollo-ambiental.png",
+    },
+    {
+      title: "Perspectivas De Autismo",
+      image: "/images/autismos-manos.png",
+    },
+    {
+      title: "Estrategias Educativas Inclusivas",
+      image: "/images/maestros-ninos.png",
+    },
+    {
+      title: "Dinámica Comunitaria",
+      image: "/images/maestros-jovenes.png",
+    },
+    {
+      title: "Derechos Constitucionales",
+      image: "/images/derechos-constitucionales.png",
+    },
+    {
+      title: "Equidad, Inclusión E Igualdad Docente",
+      image: "/images/maestros-reunion.png",
+    },
+    {
+      title: "Liderazgo Docente Emocional",
+      image: "/images/maestras-ninos.png",
+    },
+    {
+      title: "Desarrollo Social Estudiantil",
+      image: "/images/desarrollo-social-ninos.png",
+    },
+  ],
+  personal: [
+    {
+      title: "Atención Psicológica Personal",
+      image: "/images/psicologia-sesion.png",
+    },
+    {
+      title: "Administración Del Tiempo Consciente",
+      image: "/images/administracion-tiempo.png",
+    },
+    {
+      title: "Reducción Del Estrés",
+      image: "/images/meditacion.png",
+    },
+    {
+      title: "Auto-Estima Individual",
+      image: "/images/autoestima.png",
+    },
+    {
+      title: "Relaciones Interpersonales Individual",
+      image: "/images/empatia.png",
+    },
+    {
+      title: "Desarrollo Emocional Eficaz",
+      image: "/images/comunicacion-efectiva.png",
+    },
+  ],
 }
 
 export default function UnetePage() {
@@ -396,14 +483,17 @@ export default function UnetePage() {
             <div
               className="rounded-2xl shadow-2xl p-2 sm:p-4 md:p-5"
               style={{
-                background: "linear-gradient(90deg, #0293D8 0%, #075EAB 100%)",
+                background: "linear-gradient(90deg, #029DDA 0%, #075EAB 100%)",
               }}
             >
               <div className="flex overflow-x-auto gap-2 sm:gap-3 md:gap-4 justify-start sm:justify-center items-center pb-1 scrollbar-none">
                 {categories.map((category) => (
                   <button
                     key={category.id}
-                    onClick={() => setActiveCategory(category.id)}
+                    onClick={() => {
+                      setActiveCategory(category.id)
+                      window.scrollTo({ top: 0, behavior: 'smooth' })
+                    }}
                     className={`flex items-center gap-2 md:gap-3 px-3 sm:px-4 md:px-6 py-2 sm:py-3 md:py-4 rounded-xl transition-all duration-300 ${activeCategory === category.id
                       ? "bg-white text-[#075EAB] shadow-md scale-105"
                       : "bg-transparent text-white hover:bg-white/20"
