@@ -32,7 +32,7 @@ El servidor correrá en `http://localhost:3000`.
 
 El sitio está desplegado en Vercel:
 
-**[https://vercel.com/gustavodiaz-9140s-projects/v0-cidteswebsite](https://vercel.com/gustavodiaz-9140s-projects/v0-cidteswebsite)**
+**https://www.cidtes.org/**
 
 ---
 
